@@ -1,0 +1,23 @@
+.c-card {
+  &__empty {
+    height: 261px;// 空きスペースの高さ
+  }
+
+  &__contents {
+    height: 163px;
+    background-color: #ffffff;
+    opacity: 0.5;
+    padding: 25px 10px 0 10px;
+
+    h3 {
+      @include font-mplus--bold;
+      font-size: 22px;
+    }
+
+    p {
+      @include font-mplus--regular;
+      font-size: 16px;
+      padding-top: 30px;
+    }
+  }
+}

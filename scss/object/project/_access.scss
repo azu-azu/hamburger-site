@@ -1,0 +1,18 @@
+.p-access {
+    h2 {
+      font-size: 30px;
+      position: relative;
+    }
+
+    h2::before {
+      width: 80px;
+      height: 2px;
+      @include giji-line;
+      background-color: #ffffff;
+      margin: 70px 0;
+    }
+
+  &__txt {
+    padding-top: 30px;
+  }
+}

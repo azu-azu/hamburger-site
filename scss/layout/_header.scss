@@ -1,0 +1,35 @@
+.l-header {
+  $value: 218px;// ヘッダーの高さ
+  @include font-robotto;
+  height: $value;
+  width: 100%;
+  background-color: #FFF7EF;
+  color: #707070;
+  display: block;
+  text-align: right;
+
+  &__ttlwrap,
+  &__formwrap {
+    height: $value / 2;// 高さ２分割
+    padding: 0px 10px 0 10px;
+  }
+
+  &__ttlwrap {
+    padding-top: 20px;
+  }
+
+  &__formwrap {
+    gap: 10px;
+    align-items: center;
+  }
+
+  p {
+    font-size: 40px;
+    text-align: center;
+    }
+    
+    &__button {
+      font-size: 20px;
+    }
+
+}

@@ -1,0 +1,22 @@
+.l-sidebar {
+  $value: 10%;// グレーボックスの大きさ
+  width: 100vw;
+  display: grid;
+  position: absolute;
+  z-index: 100;
+
+  left: 100%;// 左に隠す
+  position: fixed;
+  overflow-y: auto;// 縦スクロール
+
+
+  &__gray-box {
+    width: $value;
+    background-color:rgba(#000000, 0.5);
+  }
+
+  &__menu-box {
+    width: 100% - $value;
+    background-color: #F2EDE9;
+  }
+}

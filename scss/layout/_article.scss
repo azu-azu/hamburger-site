@@ -1,0 +1,12 @@
+.l-article {
+
+  &__wrapper {
+    margin: 20px 20px 0 20px;
+    display: grid;
+    row-gap: 20px;
+  }
+
+  &__contents {
+    height: 642px;
+  }
+}

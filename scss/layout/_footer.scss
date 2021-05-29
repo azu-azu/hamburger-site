@@ -1,0 +1,40 @@
+.l-footer {
+  height: 150px;
+  @include font-mplus--regular;
+  background-image: url('../images/footer.png');
+  background-size: 100%;
+  color: #ffffff;
+
+
+  &__wrapper {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  ul {
+    gap: 20px;
+  }
+
+    li {
+      font-size: 20px;
+    }
+
+      // リストとリストの真ん中の線
+      li:first-child::after {
+        position: absolute;
+        display: inline-block;
+        content: '';
+        width: 1.5px;
+        height: 18px;
+        background-color: #ffffff;
+        margin-top: 1%;
+        margin-left: 10px;
+      }
+
+    small {
+      display: block;
+      font-size: 14px;
+    }
+}
