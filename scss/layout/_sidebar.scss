@@ -6,9 +6,7 @@
   z-index: 100;
 
   left: 100%;// 左に隠す
-  position: fixed;
-  overflow-y: auto;// 縦スクロール
-
+  overflow-y: scroll;// 縦スクロール
 
   &__gray-box {
     width: $value;
@@ -18,5 +16,11 @@
   &__menu-box {
     width: 100% - $value;
     background-color: #F2EDE9;
+  }
+
+  &--ttl {
+    height: 215px;
+    padding: 20px 20px 0 0;
+    text-align: right;
   }
 }

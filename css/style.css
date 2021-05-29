@@ -139,8 +139,7 @@ a {
   position: absolute;
   z-index: 100;
   left: 100%;
-  position: fixed;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .l-sidebar__gray-box {
@@ -151,6 +150,12 @@ a {
 .l-sidebar__menu-box {
   width: 90%;
   background-color: #F2EDE9;
+}
+
+.l-sidebar--ttl {
+  height: 215px;
+  padding: 20px 20px 0 0;
+  text-align: right;
 }
 
 .c-btn--search {
@@ -166,12 +171,17 @@ a {
 }
 
 .c-btn--sidex {
+  width: 32px;
+  display: inline-block;
+}
+
+.c-btn--sidex__line {
   position: relative;
 }
 
-.c-btn--sidex::before, .c-btn--sidex::after {
+.c-btn--sidex__line::before, .c-btn--sidex__line::after {
   width: 32px;
-  height: 2px;
+  height: 4px;
   content: "";
   position: absolute;
   display: block;
@@ -180,11 +190,11 @@ a {
   transition: transform 0.2s;
 }
 
-.c-btn--sidex::before {
+.c-btn--sidex__line::before {
   transform: rotate(45deg);
 }
 
-.c-btn--sidex::after {
+.c-btn--sidex__line::after {
   transform: rotate(-45deg);
 }
 
@@ -280,7 +290,7 @@ input[type="text"] {
 }
 
 .p-gmenu {
-  padding: 75px 0 0 30px;
+  padding-left: 30px;
   background-color: #F2EDE9;
 }
 
