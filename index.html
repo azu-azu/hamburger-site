@@ -1,180 +1,187 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-  <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
 
-  <!-- レスポンシブ対応：デバイスの幅を使うことを指定 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- レスポンシブ対応：デバイスの幅を使うことを指定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Hamburger</title>
-  <meta name="description" content="説明文を記述">
-  <meta name="keywords" content="検索ワードを記述（５つまで）">
+    <title>Hamburger</title>
+    <meta name="description" content="説明文を記述">
+    <meta name="keywords" content="検索ワードを記述（５つまで）">
 
-  <!-- リセットCSS -->
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
 
-  <!-- 自作CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <!-- 自作CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
-  <!-- グーグルフォント -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- グーグルフォント -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 
 
-  <!-- フォントオーサム -->
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- フォントオーサム -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
-  <!-- ファビコン -->
-  <link rel="icon" type="image/svg" href="images/raise-logo_triangle.png">
-</head>
-<!-- ◇----------------------------------------------------------------------------------------------◇ -->
-
-<body class="home">
-
-  <aside class="l-sidebar">
-
-    <div class="l-sidebar__wrapper u-display--center">
-      <div class="l-sidebar__gray-box"></div>
-
-      <div class="l-sidebar__menu-box">
-        <!-- ナビゲーション -->
-        <nav class="p-gmenu">
-          <span class="c-btn--sidex"></span>
-
-          <!-- メニュー -->
-          <ul class="p-gmenu__ul u-wrap--align">
-
-            <li class="p-gmenu__has">
-              <a class="" href="#">バーガー</a>
-              <ul class="p-gmenu__sub">
-                <li><a href="#">ハンバーガー</a></li>
-                <li><a href="#">チーズバーガー</a></li>
-                <li><a href="#">テリヤキバーガー</a></li>
-                <li><a href="#">アボカドバーガー</a></li>
-                <li><a href="#">フィッシュバーガー</a></li>
-                <li><a href="#">ベーコンバーガー</a></li>
-                <li><a href="#">チキンバーガー</a></li>
-              </ul>
-            </li>
-
-            <li class="p-gmenu__has">
-              <a class="" href="#">サイド</a>
-              <ul class="p-gmenu__sub">
-                <li><a href="#">ポテト</a></li>
-                <li><a href="#">サラダ</a></li>
-                <li><a href="#">ナゲット</a></li>
-                <li><a href="#">コーン</a></li>
-              </ul>
-            </li>
-
-            <li class="p-gmenu__has">
-              <a class="" href="#">ドリンク</a>
-              <ul class="p-gmenu__sub">
-                <li><a href="#">コーラ</a></li>
-                <li><a href="#">ファンタ</a></li>
-                <li><a href="#">オレンジ</a></li>
-                <li><a href="#">アップル</a></li>
-                <li><a href="#">紅茶（Ice/Hot）</a></li>
-                <li><a href="#">コーヒー（Ice/Hot）</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-    </div>
-  </aside>
+    <!-- ファビコン -->
+    <link rel="icon" type="image/svg" href="images/raise-logo_triangle.png">
+  </head>
   <!-- ◇----------------------------------------------------------------------------------------------◇ -->
-  <header class="l-header">
-    <div class="l-header__ttlwrap">
-      <button class="l-header__button js-menu-btn">Menu</button>
-      <p>Hamburger</p>
-    </div>
 
-    <div class="l-header__formwrap u-display--center">
-      <form class="p-searchform" action="#" method="get">
-        <input type="text" placeholder="&#xf002" id="s" name="s" size="20">
-      </form>
-      <button class="c-btn--search">検索</button>
-    </div>
-  </header>
+  <body class="home">
 
-  <figure class="l-mainvisual">
-    <h1>ダミーサイト</h1>
-  </figure>
-  <!-- ◇----------------------------------------------------------------------------------------------◇ -->
-  <main class="l-main">
+    <aside class="l-sidebar">
 
+      <div class="l-sidebar__wrapper u-display--center">
+        <div class="l-sidebar__gray-box"></div>
 
-    <article class="l-article">
-      <div class="l-article__wrapper">
-        <section class="l-article__contents p-contents">
+        <div class="l-sidebar__menu-box">
 
-          <div class="c-card__empty">
-            <h2>Take Out</h2>
+          <div class="l-sidebar--ttl">
+            <div class="c-btn--sidex">
+              <span class="c-btn--sidex__line"></span>
+            </div>
           </div>
 
-          <div class="c-card__contents">
-            <h3>Take Out</h3>
-            <p>当店のテイクアウトで利用できる商品を掲載しています</p>
+          <!-- ナビゲーション -->
+          <div class="l-sidebar--nav">
+            <nav class="p-gmenu">
+              <!-- メニュー -->
+              <ul class="p-gmenu__ul u-wrap--align">
+
+                <li class="p-gmenu__has">
+                  <a class="" href="#">バーガー</a>
+                  <ul class="p-gmenu__sub">
+                    <li><a href="#">ハンバーガー</a></li>
+                    <li><a href="#">チーズバーガー</a></li>
+                    <li><a href="#">テリヤキバーガー</a></li>
+                    <li><a href="#">アボカドバーガー</a></li>
+                    <li><a href="#">フィッシュバーガー</a></li>
+                    <li><a href="#">ベーコンバーガー</a></li>
+                    <li><a href="#">チキンバーガー</a></li>
+                  </ul>
+                </li>
+
+                <li class="p-gmenu__has">
+                  <a class="" href="#">サイド</a>
+                  <ul class="p-gmenu__sub">
+                    <li><a href="#">ポテト</a></li>
+                    <li><a href="#">サラダ</a></li>
+                    <li><a href="#">ナゲット</a></li>
+                    <li><a href="#">コーン</a></li>
+                  </ul>
+                </li>
+
+                <li class="p-gmenu__has">
+                  <a class="" href="#">ドリンク</a>
+                  <ul class="p-gmenu__sub">
+                    <li><a href="#">コーラ</a></li>
+                    <li><a href="#">ファンタ</a></li>
+                    <li><a href="#">オレンジ</a></li>
+                    <li><a href="#">アップル</a></li>
+                    <li><a href="#">紅茶（Ice/Hot）</a></li>
+                    <li><a href="#">コーヒー（Ice/Hot）</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
           </div>
+        </div>
 
-          <div class="c-card__contents">
-            <h3>Take Out</h3>
-            <p>当店のテイクアウトで利用できる商品を掲載しています</p>
-          </div>
-        </section>
-
-
-        <section class="p-contents">
-
-          <div class="c-card__empty">
-            <h2>Eat In</h2>
-          </div>
-
-          <div class="c-card__contents">
-            <h3>Eat In</h3>
-            <p>当店で利用できる商品を掲載しています</p>
-          </div>
-
-          <div class="c-card__contents">
-            <h3>Eat In</h3>
-            <p>当店で利用できる商品を掲載しています</p>
-          </div>
-        </section>
       </div>
-    </article>
-
-
-    <section class="l-access p-access">
-      <div class="l-access__box">
-        <h2>見出しが入ります</h2>
-        <p class="p-access__txt">
-          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-        </p>
+    </aside>
+    <!-- ◇----------------------------------------------------------------------------------------------◇ -->
+    <header class="l-header">
+      <div class="l-header__ttlwrap">
+        <button class="l-header__button js-menu-btn">Menu</button>
+        <p>Hamburger</p>
       </div>
 
-      <div class="l-access__empty-box"></div>
-    </section>
-  </main>
+      <div class="l-header__formwrap u-display--center">
+        <form class="p-searchform" action="#" method="get">
+          <input type="text" placeholder="&#xf002" id="s" name="s" size="20">
+        </form>
+        <button class="c-btn--search">検索</button>
+      </div>
+    </header>
+
+    <figure class="l-mainvisual">
+      <h1>ダミーサイト</h1>
+    </figure>
+    <!-- ◇----------------------------------------------------------------------------------------------◇ -->
+    <main class="l-main">
+
+
+      <article class="l-article">
+        <div class="l-article__wrapper">
+          <section class="l-article__contents p-contents">
+
+            <div class="c-card__empty">
+              <h2>Take Out</h2>
+            </div>
+
+            <div class="c-card__contents">
+              <h3>Take Out</h3>
+              <p>当店のテイクアウトで利用できる商品を掲載しています</p>
+            </div>
+
+            <div class="c-card__contents">
+              <h3>Take Out</h3>
+              <p>当店のテイクアウトで利用できる商品を掲載しています</p>
+            </div>
+          </section>
+
+
+          <section class="p-contents">
+
+            <div class="c-card__empty">
+              <h2>Eat In</h2>
+            </div>
+
+            <div class="c-card__contents">
+              <h3>Eat In</h3>
+              <p>当店で利用できる商品を掲載しています</p>
+            </div>
+
+            <div class="c-card__contents">
+              <h3>Eat In</h3>
+              <p>当店で利用できる商品を掲載しています</p>
+            </div>
+          </section>
+        </div>
+      </article>
+
+
+      <section class="l-access p-access">
+        <div class="l-access__box">
+          <h2>見出しが入ります</h2>
+          <p class="p-access__txt">
+            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+          </p>
+        </div>
+
+        <div class="l-access__empty-box"></div>
+      </section>
+    </main>
 
 
 
-  <aside class="l-sidebar"></aside>
+    <aside class="l-sidebar"></aside>
 
-  <footer class="l-footer">
-    <div class="l-footer__wrapper u-display--col">
-      <ul class="u-display--center">
-        <li>ショップ情報</li>
-        <li>ヒストリー</li>
-      </ul>
-      <small>Copyright: RaiseTech</small>
-    </div>
-  </footer>
+    <footer class="l-footer">
+      <div class="l-footer__wrapper u-display--col">
+        <ul class="u-display--center">
+          <li>ショップ情報</li>
+          <li>ヒストリー</li>
+        </ul>
+        <small>Copyright: RaiseTech</small>
+      </div>
+    </footer>
 
 
-  <script src="js/jquery-3.6.0.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 
 </html>

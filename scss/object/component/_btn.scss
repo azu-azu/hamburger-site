@@ -13,25 +13,30 @@
 
 // xボタン：サイドメニュー
 .c-btn--sidex {
-  position: relative;
+  width: 32px;
+  display: inline-block;
 
-  &::before,
-  &::after {
-    width: 32px;
-    height: 2px;
-    content: "";
-    position: absolute;
-    display: block;
-    background: #707070;
-    text-align: right;
-    transition: transform 0.2s;
-  }
+  &__line {
+    position: relative;
 
-  &::before {
-    transform: rotate(45deg);
-  }
+    &::before,
+    &::after {
+      width: 32px;
+      height: 4px;
+      content: "";
+      position: absolute;
+      display: block;
+      background: #707070;
+      text-align: right;
+      transition: transform 0.2s;
+    }
 
-  &::after {
-    transform: rotate(-45deg);
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 }
