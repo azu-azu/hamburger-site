@@ -1,0 +1,16 @@
+.l-access {
+  height: 691px;
+  grid-template-rows: 415px 1fr;// テキストボックスh415＆残り1fr
+  display: grid;
+  background-color: salmon;
+  color: #fff;
+  margin-top: 50px;
+
+  &__box {
+    padding: 40px 40px 0 40px;
+    background-color: #000000;
+    opacity: 0.5;
+    line-height: 2;
+    overflow: scroll;
+  }
+}

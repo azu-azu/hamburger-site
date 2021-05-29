@@ -1,0 +1,16 @@
+.l-mainvisual{
+  height: 285px;
+  width: 100%;
+  background-color: lightgrey;
+
+
+  h1 {
+    @include font-mplus--bold;
+    height: 100%;
+    padding-left: 25px;
+    font-size: 36px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+}

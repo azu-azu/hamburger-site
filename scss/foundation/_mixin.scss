@@ -1,0 +1,22 @@
+
+
+// フォント
+@mixin font-robotto {
+font-family: 'Roboto', sans-serif;
+}
+
+@mixin font-mplus--bold {
+  font-family: mplus-1m-bold, sans-serif;
+  }
+
+@mixin font-mplus--regular {
+  font-family: mplus-1m-regular, sans-serif;
+  }
+
+
+// 疑似要素：下ライン
+@mixin giji-line {
+  position: absolute;
+  display: inline-block;
+  content: '';
+}

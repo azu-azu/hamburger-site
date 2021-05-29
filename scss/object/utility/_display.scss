@@ -1,0 +1,17 @@
+.u-display {
+  &--center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &--col {
+  display: flex;
+  flex-direction: column;
+
+  &--align {
+    display: flex;
+    align-items: center;
+  }
+
+}
+}
