@@ -16,6 +16,7 @@
   width: 32px;
   display: inline-block;
 
+  // ｘ装飾
   &__line {
     position: relative;
 
@@ -39,4 +40,9 @@
       transform: rotate(-45deg);
     }
   }
+}
+
+
+input[type="checkbox"] {
+    display: none;// チェックボックスは非表示
 }

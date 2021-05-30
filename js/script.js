@@ -1,4 +1,4 @@
-// ハンバーガーボタン
+// Menuボタンを押したら
 jQuery(function($) {
   $(".js-menu-btn").on("click", function(){
     $(this).toggleClass("is-open");
@@ -7,3 +7,5 @@ jQuery(function($) {
     $(".p-has-menu").toggleClass("is-open");
   });
 });
+
+
