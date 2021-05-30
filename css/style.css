@@ -158,6 +158,10 @@ a {
   text-align: right;
 }
 
+.is-open .l-sidebar {
+  left: 0;
+}
+
 .c-btn--search {
   font-family: mplus-1m-bold, sans-serif;
   width: 78px;
@@ -196,6 +200,10 @@ a {
 
 .c-btn--sidex__line::after {
   transform: rotate(-45deg);
+}
+
+input[type="checkbox"] {
+  display: none;
 }
 
 .c-card__empty {
@@ -305,10 +313,6 @@ input[type="text"] {
   font-size: 20px;
   color: #707070;
   line-height: 2;
-}
-
-.is-open .p-gmenu {
-  left: 0;
 }
 
 .u-display--center {

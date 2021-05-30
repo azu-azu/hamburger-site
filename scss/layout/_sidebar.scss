@@ -24,3 +24,8 @@
     text-align: right;
   }
 }
+
+// is-open時にサイドバーを開く
+.is-open .l-sidebar {
+  left: 0;
+}
