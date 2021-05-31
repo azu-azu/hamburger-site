@@ -13,7 +13,7 @@ $(function() {
     if ( $(this).prop('checked') == false ) {
 
     } else {
-      $('.l-sidebar').left('100%');
+      $('.l-sidebar').fadeOut();
     }
   });
 });
