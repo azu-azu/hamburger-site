@@ -1,3 +1,9 @@
+.c-btn--menu {
+  @include font-robotto;
+  font-size: 20px;
+}
+
+
 .c-btn--search {
   @include font-mplus--bold;
   width: 78px;
@@ -14,7 +20,6 @@
 // xボタン：サイドメニュー
 .c-btn--sidex {
   width: 32px;
-  display: inline-block;
 
   // ｘ装飾
   &__line {
@@ -28,8 +33,8 @@
       position: absolute;
       display: block;
       background: #707070;
-      text-align: right;
       transition: transform 0.2s;
+      margin-left: 410px;
     }
 
     &::before {

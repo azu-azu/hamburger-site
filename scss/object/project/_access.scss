@@ -1,18 +1,19 @@
 .p-access {
-    h2 {
-      font-size: 30px;
-      position: relative;
-    }
+  color: #fff;
 
-    h2::before {
-      width: 80px;
-      height: 2px;
-      @include giji-line;
-      background-color: #ffffff;
-      margin: 70px 0;
-    }
+  h2 {
+    font-size: 30px;
+    position: relative;
+  }
 
-  &__txt {
-    padding-top: 30px;
+  h2::before {
+    grid-column: 2;
+    grid-row: 2;
+    width: 80px;
+    height: 2px;
+
+    @include giji-line;
+    background-color: #ffffff;
+    margin: 70px 0;
   }
 }

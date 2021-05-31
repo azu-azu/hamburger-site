@@ -1,35 +1,34 @@
 .l-header {
-  $value: 218px;// ヘッダーの高さ
-  @include font-robotto;
-  height: $value;
-  width: 100%;
-  background-color: #FFF7EF;
-  color: #707070;
-  display: block;
-  text-align: right;
+  grid-column: 1 / -1;
+  grid-row: 1;
 
-  &__ttlwrap,
-  &__formwrap {
-    height: $value / 2;// 高さ２分割
-    padding: 0px 10px 0 10px;
+  // ヘッダーの中のグリッド
+  --side: 20px;
+  --center: 45px;
+  display: grid;
+  grid-template-columns: var(--side) auto var(--side);
+  grid-template-rows: var(--side) auto auto auto var(--center) auto var(--center);
+
+
+  // メニューボタン
+  &__btn {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
   }
 
-  &__ttlwrap {
-    padding-top: 20px;
-  }
-
-  &__formwrap {
-    gap: 10px;
-    align-items: center;
-  }
-
+  // タイトル
   p {
-    font-size: 40px;
+    grid-column: 2;
+    grid-row: 4;
     text-align: center;
     }
-    
-    &__button {
-      font-size: 20px;
-    }
+  
+  // 検索フォーム
+  &__form {
+    column-gap: 10px;
 
+    grid-column: 2;
+    grid-row: 6;
+  }
 }

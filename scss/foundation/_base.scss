@@ -6,6 +6,18 @@
   url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf') format('truetype');
 }
 
+// ・・・後で消す・・・
+// レイアウトのための臨時カラー
+.l-mainvisual {
+  background-color: lightgrey;
+}
+
+.p-contents {
+  background-color: pink;
+}
+// ・・・後で消す・・・
+
+
 html,
 body {
   margin: 0;
@@ -19,4 +31,15 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+h1 {
+  @include font-mplus--bold;
+  height: 100%;
+  font-size: 36px;
+  color: #ffffff;
+}
+
+footer {
+  @include font-mplus--regular;
 }

@@ -1,8 +1,4 @@
 .p-contents {
-  row-gap: 10px;
-  display: grid;
-  background-color: pink;
-  padding: 25px 10px 10px 10px;
 
   h2 {
     font-size: 41px;
@@ -11,9 +7,12 @@
     color: #ffffff;
   }
 
+  // タイトル下のライン
   h2::before {
     width: 30px;
     height: 5px;
+    grid-column: 2;
+    grid-row: 3 / 4;
     @include giji-line;
     background-color: #ffffff;
     margin: 60px 0;
