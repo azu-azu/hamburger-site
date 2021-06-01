@@ -9,6 +9,8 @@
   &__gray-box {
     line-height: 2;
     overflow: scroll;
+    background-color: #000000;
+    opacity: 0.6;
 
     --side: 40px;
     display: grid;
@@ -25,5 +27,10 @@
       grid-column: 2;
       grid-row: 3;
     }
+  }
+
+  &__light-box {
+    background-color: #000000;
+    opacity: 0.3;
   }
 }
