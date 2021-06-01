@@ -1,25 +1,26 @@
 .l-header {
   grid-column: 1 / -1;
   grid-row: 1;
+  background-color: $header-color;
 
   // ヘッダーの中のグリッド
   --side: 20px;
   --center: 45px;
   display: grid;
-  grid-template-columns: var(--side) auto var(--side);
+  grid-template-columns: var(--side) auto 60px var(--side);
   grid-template-rows: var(--side) auto auto auto var(--center) auto var(--center);
 
 
   // メニューボタン
   &__btn {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 2;
     text-align: right;
   }
 
   // タイトル
   p {
-    grid-column: 2;
+    grid-column: 2 / 4;
     grid-row: 4;
     text-align: center;
     }
@@ -28,7 +29,7 @@
   &__form {
     column-gap: 10px;
 
-    grid-column: 2;
+    grid-column: 2 / 4;
     grid-row: 6;
   }
 }

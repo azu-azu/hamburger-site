@@ -1,8 +1,8 @@
 .c-btn--menu {
   @include font-robotto;
   font-size: 20px;
+  color: $font-color;
 }
-
 
 .c-btn--search {
   @include font-mplus--bold;
@@ -11,16 +11,13 @@
   font-size: 16px;
   cursor: pointer;
   background: #f2ede9;
-  border: 1px solid #707070;
-  color: #707070;
+  border: 1px solid $font-color;
+  color: $font-color;
   border-radius: 10px;
 }
 
-
 // xボタン：サイドメニュー
 .c-btn--sidex {
-  width: 32px;
-
   // ｘ装飾
   &__line {
     position: relative;
@@ -32,9 +29,8 @@
       content: "";
       position: absolute;
       display: block;
-      background: #707070;
+      background: $font-color;
       transition: transform 0.2s;
-      margin-left: 410px;
     }
 
     &::before {

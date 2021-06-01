@@ -1,48 +1,58 @@
 .l-sidebar {
-  $bg-color: #F2EDE9;
   width: 100vw;
-  left: 100%;// 左に隠す 
+  height: 100vh;
+  right: 100%;// 右に隠す
 
   display: grid;
   grid-template-columns: 45px auto;
-  grid-template-rows: 215px auto auto;
   overflow-y: scroll;// 縦スクロール
   overflow-x: hidden;
 
-  position: absolute;
+  top: 0;// 一番上にもってくる
+  position: absolute;// これがないと固定されちゃう
   z-index: 100;
-
 
   &__gray-box {
     grid-column: 1;
-    grid-row: 1 / -1;
     background-color:rgba(#000000, 0.5);
   }
 
-  &__ttl {
+  &__menu-box {
     grid-column: 2;
-    grid-row: 1;
-    width: 100%;
-    background-color: $bg-color;
+    background-color: $sidebar-color;
 
+    display: grid;
+    grid-template-columns: 45px auto 35px 15px;
+    grid-template-rows: 20px 45px 160px auto;
   }
-
-  &__nav {
-    grid-column: 2;
-    grid-row: 2 / 3;
-    background-color: $bg-color;
-  }
-
-  &__bottom {
-    height: 100vh;
-    grid-column: 2;
-    grid-row: 3 / 4;
-    background-color: $bg-color;
-  }
-
 }
+
+
+.l-sidebar__menu-box {
+  &--xbtn {
+    grid-column: 4;
+    grid-row: 2;
+    margin-left: -40px;
+  }
+  
+  &--nav {
+    grid-column: 2;
+    grid-row: 4;
+    padding-bottom: 500px;
+  }
+}
+
+
+
+
 
 // is-open時にサイドバーを開く
 .is-open .l-sidebar {
-  left: 0;
+  right: 0;
 }
+
+// ボディは固定する
+body.is-open {
+  position: fixed;
+}
+
