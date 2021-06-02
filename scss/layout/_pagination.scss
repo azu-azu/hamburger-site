@@ -1,0 +1,6 @@
+.l-pagination {
+  --side:50px;
+  display: grid;
+  grid-template-rows: 60px 60px;
+  color: $font-color;
+}

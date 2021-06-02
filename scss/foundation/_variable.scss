@@ -1,5 +1,31 @@
-// サイドバーの背景色：グレー
+$imgPath: "../images/";// 画像パス
+
+
+// ↓↓色設定↓↓
 $header-color:#FFF7EF;
-$font-color: #707070;
+
+$card-fcolor: #3c2b1c;
+
+$AccentColor: #707070;
+$font-color: $AccentColor;
+$searchForm-border: $AccentColor;
+$miru-btn: $AccentColor;
+
+$SubColor: #F2EDE9;
+$sidebar-color: $SubColor;
+$searchBtn-color: $SubColor;
+
+$fontAwesome-search: #808080;
 $card-fcolor: #3C2A10;
-$sidebar-color: #F2EDE9;
+
+$White: #ffffff;
+$ttl-color : $White;
+$contents-color: $White;
+$searchForm-color: $White;
+$footer-color: $White;
+$access-color: $White;
+
+$Black: #000000;
+$access-bgcolor: $Black;
+$sidebox-bgcolor: $Black;
+

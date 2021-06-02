@@ -1,7 +1,7 @@
 .p-footer {
-  background-image: url('../images/footer.png');
+  background-image: url(#{$imgPath}footer.png);
   background-size: 100%;
-  color: #ffffff;
+  color: $footer-color;
 
   li {
     font-size: 20px;
@@ -11,10 +11,10 @@
     li:first-child::after {
       position: absolute;
       display: inline-block;
+      background-color: $footer-color;
       content: '';
       width: 1.5px;
       height: 18px;
-      background-color: #ffffff;
       margin-top: 1%;
       margin-left: 10px;
     }

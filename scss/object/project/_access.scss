@@ -1,5 +1,5 @@
 .p-access {
-  color: #fff;
+  color: $access-color;
 
   h2 {
     font-size: 30px;
@@ -13,7 +13,7 @@
     height: 2px;
 
     @include giji-line;
-    background-color: #ffffff;
+    background-color: $access-color;
     margin: 70px 0;
   }
 }

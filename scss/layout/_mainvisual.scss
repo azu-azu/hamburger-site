@@ -1,6 +1,15 @@
+  // .c-grid:７rows
+  // 1:ヘッダー
+  // 2:メインビジュアル　<-----------ココ
+  // 3:余白
+  // 4:メイン
+  // 5:余白
+  // 6:アクセス
+  // 7:フッター
+
 .l-mainvisual{
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: 2;// c-gridの中の2行目
 
   height: 285px;
   width: 100%;
@@ -17,3 +26,14 @@
     grid-row: 2;
   }
 }
+
+.archive {
+  .l-mainvisual {
+    grid-template-rows: repeat(4, auto);
+    p {
+      grid-column: 2;
+      grid-row: 3;
+    }
+  }
+}
+

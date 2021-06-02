@@ -1,0 +1,55 @@
+// l-mainの中のコンテンツ(ul)のグリッド
+.l-contents {
+  display: grid;
+  row-gap: 20px;
+
+  // コンテンツの中のリンク範囲(ul)のグリッド
+  &__item {
+    height: 642px;
+
+    --side: 10px;
+    display: grid;
+    grid-template-columns: var(--side) auto var(--side);
+    grid-template-rows: 25px auto var(--side) auto auto var(--side);
+    // 1余白/2タイトル/3疑似要素/4余白/5カード部分/6余白
+
+    h2 {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    &--card {
+      grid-column: 2;
+      grid-row: 5 / 6;
+
+      // カード２つをグリッドで配置
+      display: grid;
+      row-gap: 10px;
+    }
+  }
+}
+
+
+.archive {
+  .l-contents {
+    grid-template-rows: none;
+    &__item {
+      grid-template-rows: 230px 25px 70px auto;
+      // 1画像/2余白/3タイトル/4カード/
+
+      &--bg {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+
+      h2 {
+        grid-row: 3;
+      }
+
+      &--card {
+        grid-row: 4;
+        grid-template-rows: none;
+      }
+    }
+  }
+}

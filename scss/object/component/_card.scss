@@ -1,29 +1,44 @@
 .c-card {
-  &__contents {
-    background-color: #ffffff;
-    opacity: 0.5;
-    color: $card-fcolor;
+  color: $card-fcolor;
+  background-color: $contents-color;
+  opacity: 0.5;
 
-    display: grid;
-    grid-template-columns: 10px auto 10px;
-    grid-template-rows: 45px 25px auto;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  white-space: nowrap;
+  padding-left: 10px;
 
-    h3 {
-      grid-column: 2;
-      grid-row: 1;
-      align-self: end;
+  dt {
+    padding-top: 25px;
+    @include font-mplus--bold;
+    font-size: 22px;
+  }
 
-      @include font-mplus--bold;
-      font-size: 22px;
-      }
+  dd {
+    padding-top: 30px;
+    @include font-mplus--regular;
+    white-space: normal;// 改行させる
+    font-size: 16px;
+  }
+}
 
-    p {
-      grid-column: 2;
-      grid-row: 3;
-      align-self: flex-start;
+.archive {
+  .c-card {
+    grid-template-columns: auto 50px;
+    grid-template-rows: auto auto;
+    color: $contents-color;
+    background-color: transparent;
+    opacity: 1;
+    padding: 0;
 
-      @include font-mplus--regular;
-      font-size: 16px;
-      }
+    dt {
+      padding: 0;
+    }
+
+    &__miru-btn {
+      grid-column: 1;
+      grid-row: 2;
+      @include miru-btn;
+    }
   }
 }

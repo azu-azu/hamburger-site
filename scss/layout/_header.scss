@@ -1,6 +1,15 @@
+  // .c-grid:７rows
+  // 1:ヘッダー　　<-----------ココ
+  // 2:メインビジュアル
+  // 3:余白
+  // 4:メイン
+  // 5:余白
+  // 6:アクセス
+  // 7:フッター
+  
 .l-header {
   grid-column: 1 / -1;
-  grid-row: 1;
+  grid-row: 1;// c-gridの中の１行目
   background-color: $header-color;
 
   // ヘッダーの中のグリッド
@@ -19,7 +28,7 @@
   }
 
   // タイトル
-  p {
+  a {
     grid-column: 2 / 4;
     grid-row: 4;
     text-align: center;
@@ -33,3 +42,7 @@
     grid-row: 6;
   }
 }
+
+
+
+
