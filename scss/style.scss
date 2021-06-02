@@ -17,6 +17,7 @@
 @import "./layout/_contents";
 @import "./layout/_access";
 @import "./layout/_pagination";
+@import "./layout/_post";
 
 @import "./layout/_container";
 @import "./layout/_footer";
@@ -44,6 +45,7 @@
 // Project
 // -----------------------------------------------------------------
 @import "./object/project/_searchform";
+@import "./object/project/_post";
 @import "./object/project/_contents";
 @import "./object/project/_access";
 @import "./object/project/_footer";

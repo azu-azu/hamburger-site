@@ -2,41 +2,46 @@
   grid-row: 2;
   align-self: start;
 
+  --padding: 30px;
+  --ya-soto: 25px;
+  --ya-naka: 35px;
+  --border-size: 1px;
+
   &--prev {
-    padding-left: 30px;
+    padding-left: var(--padding);
 
     // 左向き矢印
     &::before {
       grid-column: 1;
       @include giji-ya;
-      left: 25px;
-      border-bottom: 1px double $font-color;
-      border-left: 1px double $font-color;
+      left: var(--ya-soto);
+      border-top: var(--border-size);
+      border-right: var(--border-size);
     }
   
     &::after {
       grid-column: 1;
       @extend .c-pagination--prev::before;
-      left: 35px;
+      left: var(--ya-naka);
     }
   }
 
   &--next {
-    padding-right: 30px;
+    padding-right: var(--padding);
 
     // 右向き矢印
     &::before {
       grid-column: 5;
       @include giji-ya;
-      right: 25px;
-      border-top: 1px double $font-color;
-      border-right: 1px double $font-color;
+      right: var(--ya-soto);
+      border-bottom: var(--border-size);
+      border-left: var(--border-size);
     }
   
     &::after {
       grid-column: 5;
       @extend .c-pagination--next::before;
-      right: 35px;
+      right: var(--ya-naka);
     }
   }
 }

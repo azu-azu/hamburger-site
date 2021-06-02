@@ -1,6 +1,6 @@
 .l-pagination {
-  --side:50px;
+  $height: 120px;
   display: grid;
-  grid-template-rows: 60px 60px;
+  grid-template-rows: halfsize($height) halfsize($height);
   color: $font-color;
 }

@@ -23,27 +23,15 @@
     position: relative;
 
     &::before {
-      @extend %giji-base;
+      @include giji-sidex;
       transform: rotate(45deg);
     }
 
     &::after {
-      @extend %giji-base;
+      @include giji-sidex;
       transform: rotate(-45deg);
     }
   }
-}
-
-
-// 疑似要素の共通設定
-%giji-base {
-  width: 32px;
-  height: 4px;
-  content: "";
-  position: absolute;
-  display: block;
-  background: $font-color;
-  transition: transform 0.2s;
 }
 
 input[type="checkbox"] {
