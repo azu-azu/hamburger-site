@@ -18,6 +18,8 @@
 @import "./layout/_access";
 @import "./layout/_pagination";
 @import "./layout/_post";
+@import "./layout/_feature";
+@import "./layout/_gallery";
 
 @import "./layout/_container";
 @import "./layout/_footer";
@@ -44,19 +46,20 @@
 // -----------------------------------------------------------------
 // Project
 // -----------------------------------------------------------------
+@import "./object/project/_page-ttl";
 @import "./object/project/_searchform";
+@import "./object/project/_mainvisual";
 @import "./object/project/_post";
 @import "./object/project/_contents";
+@import "./object/project/_feature";
 @import "./object/project/_access";
 @import "./object/project/_footer";
+@import "./object/project/_gmenu";
 
 
 @import "./object/project/_archive";
 @import "./object/project/_branch-menu";
 @import "./object/project/_detail";
-@import "./object/project/_gmenu";
-@import "./object/project/_mainvisual";
-@import "./object/project/_page-ttl";
 @import "./object/project/_wp-pagenavi";
 
 // -----------------------------------------------------------------

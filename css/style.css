@@ -16,6 +16,10 @@
   background-color: lightblue;
 }
 
+.Kari {
+  background-color: pink;
+}
+
 #modal-html {
   display: none;
 }
@@ -170,16 +174,50 @@ footer {
 
 .l-post {
   display: grid;
-  grid-template-rows: 70px 35px auto 20px;
+  grid-template-rows: 70px 35px auto auto 20px;
 }
 
 .l-post h2 {
   grid-row: 1;
   align-self: end;
+  font-size: 28px;
 }
 
 .l-post p {
   grid-row: 3;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.l-post__cont {
+  grid-row: 4;
+  margin-top: 20px;
+}
+
+.l-post__cont--ttl {
+  margin-top: 20px;
+}
+
+.l-feature {
+  --side: 20px;
+}
+
+.l-feature__eye-catch {
+  width: calc(100vw - (var(--side) * 2));
+  height: 124px;
+}
+
+.l-gallery {
+  --side: 20px;
+}
+
+.l-gallery__img {
+  width: calc(100vw - (var(--side) * 2));
+  height: 205px;
+}
+
+.l-gallery__img img {
+  width: 100%;
 }
 
 .l-footer {
@@ -444,6 +482,16 @@ input[type="checkbox"] {
   grid-template-rows: repeat(6, auto);
 }
 
+.single .c-grid {
+  grid-template-rows: auto auto 20px auto 125px auto;
+}
+
+.p-page-ttl {
+  color: #707070;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
 .p-searchform {
   height: 46px;
   width: 230px;
@@ -476,7 +524,31 @@ input[type="text"]::placeholder {
 
 .p-post p {
   font-size: 16px;
-  line-height: 1.5;
+}
+
+.p-post__blockquote {
+  margin-top: 20px;
+  padding: 35px;
+  position: relative;
+  box-sizing: border-box;
+  font-family: mplus-1m-regular, sans-serif;
+  font-size: 16px;
+  background: #F5F5F5;
+  color: #3C2A10;
+}
+
+.p-post__blockquote p {
+  line-height: 1.7;
+}
+
+.p-post__blockquote--cite {
+  padding-top: 40px;
+  display: block;
+  font-style: normal;
+}
+
+.p-post__blockquote--cite a {
+  text-decoration: underline;
 }
 
 .p-contents h2 {
@@ -508,6 +580,11 @@ input[type="text"]::placeholder {
 
 .archive .p-contents h2::before {
   display: none;
+}
+
+.p-feature__figure01, .p-feature__figure02 {
+  width: 145px;
+  height: 90px;
 }
 
 .p-access {
@@ -571,12 +648,6 @@ input[type="text"]::placeholder {
   padding-left: 20px;
   font-size: 20px;
   line-height: 3;
-}
-
-.p-page-ttl {
-  color: #707070;
-  font-family: 'Roboto', sans-serif;
-  font-size: 40px;
 }
 
 .u-display--center {
