@@ -30,9 +30,9 @@
 
 .l-sidebar__menu-box {
   &--xbtn {
-    grid-column: 4;
+    grid-column: 3;
     grid-row: 2;
-    margin-left: -40px;
+    text-align: left;
   }
   
   &--nav {

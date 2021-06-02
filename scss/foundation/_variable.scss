@@ -29,3 +29,7 @@ $Black: #000000;
 $access-bgcolor: $Black;
 $sidebox-bgcolor: $Black;
 
+// ハーフサイズにする関数
+@function halfsize($value) {
+  @return ($value / 2)
+}

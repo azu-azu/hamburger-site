@@ -12,7 +12,7 @@
   background-color: pink;
 }
 
-.l-contents__item--bg {
+.l-contents--wrap__item--bg {
   background-color: lightblue;
 }
 
@@ -80,12 +80,12 @@ footer {
   grid-row: 4;
 }
 
-.l-contents {
+.l-contents--wrap {
   display: grid;
   row-gap: 20px;
 }
 
-.l-contents__item {
+.l-contents--wrap__item {
   height: 642px;
   --side: 10px;
   display: grid;
@@ -93,36 +93,36 @@ footer {
   grid-template-rows: 25px auto var(--side) auto auto var(--side);
 }
 
-.l-contents__item h2 {
+.l-contents--wrap__item h2 {
   grid-column: 2;
   grid-row: 2;
 }
 
-.l-contents__item--card {
+.l-contents--wrap__item--card {
   grid-column: 2;
   grid-row: 5 / 6;
   display: grid;
   row-gap: 10px;
 }
 
-.archive .l-contents {
+.archive .l-contents--wrap {
   grid-template-rows: none;
 }
 
-.archive .l-contents__item {
+.archive .l-contents--wrap__item {
   grid-template-rows: 230px 25px 70px auto;
 }
 
-.archive .l-contents__item--bg {
+.archive .l-contents--wrap__item--bg {
   grid-column: 1 / -1;
   grid-row: 1;
 }
 
-.archive .l-contents__item h2 {
+.archive .l-contents--wrap__item h2 {
   grid-row: 3;
 }
 
-.archive .l-contents__item--card {
+.archive .l-contents--wrap__item--card {
   grid-row: 4;
   grid-template-rows: none;
 }
@@ -163,10 +163,23 @@ footer {
 }
 
 .l-pagination {
-  --side:50px;
   display: grid;
   grid-template-rows: 60px 60px;
   color: #707070;
+}
+
+.l-post {
+  display: grid;
+  grid-template-rows: 70px 35px auto 20px;
+}
+
+.l-post h2 {
+  grid-row: 1;
+  align-self: end;
+}
+
+.l-post p {
+  grid-row: 3;
 }
 
 .l-footer {
@@ -242,9 +255,9 @@ footer {
 }
 
 .l-sidebar__menu-box--xbtn {
-  grid-column: 4;
+  grid-column: 3;
   grid-row: 2;
-  margin-left: -40px;
+  text-align: left;
 }
 
 .l-sidebar__menu-box--nav {
@@ -284,21 +297,25 @@ body.is-open {
 }
 
 .c-btn--sidex__line::before {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 32px;
+  height: 4px;
+  background: #707070;
+  transition: transform 0.2s;
   transform: rotate(45deg);
 }
 
 .c-btn--sidex__line::after {
-  transform: rotate(-45deg);
-}
-
-.c-btn--sidex__line::before, .c-btn--sidex__line::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
   width: 32px;
   height: 4px;
-  content: "";
-  position: absolute;
-  display: block;
   background: #707070;
   transition: transform 0.2s;
+  transform: rotate(-45deg);
 }
 
 input[type="checkbox"] {
@@ -360,10 +377,14 @@ input[type="checkbox"] {
 .c-pagination {
   grid-row: 2;
   align-self: start;
+  --padding: 30px;
+  --ya-soto: 25px;
+  --ya-naka: 35px;
+  --border-size: 1px;
 }
 
 .c-pagination--prev {
-  padding-left: 30px;
+  padding-left: var(--padding);
 }
 
 .c-pagination--prev::before, .c-pagination--prev::after {
@@ -372,21 +393,23 @@ input[type="checkbox"] {
   display: inline-block;
   content: '';
   transform: translateY(-50%) rotate(45deg);
+  border-color: #707070;
   margin-top: 10px;
   width: 15px;
   height: 15px;
-  left: 25px;
-  border-bottom: 1px double #707070;
-  border-left: 1px double #707070;
+  border-style: solid;
+  left: var(--ya-soto);
+  border-top: var(--border-size);
+  border-right: var(--border-size);
 }
 
 .c-pagination--prev::after {
   grid-column: 1;
-  left: 35px;
+  left: var(--ya-naka);
 }
 
 .c-pagination--next {
-  padding-right: 30px;
+  padding-right: var(--padding);
 }
 
 .c-pagination--next::before, .c-pagination--next::after {
@@ -395,17 +418,19 @@ input[type="checkbox"] {
   display: inline-block;
   content: '';
   transform: translateY(-50%) rotate(45deg);
+  border-color: #707070;
   margin-top: 10px;
   width: 15px;
   height: 15px;
-  right: 25px;
-  border-top: 1px double #707070;
-  border-right: 1px double #707070;
+  border-style: solid;
+  right: var(--ya-soto);
+  border-bottom: var(--border-size);
+  border-left: var(--border-size);
 }
 
 .c-pagination--next::after {
   grid-column: 5;
-  right: 35px;
+  right: var(--ya-naka);
 }
 
 .c-grid {
@@ -443,6 +468,15 @@ input[type="text"]::placeholder {
   font-weight: 900;
   font-size: 30px;
   color: #808080;
+}
+
+.p-post h2 {
+  font-size: 28px;
+}
+
+.p-post p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .p-contents h2 {

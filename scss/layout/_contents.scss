@@ -1,5 +1,5 @@
 // l-mainの中のコンテンツ(ul)のグリッド
-.l-contents {
+.l-contents--wrap {
   display: grid;
   row-gap: 20px;
 
@@ -31,7 +31,7 @@
 
 
 .archive {
-  .l-contents {
+  .l-contents--wrap {
     grid-template-rows: none;
     &__item {
       grid-template-rows: 230px 25px 70px auto;

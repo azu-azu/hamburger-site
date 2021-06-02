@@ -1,0 +1,13 @@
+.l-post {
+  display: grid;
+  grid-template-rows: 70px 35px auto 20px;
+
+  h2 {
+    grid-row: 1;
+    align-self: end;
+  }
+
+  p {
+    grid-row: 3;
+  }
+}

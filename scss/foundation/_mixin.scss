@@ -35,13 +35,6 @@ font-family: 'Roboto', sans-serif;
   transition: background-color .8s;
 }
 
-// 疑似要素：下ライン
-@mixin giji-line {
-  position: absolute;
-  display: inline-block;
-  content: '';
-}
-
 // prefix
 $prefixList: -webkit-, -moz-, null;
 @mixin transform($value) {
@@ -50,12 +43,29 @@ $prefixList: -webkit-, -moz-, null;
   }
 }
 
+// 疑似要素：下ライン
+@mixin giji-line {
+  position: absolute;
+  display: inline-block;
+  content: '';
+}
+
 // 疑似要素：矢印
 @mixin giji-ya {
   @include giji-line;
   @include transform(translateY(-50%) rotate(45deg));
+  border-color: $font-color;
   margin-top: 10px;
   width: 15px;
   height: 15px;
+  border-style: solid;
 }
 
+// 疑似要素：ｘボタン
+@mixin giji-sidex {
+  @include giji-line;
+  width: 32px;
+  height: 4px;
+  background: $font-color;
+  transition: transform 0.2s;
+}
