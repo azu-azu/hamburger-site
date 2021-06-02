@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: var(--side) 1fr var(--side);
   grid-template-rows: auto auto 20px auto 50px auto auto;
-
   // rows:７行
   // 1:ヘッダー
   // 2:メインビジュアル
@@ -14,9 +13,23 @@
   // 7:フッター
 }
 
-// ２枚目：アーカイブページ
+// ２ページ目：アーカイブページ
 .archive {
   .c-grid {
     grid-template-rows: repeat(6, auto);
+  }
+}
+
+// ３ページ目：シングルページ
+.single {
+  .c-grid {
+    grid-template-rows: auto auto 20px auto 125px auto;
+    // rows:６行
+    // 1:ヘッダー
+    // 2:メインビジュアル
+    // 3:余白
+    // 4:メイン
+    // 5:余白
+    // 6:フッター
   }
 }

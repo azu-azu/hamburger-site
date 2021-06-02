@@ -1,13 +1,25 @@
 .l-post {
   display: grid;
-  grid-template-rows: 70px 35px auto 20px;
+  grid-template-rows: 70px 35px auto auto 20px;
 
   h2 {
     grid-row: 1;
     align-self: end;
+    font-size: 28px;
   }
 
   p {
     grid-row: 3;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &__cont {
+    grid-row: 4;
+    margin-top: 20px;
+
+    &--ttl {
+      margin-top: 20px;
+    }
   }
 }

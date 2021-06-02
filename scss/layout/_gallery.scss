@@ -1,0 +1,12 @@
+.l-gallery {
+  --side: 20px;
+
+  &__img {
+    width: calc(100vw - (var(--side) * 2));
+    height: 205px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

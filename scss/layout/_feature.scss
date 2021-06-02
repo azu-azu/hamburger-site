@@ -1,0 +1,8 @@
+.l-feature {
+  --side: 20px;
+
+  &__eye-catch {
+    width: calc(100vw - (var(--side) * 2));
+    height: 124px;
+  }
+}
