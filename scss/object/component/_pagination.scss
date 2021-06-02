@@ -1,0 +1,42 @@
+.c-pagination {
+  grid-row: 2;
+  align-self: start;
+
+  &--prev {
+    padding-left: 30px;
+
+    // 左向き矢印
+    &::before {
+      grid-column: 1;
+      @include giji-ya;
+      left: 25px;
+      border-bottom: 1px double $font-color;
+      border-left: 1px double $font-color;
+    }
+  
+    &::after {
+      grid-column: 1;
+      @extend .c-pagination--prev::before;
+      left: 35px;
+    }
+  }
+
+  &--next {
+    padding-right: 30px;
+
+    // 右向き矢印
+    &::before {
+      grid-column: 5;
+      @include giji-ya;
+      right: 25px;
+      border-top: 1px double $font-color;
+      border-right: 1px double $font-color;
+    }
+  
+    &::after {
+      grid-column: 5;
+      @extend .c-pagination--next::before;
+      right: 35px;
+    }
+  }
+}

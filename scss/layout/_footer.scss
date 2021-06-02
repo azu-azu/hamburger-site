@@ -1,7 +1,16 @@
+  // .c-grid:７rows
+  // 1:ヘッダー
+  // 2:メインビジュアル
+  // 3:余白
+  // 4:メイン
+  // 5:余白
+  // 6:アクセス
+  // 7:フッター　<-----------ココ
+  
 .l-footer {
-  grid-column: 1 / -1;
-  grid-row: 7;
   height: 150px;
+  grid-column: 1 / -1;
+  grid-row: 7;// c-gridの中の7行目
 
   &__wrapper {
     height: 100%;
@@ -14,3 +23,4 @@
     gap: 20px;
   }
 }
+

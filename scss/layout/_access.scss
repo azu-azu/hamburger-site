@@ -1,15 +1,24 @@
+  // .c-grid:７rows
+  // 1:ヘッダー
+  // 2:メインビジュアル
+  // 3:余白
+  // 4:メイン
+  // 5:余白
+  // 6:アクセス　<-----------ココ
+  // 7:フッター
+
 .l-access {
   grid-column: 1 / -1;
-  grid-row: 6;
+  grid-row: 6;// c-gridの中の6行目
 
   height: 691px;
   grid-template-rows: 415px 1fr;// テキストボックスh415＆残り1fr
   display: grid;
 
-  &__gray-box {
+  &__txtbox {
     line-height: 2;
     overflow: scroll;
-    background-color: #000000;
+    background-color: $access-bgcolor;
     opacity: 0.6;
 
     --side: 40px;
@@ -29,8 +38,11 @@
     }
   }
 
-  &__light-box {
-    background-color: #000000;
+  &__space {
+    background-color: $access-bgcolor;
     opacity: 0.3;
   }
 }
+
+
+

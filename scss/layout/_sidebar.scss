@@ -12,9 +12,9 @@
   position: absolute;// これがないと固定されちゃう
   z-index: 100;
 
-  &__gray-box {
+  &__side-box {
     grid-column: 1;
-    background-color:rgba(#000000, 0.5);
+    background-color:rgba($sidebox-bgcolor, 0.5);
   }
 
   &__menu-box {
@@ -38,7 +38,7 @@
   &--nav {
     grid-column: 2;
     grid-row: 4;
-    padding-bottom: 500px;
+    padding-bottom: 500px;// 設定しないと高さが出ない
   }
 }
 

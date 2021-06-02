@@ -1,3 +1,10 @@
+@font-face{ 
+  font-family: 'mplus-1p-regular';
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot');
+  src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot?#iefix') format('embedded-opentype'),
+  url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.woff') format('woff'),
+  url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.ttf') format('truetype');
+}
 
 
 // フォント
@@ -13,6 +20,20 @@ font-family: 'Roboto', sans-serif;
   font-family: mplus-1m-regular, sans-serif;
   }
 
+// 詳しく見るボタン
+@mixin miru-btn {
+  height: 40px;
+  width: 160px;
+  margin: 0 auto;
+  background: $contents-color;
+  color:$miru-btn;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 60px;
+  padding: 0 25px;
+  transition: background-color .8s;
+}
 
 // 疑似要素：下ライン
 @mixin giji-line {
@@ -20,3 +41,21 @@ font-family: 'Roboto', sans-serif;
   display: inline-block;
   content: '';
 }
+
+// prefix
+$prefixList: -webkit-, -moz-, null;
+@mixin transform($value) {
+  @each $prefix in $prefixList {
+    #{$prefix}transform:$value;
+  }
+}
+
+// 疑似要素：矢印
+@mixin giji-ya {
+  @include giji-line;
+  @include transform(translateY(-50%) rotate(45deg));
+  margin-top: 10px;
+  width: 15px;
+  height: 15px;
+}
+
