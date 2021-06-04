@@ -1,15 +1,21 @@
+// -----------------------------------------
+// 【画像】繰り返し配置
+// -----------------------------------------
 $bgSetList: takeout takeout, eat-in eat-in;
 @each $bgSet in $bgSetList {
   .p-contents.#{nth($bgSet,1)} {
     background-image: url('#{$imgPath}home_#{nth($bgSet,2)}.png');
-    background-size: 120%, contain;
+    background-size: 120%, cover;
     background-position: center;
   }
 }
 
-
+// -----------------------------------------
+// 【１ページ目】h2タイトル下のライン
+// -----------------------------------------
 .p-contents {
   width: $img-width;
+
   h2 {
     position: relative;
     font-size: 41px;
@@ -30,9 +36,19 @@ $bgSetList: takeout takeout, eat-in eat-in;
   }
 }
 
+
+// -----------------------------------------
+// 【２ページ目】アーカイブのコンテンツカード
+// -----------------------------------------
 .archive {
   .p-contents {
-    background-color: $card-fcolor;
+    width: $img-width;
+
+    @include breakpoint( tablet ) {
+      width: $img-width * 2;
+      height: $card-imag-height-tablet;
+    }
+
     h2 {
       font-size: 25px;
 

@@ -1,10 +1,11 @@
 .c-pagination {
   grid-row: 2;
+  grid-column: 2;
   align-self: start;
 
   --padding: 30px;
-  --ya-soto: 25px;
-  --ya-naka: 35px;
+  --ya-soto: 80px;
+  --ya-naka: 90px;
   --border-size: 1px;
 
   &--prev {
@@ -12,15 +13,19 @@
 
     // 左向き矢印
     &::before {
-      grid-column: 1;
+      grid-column: 2;
       @include giji-ya;
       left: var(--ya-soto);
       border-top: var(--border-size);
       border-right: var(--border-size);
+
+    @include breakpoint( pc ) {
+      left: 100px;
+      }
     }
   
     &::after {
-      grid-column: 1;
+      grid-column: 2;
       @extend .c-pagination--prev::before;
       left: var(--ya-naka);
     }
@@ -36,12 +41,43 @@
       right: var(--ya-soto);
       border-bottom: var(--border-size);
       border-left: var(--border-size);
+
+      @include breakpoint( pc ) {
+        left: 700px;
+      }
     }
   
     &::after {
       grid-column: 5;
       @extend .c-pagination--next::before;
       right: var(--ya-naka);
+      
+      @include breakpoint( pc ) {
+        left: 710px;
+      }
     }
+  }
+}
+
+
+// ページ番号付きページネーション
+.c-pagination {
+
+  &--numbers {
+    text-align: center;
+    list-style-position: inside;
+    padding: 0;
+  }
+
+  &--numbers li {
+    display: inline-block;
+  }
+
+  &--numbers a {
+    display: inline-block;
+    padding: .5rem;
+    margin: 0 .2rem .2rem 0;
+    background: #fff;
+    border: 1px solid #ccc;
   }
 }

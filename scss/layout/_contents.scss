@@ -1,4 +1,6 @@
-// l-mainの中のコンテンツ(ul)のグリッド
+// -----------------------------------------
+// 【１ページ目】l-mainの中のコンテンツ(ul)のグリッド
+// -----------------------------------------
 .l-contents {
 
   &--wrap {
@@ -20,62 +22,166 @@
   }
 }
 
-// takeoutとeat-inのグリッド
-.l-contents--wrap {
-  &__item {
-    height: $img-height;
-    $side: $gap10;
+// -----------------------------------------
+// 【１ページ目】takeoutとeat-in
+// -----------------------------------------
+.l-contents {
 
-    display: grid;
-    grid-template-columns: auto $img-width auto;
-    grid-template-rows: 25px auto $side auto auto $side;
-    // 1余白/2タイトル/3疑似要素/4余白/5カード部分/6余白
+  &--wrap {
+    &__item {
+      height: $img-height;
+      $side: $gap10;
 
-    h2 {
-      grid-column: 2;
-      grid-row: 2;
-      padding-left: $side;
-    }
-
-    &--card {
-      grid-column: 2;
-      grid-row: 5 / 6;
-
-      // カード２つをグリッドで配置
       display: grid;
-      row-gap: $side;
+      grid-template-columns: auto $img-width auto;
+      grid-template-rows: 25px auto $side auto auto $side;
+      // 1余白/2タイトル/3疑似要素/4余白/5カード部分/6余白
+
+      h2 {
+        grid-column: 2;
+        grid-row: 2;
+        padding-left: $side;
+      }
+
+      &--card {
+        grid-column: 2;
+        grid-row: 5 / 6;
+
+        // カード２つをグリッドで配置
+        display: grid;
+        row-gap: $side;
+      }
     }
   }
 }
 
-
-
+// -----------------------------------------
+// 【２ページ目】アーカイブのコンテンツカード
+// -----------------------------------------
 .archive {
-  .l-contents--wrap {
-    grid-template-rows: none;
-    &__item {
-      grid-template-rows: 230px 25px 70px auto;
-      // 1画像/2余白/3タイトル/4カード/
+  .l-contents {
+    &--wrap {
+      &__item {      
+        grid-template-rows: $card-imag-height 70px auto;
+        grid-template-columns: $img-width 0;
+        background-color: $card-color;
 
-      &--bg {
-        grid-column: 1 / -1;
-        grid-row: 1;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        &--bg {
+          grid-row: 1;
         }
-      }
 
-      h2 {
-        grid-row: 3;
-      }
+        &--cat {
+          grid-row: 2;
 
-      &--card {
-        grid-row: 4;
-        grid-template-rows: none;
+          display: grid;
+          grid-template-rows: 70px 250px 80px;
+          grid-template-columns: 5% 80% 15%;
+
+          h2 {
+            grid-row: 1;
+            grid-column: 2 / -1;
+            padding-left: 0;
+            align-self: end;
+          }
+
+          ul {
+            grid-row: 2;
+            grid-column: 2;
+            align-self: center;
+          }
+
+          button {
+            grid-row: 3;
+            grid-column: 2;
+            align-self: center;
+          }
+        }
       }
     }
   }
+}
+
+// -----------------------------------------
+// 【２ページ目】タブレット用
+// -----------------------------------------
+.archive {
+  .l-contents {
+    justify-content: center;
+    
+    &--wrap {
+      @include breakpoint( tablet ) {
+        --side: $gap20;
+        grid-auto-flow: row;// 縦並びにする
+        row-gap: $gap20;
+        height: 100%;
+
+
+        &__item {
+          height: $card-imag-height-tablet;
+          grid-template-rows: $card-imag-height-tablet 0 0;
+          grid-template-columns: 40% 60%;
+
+          &--bg {
+            grid-row: 1;
+
+            img {
+              width: 100%;
+              height: 100%;
+              left: 10%;
+              object-fit: cover;
+            }
+          }
+    
+          &--cat {
+            grid-row: 1;
+            grid-column: 2;
+            background-color: $card-color;
+    
+            display: grid;
+            grid-template-rows: repeat(3, auto);
+            grid-template-columns: 10% 80% 10%;
+    
+            h2 {
+              grid-row: 1;
+              grid-column: 2;
+            }
+    
+            ul {
+              grid-row: 2;
+              grid-column: 2;
+            }
+    
+            button {
+              grid-row: 3;
+              grid-column: 2;
+              justify-self: start;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------------
+// 【２ページ目】PC用
+// -----------------------------------------
+.archive {
+  .l-contents {
+
+    &--wrap {
+      @include breakpoint( pc ) {
+        display: flex;
+        flex-direction: column;
+
+      &__item {
+        grid-template-columns: $img-width calc(100vw - #{$img-width} - #{$sidebar-width-pc} - #{$gap40} * 2);
+
+        dd {
+          white-space: normal;// 改行しない
+        }
+      }
+    }
+  }
+}
 }

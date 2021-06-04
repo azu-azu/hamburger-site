@@ -2,7 +2,7 @@
   --side: 20px;
 
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: var(--side) 1fr var(--side);
   grid-template-rows: auto auto 20px auto 50px auto auto;
   // rows:７行
   // 1:ヘッダー

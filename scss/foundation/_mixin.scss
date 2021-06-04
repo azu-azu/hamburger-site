@@ -59,7 +59,6 @@ $prefixList: -webkit-, -moz-, null;
   @include giji-line;
   @include transform(translateY(-50%) rotate(45deg));
   border-color: $font-color;
-  margin-top: 10px;
   width: 15px;
   height: 15px;
   border-style: solid;

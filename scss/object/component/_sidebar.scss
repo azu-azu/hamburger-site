@@ -1,0 +1,12 @@
+.c-sidebar {
+
+  &--side-box {
+    background-color:rgba($sidebox-bgcolor, 0.5);// 黒・透過
+    height: 100%;
+  }
+
+  &--menu-box {
+    background-color: $sidebar-color;
+    height: 100%;
+  }
+}
