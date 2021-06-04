@@ -1,3 +1,22 @@
+@mixin breakpoint ($point) {
+  @if $point == pc {
+    @media (min-width: 900px) {
+      @content;
+    }
+  }
+  @if $point == tablet {
+    @media (min-width: 641px) {
+      @content;
+    }
+  }
+}
+
+@mixin m-center {
+  margin:0 auto;
+}
+
+
+
 @font-face{ 
   font-family: 'mplus-1p-regular';
   src: url('http://mplus-webfonts.sourceforge.jp/mplus-1p-regular.eot');
@@ -19,21 +38,6 @@ font-family: 'Roboto', sans-serif;
 @mixin font-mplus--regular {
   font-family: mplus-1m-regular, sans-serif;
   }
-
-// 詳しく見るボタン
-@mixin miru-btn {
-  height: 40px;
-  width: 160px;
-  margin: 0 auto;
-  background: $contents-color;
-  color:$miru-btn;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 60px;
-  padding: 0 25px;
-  transition: background-color .8s;
-}
 
 // prefix
 $prefixList: -webkit-, -moz-, null;
@@ -68,4 +72,19 @@ $prefixList: -webkit-, -moz-, null;
   height: 4px;
   background: $font-color;
   transition: transform 0.2s;
+}
+
+// 詳しく見るボタン
+@mixin miru-btn {
+  height: 40px;
+  width: 160px;
+  margin: 0 auto;
+  background: $contents-color;
+  color:$miru-btn;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 60px;
+  padding: 0 25px;
+  transition: background-color .8s;
 }

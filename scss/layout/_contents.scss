@@ -1,21 +1,40 @@
 // l-mainの中のコンテンツ(ul)のグリッド
-.l-contents--wrap {
-  display: grid;
-  row-gap: 20px;
+.l-contents {
 
-  // コンテンツの中のリンク範囲(ul)のグリッド
-  &__item {
-    height: 642px;
+  &--wrap {
+    $side: $gap20;
+    justify-content: center;
 
-    --side: 10px;
     display: grid;
-    grid-template-columns: var(--side) auto var(--side);
-    grid-template-rows: 25px auto var(--side) auto auto var(--side);
+    row-gap: $side;
+
+    @include breakpoint( tablet ) {
+      grid-auto-flow: column;
+      column-gap: $side;
+    }
+
+    @include breakpoint( pc ) {
+      grid-template-columns: repeat(2, auto);
+      column-gap: calc(#{$side}*2);
+    }
+  }
+}
+
+// takeoutとeat-inのグリッド
+.l-contents--wrap {
+  &__item {
+    height: $img-height;
+    $side: $gap10;
+
+    display: grid;
+    grid-template-columns: auto $img-width auto;
+    grid-template-rows: 25px auto $side auto auto $side;
     // 1余白/2タイトル/3疑似要素/4余白/5カード部分/6余白
 
     h2 {
       grid-column: 2;
       grid-row: 2;
+      padding-left: $side;
     }
 
     &--card {
@@ -24,10 +43,11 @@
 
       // カード２つをグリッドで配置
       display: grid;
-      row-gap: 10px;
+      row-gap: $side;
     }
   }
 }
+
 
 
 .archive {
@@ -40,6 +60,12 @@
       &--bg {
         grid-column: 1 / -1;
         grid-row: 1;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
       h2 {

@@ -11,38 +11,96 @@
   grid-column: 1 / -1;
   grid-row: 6;// c-gridの中の6行目
 
-  height: 691px;
-  grid-template-rows: 415px 1fr;// テキストボックスh415＆残り1fr
+  height: $GoogleMap-height;
   display: grid;
 
-  &__txtbox {
-    line-height: 2;
-    overflow: scroll;
-    background-color: $access-bgcolor;
-    opacity: 0.6;
-
-    --side: 40px;
-    display: grid;
-    grid-template-columns: var(--side) auto var(--side);
-    grid-template-rows: 80px 30px auto;
-
-    h2 {
-      grid-column: 2;
-      grid-row: 1;
-      align-self: flex-end;
-    }
-
-    p {
-      grid-column: 2;
-      grid-row: 3;
-    }
+  @include breakpoint( tablet ){
+    height: $GoogleMap-height-pc;
   }
 
-  &__space {
-    background-color: $access-bgcolor;
-    opacity: 0.3;
+  @include breakpoint( pc ) {
+    grid-template-columns: auto $sidebar-width-pc;
+  }
+
+  &__map,
+  &__txtbox {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+
+    @include breakpoint( pc ) {
+      grid-column: 1 / -2;
+    }
   }
 }
 
 
+// テキストボックス内のグリッド
+.l-access__txtbox {
+  width: 100%;
 
+  display: grid;
+  grid-template-rows: 60% 40%;
+
+  @include breakpoint( tablet ) {
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr;
+  }
+
+  &--box {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    background-color: $access-bgcolor;
+    opacity: 0.6;
+
+    @include breakpoint( tablet ) {
+      grid-column: 1 / -1;
+    }
+
+    @include breakpoint( pc ) {
+      grid-column: 1;
+    }
+  }
+
+  &--space {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    background-color: $access-bgcolor;
+    opacity: 0.3;
+
+    @include breakpoint( tablet ) {
+      display: none;
+    }
+
+    @include breakpoint( pc ) {
+      display: block;
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+}
+
+// テキストボックス内のボックス内のグリッド
+.l-access__txtbox--box {
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  grid-template-rows: 80px 30px auto;
+  // 1:h2/2:余白/3:p
+
+  h2 {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: flex-end;
+  }
+
+  p {
+    grid-row: 3;
+    grid-column: 2;
+    line-height: 2;
+    overflow: scroll;
+
+    @include breakpoint( tablet ) {
+      overflow: visible;
+    }
+  }
+}

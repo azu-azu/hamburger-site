@@ -1,4 +1,15 @@
+$bgSetList: takeout takeout, eat-in eat-in;
+@each $bgSet in $bgSetList {
+  .p-contents.#{nth($bgSet,1)} {
+    background-image: url('#{$imgPath}home_#{nth($bgSet,2)}.png');
+    background-size: 120%, contain;
+    background-position: center;
+  }
+}
+
+
 .p-contents {
+  width: $img-width;
   h2 {
     position: relative;
     font-size: 41px;
@@ -23,7 +34,7 @@
   .p-contents {
     background-color: $card-fcolor;
     h2 {
-      font-size: 30px;
+      font-size: 25px;
 
       &::before {
         display: none;

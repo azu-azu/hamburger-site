@@ -3,10 +3,13 @@
   background-color: $contents-color;
   opacity: 0.5;
 
+  width: $img-width - $gap10 * 2;
+  margin: 0 auto;
+
   display: grid;
   grid-template-rows: 100px 1fr;
   white-space: nowrap;
-  padding-left: 10px;
+  padding: 0 $gap10 0 $gap10;
 
   dt {
     padding-top: 25px;
