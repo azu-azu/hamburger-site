@@ -76,6 +76,12 @@ footer {
   grid-row: 3;
 }
 
+@media (min-width: 641px) {
+  .archive .l-mainvisual {
+    height: 283px;
+  }
+}
+
 .l-main {
   grid-column: 2;
   grid-row: 4;
@@ -814,8 +820,17 @@ input[type="text"]::placeholder {
 .archive .p-mainvisual,
 .archive_search .p-mainvisual {
   background-image: url(../images/archive_mainvisual.png);
-  background-size: 200%, contain;
+  background-size: 200%, cover;
+  background-color: #000000;
   background-position: left;
+}
+
+@media (min-width: 641px) {
+  .archive .p-mainvisual,
+  .archive_search .p-mainvisual {
+    background-size: 100% 100%, cover;
+    background-position: center;
+  }
 }
 
 .page .p-mainvisual {
