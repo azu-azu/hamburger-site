@@ -1,6 +1,24 @@
 .l-pagination {
   $height: 120px;
+  color: $font-color;
+
   display: grid;
   grid-template-rows: halfsize($height) halfsize($height);
-  color: $font-color;
+  grid-template-columns: auto $img-width auto;
+
+  @include breakpoint( tablet ) {
+    display: flex;
+    grid-template-columns: $gap40 auto $gap40;
+    display: block;
+    @include m-center;
+    padding: 20px;
+
+    span {
+      display: none;
+    }
+  }
+
+  @include breakpoint( pc ) {
+    grid-template-columns: $gap40 auto $gap40;
+  }
 }

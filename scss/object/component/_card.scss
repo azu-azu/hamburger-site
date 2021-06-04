@@ -1,3 +1,6 @@
+// -----------------------------------------
+// 【１ページ目】takeoutとeat-in
+// -----------------------------------------
 .c-card {
   color: $card-fcolor;
   background-color: $contents-color;
@@ -25,6 +28,11 @@
   }
 }
 
+
+
+// -----------------------------------------
+// 【２ページ目】アーカイブのコンテンツカード
+// -----------------------------------------
 .archive {
   .c-card {
     grid-template-columns: auto 50px;
@@ -33,6 +41,7 @@
     background-color: transparent;
     opacity: 1;
     padding: 0;
+    margin: unset;
 
     dt {
       padding: 0;
@@ -45,3 +54,4 @@
     }
   }
 }
+

@@ -1,9 +1,13 @@
+// -------------------------
+// アイキャッチの設定
+// -------------------------
 .l-feature {
   --side: 20px;
 
   &__eye-catch {
     width: calc(100vw - (var(--side) * 2));
-    height: 124px;
+    height: 264px;
+    background: url(#{$imgPath}single.png) center;
   }
 
   &__last-img {
@@ -24,6 +28,9 @@
 }
 
 
+// -------------------------
+// コンテンツのグリッド
+// -------------------------
 .l-feature--cont {
   --side: 15px;
   display: grid;
@@ -54,5 +61,16 @@
   &__txt02 {
     grid-column: 1 / 3;
     grid-row: 2;
+  }
+}
+
+
+// -------------------------
+// 画像の設定
+// -------------------------
+.l-feature--cont {
+  img {
+    width: 100%;
+    height: 100%;
   }
 }

@@ -1,45 +1,53 @@
 .l-sidebar {
   width: 100vw;
   right: 100%;// 右に隠す
-  height: 100vh;
+  height: 100%;
 
   top: 0;// 一番上にもってくる
   position: absolute;// これがないと固定されちゃう
   z-index: 100;
 
+
   display: grid;
-  grid-template-columns: $sidebar-side-width auto;
+  grid-template-columns: $sidebar-side-width auto;// サイドボックス/メニューボックス
   overflow-y: scroll;// 縦スクロール
 
-  &__side-box {
+
+  &--side-box {
+    background-color:rgba($sidebox-bgcolor, 0.5);// 黒・透過
+    grid-row: 1 / -1;
     grid-column: 1;
-    background-color:rgba($sidebox-bgcolor, 0.5);
   }
 
-  &__menu-box {
+  &--menu-box {
+    background-color: $sidebar-color;  
+    grid-row: 1 / -1;
     grid-column: 2;
-    background-color: $sidebar-color;
 
     display: grid;
-    grid-template-columns: 45px auto 35px 15px;
+    grid-template-columns: 20px auto 20px 20px;
     grid-template-rows: 20px 45px auto;// 余白/xボタン/メニュー
   }
 }
 
 
-.l-sidebar__menu-box {
-  height: 100vh;
 
-  &--xbtn {
+
+// ------------------------------
+// メニューボックスのグリッド
+// ------------------------------
+.l-sidebar--menu-box {
+
+  &__xbtn {
     grid-column: 3;
     grid-row: 2;
     text-align: left;
   }
   
-  &--nav {
-    grid-column: 2;
-    grid-row: 4;
-    padding-bottom: 500px;// 設定しないと高さが出ない
+  &__nav {
+    grid-column: 2 / -1;
+    grid-row: 3;
+    padding-bottom: 500px;
   }
 }
 
@@ -53,7 +61,10 @@ body.is-open {
   position: fixed;
 }
 
+
+// ------------------------------
 // PC版
+// ------------------------------
 .l-sidebar {
   @include breakpoint( pc ){
     grid-column: 4;
@@ -66,11 +77,11 @@ body.is-open {
     overflow-y: visible;// 縦スクロール無し
     z-index: unset;
 
-    &__side-box {
+    &--side-box {
       background-color: $sidebar-color;
     }
 
-    &__menu-box--xbtn {
+    &--menu-box__xbtn {
       display: none;
     }
   }
