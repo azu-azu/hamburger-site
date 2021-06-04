@@ -11,6 +11,7 @@
   height: 150px;
   grid-column: 1 / -1;
   grid-row: 7;// c-gridの中の7行目
+  z-index: 100;// pc用のため
 
   &__wrapper {
     height: 100%;

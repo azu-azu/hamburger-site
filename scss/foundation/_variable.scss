@@ -1,5 +1,27 @@
 $imgPath: "../images/";// 画像パス
 
+// 写真サイズ
+$img-width: 336px;
+$img-height: 643px;
+$mv-sp-height: 285px;
+$mv-pc-height: 530px;
+$side-size: calc((100vw - #{$img-width}) / 2);
+
+// 余白サイズ
+$gap10: 10px;
+$gap20: 20px;
+$gap30: 30px;
+$gap40: 40px;
+
+// サイドバーのサイズ
+$sidebar-side-width: 45px;
+$sidebar-menu-width: 367px;
+$sidebar-width-pc: $sidebar-menu-width - $sidebar-side-width;
+
+// グーグル・マップのサイズ:htmlと同じ高さ指定
+$GoogleMap-height: 643px;
+$GoogleMap-height-pc: 400px;
+
 
 // ↓↓色設定↓↓
 $header-color:#FFF7EF;
@@ -13,15 +35,18 @@ $miru-btn: $AccentColor;
 
 $SubColor: #F2EDE9;
 $sidebar-color: $SubColor;
-$searchBtn-color: $SubColor;
+$btn-color: $SubColor;
 
 $fontAwesome-search: #808080;
 
 $Brown: #3C2A10;
 $card-fcolor: $Brown;
 $block-quote: $Brown;
+$list-color: $Brown;
 
-$block-quote-bg: #F5F5F5;
+$Gray: #F5F5F5;
+$block-quote-bg: $Gray;
+$setting-box: $Gray;
 
 $White: #ffffff;
 $ttl-color : $White;
@@ -36,5 +61,6 @@ $sidebox-bgcolor: $Black;
 
 // ハーフサイズにする関数
 @function halfsize($value) {
-  @return ($value / 2)
+  @return ($value / 2);
 }
+

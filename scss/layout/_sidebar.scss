@@ -1,16 +1,15 @@
 .l-sidebar {
   width: 100vw;
-  height: 100vh;
   right: 100%;// 右に隠す
-
-  display: grid;
-  grid-template-columns: 45px auto;
-  overflow-y: scroll;// 縦スクロール
-  overflow-x: hidden;
+  height: 100vh;
 
   top: 0;// 一番上にもってくる
   position: absolute;// これがないと固定されちゃう
   z-index: 100;
+
+  display: grid;
+  grid-template-columns: $sidebar-side-width auto;
+  overflow-y: scroll;// 縦スクロール
 
   &__side-box {
     grid-column: 1;
@@ -23,12 +22,14 @@
 
     display: grid;
     grid-template-columns: 45px auto 35px 15px;
-    grid-template-rows: 20px 45px 160px auto;
+    grid-template-rows: 20px 45px auto;// 余白/xボタン/メニュー
   }
 }
 
 
 .l-sidebar__menu-box {
+  height: 100vh;
+
   &--xbtn {
     grid-column: 3;
     grid-row: 2;
@@ -42,10 +43,6 @@
   }
 }
 
-
-
-
-
 // is-open時にサイドバーを開く
 .is-open .l-sidebar {
   right: 0;
@@ -56,3 +53,25 @@ body.is-open {
   position: fixed;
 }
 
+// PC版
+.l-sidebar {
+  @include breakpoint( pc ){
+    grid-column: 4;
+    grid-row: 1 / -2;
+
+    grid-template-columns: 0 $sidebar-width-pc;
+    right: 0;
+    width: $sidebar-width-pc;
+    padding-bottom: 0;
+    overflow-y: visible;// 縦スクロール無し
+    z-index: unset;
+
+    &__side-box {
+      background-color: $sidebar-color;
+    }
+
+    &__menu-box--xbtn {
+      display: none;
+    }
+  }
+}

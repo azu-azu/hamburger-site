@@ -12,6 +12,10 @@
   grid-row: 1;// c-gridの中の１行目
   background-color: $header-color;
 
+  @include breakpoint( pc ){
+    grid-column: 1 / -2;
+  }
+
   // ヘッダーの中のグリッド
   --side: 20px;
   --center: 45px;
@@ -19,12 +23,10 @@
   grid-template-columns: var(--side) auto 60px var(--side);
   grid-template-rows: var(--side) auto auto auto var(--center) auto var(--center);
 
-
   // メニューボタン
   &__btn {
     grid-column: 3;
     grid-row: 2;
-    text-align: right;
   }
 
   // タイトル
@@ -44,5 +46,28 @@
 }
 
 
+// PC版
+.l-header {
+  @include breakpoint( pc ) {
+    grid-template-columns: 50px auto auto 20px;
+    grid-template-rows: repeat(3, 1fr);
 
+    // メニューボタン
+    &__btn {
+      display: none;
+    }
 
+    a {
+      grid-column: 2;
+      grid-row: 2;
+      text-align: center;
+      }
+    
+    // 検索フォーム
+    &__form {  
+      grid-column: 3;
+      grid-row: 2;
+      align-self: center;
+    }
+  }
+}

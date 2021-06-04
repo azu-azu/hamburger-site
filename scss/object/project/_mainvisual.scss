@@ -1,0 +1,46 @@
+.p-mainvisual {
+  background-image: url(#{$imgPath}home_mainvisual.png);
+  background-size: 100%, cover;
+  background-position: center;
+
+  @include breakpoint( pc ) {
+    background-image: url(#{$imgPath}home_mainvisual_pc.png);
+    background-size: auto $mv-pc-height, cover;
+  }
+}
+
+.archive,
+.archive_search {
+  .p-mainvisual {
+    background-image: url(#{$imgPath}archive_mainvisual.png);
+    background-size: 200%, contain;
+    background-position: left;
+  }
+}
+
+.page {
+  .p-mainvisual {
+    background-image: url(#{$imgPath}page_mainvisual.png);
+    background-size: 100%, contain;
+    background-position: left;
+  }
+}
+
+.single {
+  .p-mainvisual {
+    background-image: url(#{$imgPath}single_mainvisual.png);
+    background-size: 100%, contain;
+    background-position: left;
+  }
+}
+
+
+
+// $bgSetList: home mainvisual, archive mainvisual;
+// @each $bgSet in $bgSetList {
+//   .#{nth($bgSet,1)}article.l-mainvisual.p-mainvisual {
+//     background-image: url('#{$imgPath}#{nth($bgSet,1)}_#{nth($bgSet,2)}.png');
+//     background-size: 120%, contain;
+//     background-position: center;
+//   }
+// }
