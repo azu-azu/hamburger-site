@@ -50,8 +50,8 @@
       </article>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
-        <article class="l-post p-post">
-          <h2>小見出しが入ります</h2>
+        <article class="p-post">
+          <h2>archive.html</h2>
           <p>
             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
           </p>
@@ -61,82 +61,107 @@
           <ul class="l-contents--wrap">
             <li class="p-contents cheeze-burger">
               <a href="#" class="l-contents--wrap__item">
-                <section class="l-contents--wrap__item--bg"><img src="images/card.png" alt=""></section>
+
+                <!-- 画像：画面幅によって取り込みサイズを変える -->
+                <section class="l-contents--wrap__item--bg">
+                  <img src="images/card.png"
+                    srcset="images/card.png 379w,
+                          images/card_pc.png 677w"
+                    sizes="(max-width:640px) 379px, 100vw"
+                    alt="">
+                </section>
+
                 <div class="l-contents--wrap__item--cat">
                   <h2>チーズバーガー</h2>
                   <ul class="">
-                    <li class="c-card">
+                    <li class="">
                       <dl>
-                        <dt>小見出しが入ります</dt>
-                        <dd>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        <dt class="c-font--card-ttl">小見出しが入ります</dt>
+                        <dd class="c-font--card-txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                         </dd>
                       </dl>
                     </li>
                   </ul>
-                  <button class="c-card__miru-btn">詳しく見る</button>
+                  <button class="c-btn--miru-btn">詳しく見る</button>
                 </div>
               </a>
             </li>
 
             <li class="p-contents Wcheeze-burger">
               <a href="#" class="l-contents--wrap__item">
-                <section class="l-contents--wrap__item--bg"><img src="images/card.png" alt=""></section>
+
+                <!-- 画像：画面幅によって取り込みサイズを変える -->
+                <section class="l-contents--wrap__item--bg">
+                  <img src="images/card.png"
+                    srcset="images/card.png 379w,
+                          images/card_pc.png 677w"
+                    sizes="(max-width:640px) 379px, 100vw"
+                    alt="">
+                </section>
+                
                 <div class="l-contents--wrap__item--cat">
                   <h2>ダブルチーズバーガー</h2>
                   <ul class="l-contents--wrap__item--card">
-                    <li class="c-card">
+                    <li class="">
                       <dl>
-                        <dt>小見出しが入ります</dt>
-                        <dd>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        <dt class="c-font--card-ttl">小見出しが入ります</dt>
+                        <dd class="c-font--card-txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                         </dd>
                       </dl>
                     </li>
                   </ul>
-                  <button class="c-card__miru-btn">詳しく見る</button>
+                  <button class="c-btn--miru-btn">詳しく見る</button>
                 </div>
               </a>
             </li>
 
             <li class="p-contents special-cheez-burger">
               <a href="#" class="l-contents--wrap__item">
-                <section class="l-contents--wrap__item--bg"><img src="images/card.png" alt=""></section>
+
+                <!-- 画像：画面幅によって取り込みサイズを変える -->
+                <section class="l-contents--wrap__item--bg">
+                  <img src="images/card.png"
+                    srcset="images/card.png 379w,
+                          images/card_pc.png 677w"
+                    sizes="(max-width:640px) 379px, 100vw"
+                    alt="">
+                </section>
+
                 <div class="l-contents--wrap__item--cat">
                   <h2>スペシャルチーズバーガー</h2>
                   <ul class="l-contents--wrap__item--card">
-                    <li class="c-card">
+                    <li class="">
                       <dl>
-                        <dt>小見出しが入ります</dt>
-                        <dd>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        <dt class="c-font--card-ttl">小見出しが入ります</dt>
+                        <dd class="c-font--card-txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
                         </dd>
                       </dl>
                     </li>
                   </ul>
-                  <button class="c-card__miru-btn">詳しく見る</button>
+                  <button class="c-btn--miru-btn">詳しく見る</button>
                 </div>
               </a>
             </li>
           </ul>
         </article>
 
-        <div class="l-pagination">
-          <div class="c-pagination u-display--between">
-            <button class="c-pagination--prev"><span>前へ</span></button>
-            <ul class="c-pagination--numbers">
-              <li><a href="/page/1/">1</a></li>
-              <li><a href="/page/2/">2</a></li>
-              <li><a href="/page/3/">3</a></li>
-              <li><a href="/page/4/">4</a></li>
-              <li><a href="/page/5/">5</a></li>
-              <li><a href="/page/6/">6</a></li>
-              <li><a href="/page/7/">7</a></li>
-              <li><a href="/page/8/">8</a></li>
-              <li><a href="/page/9/">9</a></li>
-              <li><a href="/page/10/">10</a></li>
-            </ul>
-            <button class="c-pagination--next"><span>次へ</span></button>
-          </div>
-        </div>
 
+        <article class="c-pagination u-display--center">
+          <span class="c-pagination__page">page 1/10</span>
+          <span class="c-pagination__pre"><a href="#">前へ</a></span>
+          <ul class="c-pagination__numbers">
+            <li><a href="#" class="active"><span>1</span></a></li>
+            <li><a href="#"><span>2</span></a></li>
+            <li><a href="#"><span>3</span></a></li>
+            <li><a href="#"><span>4</span></a></li>
+            <li><a href="#"><span>5</span></a></li>
+            <li><a href="#"><span>6</span></a></li>
+            <li><a href="#"><span>7</span></a></li>
+            <li><a href="#"><span>8</span></a></li>
+            <li><a href="#"><span>9</span></a></li>
+          </ul>
+          <span class="c-pagination__next"><a href="#">次へ</a></span>
+        </article>
 
       </main>
 

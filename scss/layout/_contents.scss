@@ -1,8 +1,21 @@
 // -----------------------------------------
-// 【１ページ目】l-mainの中のコンテンツ(ul)のグリッド
+// 【1ページ目：画像】繰り返し配置
 // -----------------------------------------
-.l-contents {
+$bgSetList: takeout takeout, eat-in eat-in;
+@each $bgSet in $bgSetList {
+  .l-contents--wrap__item.#{nth($bgSet,1)} {
+    background-image: url('#{$imgPath}home_#{nth($bgSet,2)}.png');
+    background-size: 120%, cover;
+    background-position: center;
+  }
+}
 
+
+
+// ---------------------------------------------
+// 【１ページ目】l-mainの中のコンテンツ(ul)のグリッド
+// ---------------------------------------------
+.l-contents {
   &--wrap {
     $side: $gap20;
     justify-content: center;
@@ -11,31 +24,37 @@
     row-gap: $side;
 
     @include breakpoint( tablet ) {
-      grid-auto-flow: column;
+      grid-template-columns: repeat(2, auto);
       column-gap: $side;
     }
 
     @include breakpoint( pc ) {
+      grid-template-columns: repeat(2, auto);
+      column-gap: calc(#{$side}/2);
+    }
+
+    @include breakpoint( pc-wide ) {
       grid-template-columns: repeat(2, auto);
       column-gap: calc(#{$side}*2);
     }
   }
 }
 
-// -----------------------------------------
+// ---------------------------------------------
 // 【１ページ目】takeoutとeat-in
-// -----------------------------------------
+// ---------------------------------------------
 .l-contents {
-
   &--wrap {
     &__item {
-      height: $img-height;
+
+      height: $takeout-img-height;
       $side: $gap10;
 
       display: grid;
-      grid-template-columns: auto $img-width auto;
-      grid-template-rows: 25px auto $side auto auto $side;
+      grid-template-columns: $side 1fr $side;// 2つ目:$img-width
+      grid-template-rows: 25px auto $side auto 350px $side;
       // 1余白/2タイトル/3疑似要素/4余白/5カード部分/6余白
+
 
       h2 {
         grid-column: 2;
@@ -55,16 +74,19 @@
   }
 }
 
-// -----------------------------------------
-// 【２ページ目】アーカイブのコンテンツカード
-// -----------------------------------------
+
+
+// ---------------------------------------------
+// 【２ページ目：アーカイブ】コンテンツカード
+// ---------------------------------------------
 .archive {
   .l-contents {
     &--wrap {
-      &__item {      
-        grid-template-rows: $card-imag-height 70px auto;
+      &__item {
         grid-template-columns: $img-width 0;
+        grid-template-rows: $card-imag-height 50px auto;
         background-color: $card-color;
+        color: $contents-color;
 
         &--bg {
           grid-row: 1;
@@ -74,7 +96,7 @@
           grid-row: 2;
 
           display: grid;
-          grid-template-rows: 70px 250px 80px;
+          grid-template-rows: 50px 250px 80px;
           grid-template-columns: 5% 80% 15%;
 
           h2 {
@@ -101,25 +123,36 @@
   }
 }
 
-// -----------------------------------------
-// 【２ページ目】タブレット用
-// -----------------------------------------
+
+
+// ---------------------------------------------
+// 【アーカイブ:レスポンシブ】wrapのグリッド
+// ---------------------------------------------
 .archive {
   .l-contents {
     justify-content: center;
-    
+
     &--wrap {
       @include breakpoint( tablet ) {
-        --side: $gap20;
         grid-auto-flow: row;// 縦並びにする
+
+        --side: $gap20;
         row-gap: $gap20;
         height: 100%;
 
+        display: flex;
+        flex-direction: column;// 子要素を縦に並べる
+        align-items: center;
+        justify-items: center;
+        
+        grid-template-columns: 20px auto 20px;
+
 
         &__item {
-          height: $card-imag-height-tablet;
+          height: $card-imag-height-tablet;// カードが縦から横になるため高さ変更
+
           grid-template-rows: $card-imag-height-tablet 0 0;
-          grid-template-columns: 40% 60%;
+          grid-template-columns: 50% 50%;// サイズは半々
 
           &--bg {
             grid-row: 1;
@@ -140,22 +173,6 @@
             display: grid;
             grid-template-rows: repeat(3, auto);
             grid-template-columns: 10% 80% 10%;
-    
-            h2 {
-              grid-row: 1;
-              grid-column: 2;
-            }
-    
-            ul {
-              grid-row: 2;
-              grid-column: 2;
-            }
-    
-            button {
-              grid-row: 3;
-              grid-column: 2;
-              justify-self: start;
-            }
           }
         }
       }
@@ -163,22 +180,36 @@
   }
 }
 
-// -----------------------------------------
-// 【２ページ目】PC用
-// -----------------------------------------
+
+// ---------------------------------------------
+// 【アーカイブ】ＰＣ用
+// ---------------------------------------------
 .archive {
   .l-contents {
+    justify-content: center;
 
     &--wrap {
-      @include breakpoint( pc ) {
-        display: flex;
-        flex-direction: column;
-
       &__item {
-        grid-template-columns: $img-width calc(100vw - #{$img-width} - #{$sidebar-width-pc} - #{$gap40} * 2);
 
-        dd {
-          white-space: normal;// 改行しない
+      @include breakpoint( pc ) {
+        &--cat {
+          grid-template-columns: 5% 80% 15%;
+
+          h2 {
+            grid-row: 1;
+            grid-column: 2 / -1;
+          }
+  
+          ul {
+            grid-row: 2;
+            grid-column: 2;
+          }
+
+          button {
+            grid-row: 3;
+            grid-column: 2;
+            justify-self: start;
+          }
         }
       }
     }

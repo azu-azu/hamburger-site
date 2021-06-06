@@ -1,5 +1,5 @@
 // -----------------------------------------
-// 【１ページ目】takeoutとeat-in
+// 【１ページ目】takeoutとeat-inのカード幅
 // -----------------------------------------
 .c-card {
   color: $card-fcolor;
@@ -8,50 +8,22 @@
 
   width: $img-width - $gap10 * 2;
   margin: 0 auto;
-
-  display: grid;
-  grid-template-rows: 100px 1fr;
-  white-space: nowrap;
+  white-space: normal;
   padding: 0 $gap10 0 $gap10;
+
+
+  @include breakpoint( tablet ) {
+    width: unset;// サイドバーで幅が足りなくなるので、いったん狭くする
+  }
+
+  @include breakpoint( pc-wide ) {
+    width: $img-width - $gap10 * 2;// 元に戻す
+  }
 
   dt {
     padding-top: 25px;
-    @include font-mplus--bold;
-    font-size: 22px;
-  }
-
-  dd {
-    padding-top: 30px;
-    @include font-mplus--regular;
-    white-space: normal;// 改行させる
-    font-size: 16px;
   }
 }
 
 
-
-// -----------------------------------------
-// 【２ページ目】アーカイブのコンテンツカード
-// -----------------------------------------
-.archive {
-  .c-card {
-    grid-template-columns: auto 50px;
-    grid-template-rows: auto auto;
-    color: $contents-color;
-    background-color: transparent;
-    opacity: 1;
-    padding: 0;
-    margin: unset;
-
-    dt {
-      padding: 0;
-    }
-
-    &__miru-btn {
-      grid-column: 1;
-      grid-row: 2;
-      @include miru-btn;
-    }
-  }
-}
 

@@ -12,21 +12,29 @@
   grid-template-columns: $sidebar-side-width auto;// サイドボックス/メニューボックス
   overflow-y: scroll;// 縦スクロール
 
+  @include breakpoint( tablet ){
+    grid-template-columns: 1fr $sidebar-menu-width;
+  }
+
 
   &--side-box {
-    background-color:rgba($sidebox-bgcolor, 0.5);// 黒・透過
+    background-color:rgba($sidebox-bgcolor, 0.5);// 黒の透過
     grid-row: 1 / -1;
     grid-column: 1;
   }
 
   &--menu-box {
-    background-color: $sidebar-color;  
+    background-color: $sidebar-color;
     grid-row: 1 / -1;
     grid-column: 2;
 
     display: grid;
     grid-template-columns: 20px auto 20px 20px;
-    grid-template-rows: 20px 45px auto;// 余白/xボタン/メニュー
+    grid-template-rows: 40px 100px 1fr 1fr;// 余白/xボタン/メニュー/余白
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+    // ↑↑↑余白サイズ要修正↑↑↑
+    // gtrの４行目を何とかする
+    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
   }
 }
 
@@ -36,22 +44,29 @@
 // ------------------------------
 // メニューボックスのグリッド
 // ------------------------------
-.l-sidebar--menu-box {
+.l-sidebar{
+  &--menu-box {
 
-  &__xbtn {
-    grid-column: 3;
-    grid-row: 2;
-    text-align: left;
-  }
-  
-  &__nav {
-    grid-column: 2 / -1;
-    grid-row: 3;
-    padding-bottom: 500px;
+    &__xbtn {
+      grid-column: 3;
+      grid-row: 2;
+      text-align: left;
+      align-self: baseline;
+    }
+    
+    &__nav {
+      grid-column: 2 / -1;
+      grid-row: 3;
+    }
   }
 }
 
-// is-open時にサイドバーを開く
+
+
+// ------------------------------
+// js連動:::is-openになったら……
+// ------------------------------
+// サイドバーを開く
 .is-open .l-sidebar {
   right: 0;
 }
@@ -60,6 +75,7 @@
 body.is-open {
   position: fixed;
 }
+
 
 
 // ------------------------------
@@ -86,3 +102,6 @@ body.is-open {
     }
   }
 }
+
+
+

@@ -1,3 +1,15 @@
+// $bgSetList: home mainvisual, archive mainvisual;
+// @each $bgSet in $bgSetList {
+//   .#{nth($bgSet,1)}.p-mainvisual {
+//     background-image: url('#{$imgPath}#{nth($bgSet,1)}_#{nth($bgSet,2)}.png');
+//   }
+// }
+
+
+
+// -----------------------------------------
+// ホーム
+// -----------------------------------------
 .p-mainvisual {
   background-image: url(#{$imgPath}home_mainvisual.png);
   background-size: 100%, cover;
@@ -5,10 +17,14 @@
 
   @include breakpoint( pc ) {
     background-image: url(#{$imgPath}home_mainvisual_pc.png);
-    background-size: auto $mv-pc-height, cover;
+    background-size: auto 100%, cover;
   }
 }
 
+
+// -----------------------------------------
+// アーカイブ
+// -----------------------------------------
 .archive,
 .archive_search {
   .p-mainvisual {
@@ -18,35 +34,54 @@
     background-position: left;
 
     @include breakpoint( tablet ) {
-      background-size: 100% 100%, cover;
+      background-size: 100% 100%, contain;
       background-position: center;
+
+    @include breakpoint( pc ) {
+      background-image: url(#{$imgPath}archive_mainvisual_pc.png);
+      background-size: auto 100%, cover;
+    }
     }
   }
 }
 
-.page {
-  .p-mainvisual {
-    background-image: url(#{$imgPath}page_mainvisual.png);
-    background-size: 100%, contain;
-    background-position: left;
-  }
-}
 
+
+// -----------------------------------------
+// シングル
+// -----------------------------------------
 .single {
   .p-mainvisual {
     background-image: url(#{$imgPath}single_mainvisual.png);
-    background-size: 100%, contain;
+    background-size: 100%,contain;
     background-position: left;
+
+    @include breakpoint( tablet ) {
+      background-size: 100% 100%, cover;
+    }
+
+    @include breakpoint( pc ) {
+      background-image: url(#{$imgPath}single_mainvisual_pc.png);
+      background-size: auto 100%, contain;
+    }
   }
 }
 
 
+// -----------------------------------------
+// ページ
+// -----------------------------------------
+.page {
+  .p-mainvisual {
+    background-image: url(#{$imgPath}page_mainvisual.png);
+    background-size: 100% 100%, contain;
+    background-position: left;
 
-// $bgSetList: home mainvisual, archive mainvisual;
-// @each $bgSet in $bgSetList {
-//   .#{nth($bgSet,1)}article.l-mainvisual.p-mainvisual {
-//     background-image: url('#{$imgPath}#{nth($bgSet,1)}_#{nth($bgSet,2)}.png');
-//     background-size: 120%, contain;
-//     background-position: center;
-//   }
-// }
+    @include breakpoint( pc ) {
+      background-image: url(#{$imgPath}page_mainvisual_pc.png);
+      background-size: auto 100%, cover;
+    }
+  }
+}
+
+

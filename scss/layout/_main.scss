@@ -1,12 +1,3 @@
-.l-main {
-  grid-column: 2;
-  grid-row: 4;// c-gridの中の4行目
-
-  @include breakpoint( pc ) {
-    grid-column: 1 / -2;
-  }
-}
-
   // .c-grid:７rows
   // 1:ヘッダー
   // 2:メインビジュアル
@@ -15,3 +6,9 @@
   // 5:余白
   // 6:アクセス
   // 7:フッター
+
+.l-main {
+  grid-column: 2;
+  grid-row: 4;// c-gridの中の4行目
+}
+
