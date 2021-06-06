@@ -447,6 +447,13 @@ footer {
   gap: 20px;
 }
 
+@media (min-width: 900px) {
+  .l-sidebar {
+    grid-column: 4;
+    grid-row: 1 / -1;
+  }
+}
+
 .l-sidebar {
   width: 100vw;
   right: 100%;
@@ -1228,6 +1235,7 @@ input[type="text"]::placeholder {
 
 .p-footer li {
   font-size: 20px;
+  position: relative;
 }
 
 .p-footer li:first-child::after {
@@ -1237,8 +1245,10 @@ input[type="text"]::placeholder {
   content: '';
   width: 1.5px;
   height: 18px;
-  margin-top: 6px;
-  margin-left: 10px;
+  top: 0;
+  bottom: 0;
+  left: 6.5em;
+  margin: auto;
 }
 
 .p-footer small {

@@ -3,8 +3,10 @@
   background-size: 100%;
   color: $footer-color;
 
+
   li {
     font-size: 20px;
+    position: relative;
   }
 
     // リストとリストの真ん中の線
@@ -15,8 +17,10 @@
       content: '';
       width: 1.5px;
       height: 18px;
-      margin-top: 6px;
-      margin-left: 10px;
+      top: 0;
+      bottom: 0;
+      left: 6.5em;
+      margin: auto;
     }
 
   small {
