@@ -40,6 +40,7 @@
 }
 
 
+
 // ---------------------------------
 // 表示設定:前へ・次へ
 // --------------------------------- 
@@ -56,12 +57,27 @@
     &__pre span,
     &__next span {
         display: none;
-        color: $font-color;
-        text-decoration: none;
     }
   }
 }
 
+
+.c-pagination {
+  &__pre span,
+  &__next span {
+    font-size: 20px;
+    color: $font-color;
+    text-decoration: none;
+  }
+
+  &__pre span {
+    padding: 0 80px 0 0;
+  }
+
+  &__next span {
+    padding: 0 0 0 80px;
+  }
+}
 
 
 // ---------------------------------
@@ -131,8 +147,6 @@
 
     &__next .fas {
       display: inline-block;
-      margin-left: 200px;
-      // right: 0;
     }
 
     &__pre span,
