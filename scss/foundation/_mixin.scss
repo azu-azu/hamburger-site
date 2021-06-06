@@ -1,4 +1,9 @@
 @mixin breakpoint ($point) {
+  @if $point == pc-wide {
+    @media (min-width: 1120px) {
+      @content;
+    }
+  }
   @if $point == pc {
     @media (min-width: 900px) {
       @content;
@@ -10,6 +15,8 @@
     }
   }
 }
+
+
 
 @mixin m-center {
   margin:0 auto;

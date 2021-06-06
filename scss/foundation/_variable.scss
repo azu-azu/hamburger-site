@@ -2,20 +2,23 @@
 $imgPath: "../images/";
 
 // 写真サイズ
-$img-width: 336px;
-$img-height: 643px;
-$card-imag-height: 231px;
-$card-imag-height-tablet: 355px;
+$img-width: 379px;
+$takeout-img-height: 642px;
+$card-imag-height: 263px;
+$card-imag-height-tablet: 471px;
 $mv-sp-height: 285px;
 $mv-pc-height: 530px;
 $mv-archive-height: 283px;
-$side-size: calc((100vw - #{$img-width}) / 2);
+$mv-singlel-height-tablet: 500px;
+
 
 // 余白サイズ
 $gap10: 10px;
 $gap20: 20px;
 $gap30: 30px;
 $gap40: 40px;
+$side-size: calc((100vw - #{$img-width}) / 2);
+
 
 // サイドバーのサイズ
 $sidebar-side-width: 45px;

@@ -1,0 +1,16 @@
+// -----------------------------------------
+// カード内のdt/dd
+// -----------------------------------------
+.c-font {
+  &--card-ttl {
+    @include font-mplus--bold;
+    font-size: 22px;
+  }
+
+  &--card-txt {
+    padding-top: 30px;
+    @include font-mplus--regular;
+    white-space: normal;// 改行させる
+    font-size: 16px;
+  }
+}

@@ -1,6 +1,95 @@
-// .p-feature {
-//   background-image: url(#{$imgPath}home_mainvisual.png);
-//   background-size: 100vw;
-//   background-position: center;
+// -------------------------
+// アイキャッチの設定
+// -------------------------
+.p-feature {
 
-// }
+  --side: 20px;
+
+  &__eye-catch {
+    width: calc(100vw - (var(--side) * 2));
+    height: 264px;
+    background: url(#{$imgPath}single.png) no-repeat, center;
+
+    @include breakpoint( pc ) {
+      width: calc(100vw - #{$sidebar-width-pc} - var(--side)*2);
+      background-size: 100%;
+    }
+  }
+}
+
+
+// -------------------------
+// コンテンツの設定
+// -------------------------
+.p-feature{
+  &--cont {
+    --side: 15px;
+    display: grid;
+    grid-template-columns: auto var(--side) var(--side) auto;
+    grid-template-rows: 30px auto 20px;
+  
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &__figure01,
+    &__figure02 {
+      width: 170px;
+      height: 120px;
+
+      @include breakpoint( pc ) {
+        width: auto;
+        height: auto;
+      }
+    }
+  
+    &__figure01 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  
+    &__txt01 {
+      grid-column: 3 / -1;
+      grid-row: 2;
+    }
+  
+    &__figure02 {
+      grid-column: 4;
+      grid-row: 2;
+    }
+  
+    &__txt02 {
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
+  }
+}
+
+
+
+// -------------------------
+// last-img
+// -------------------------
+.p-feature {
+  &__last-img {
+    display: grid;
+    grid-template-rows: 15px auto 50px;
+    justify-content: center;
+
+    &--wrap {
+      grid-row: 2;
+      width: 270px;
+      height: auto;
+
+      @include breakpoint( tablet ) {
+        width: auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

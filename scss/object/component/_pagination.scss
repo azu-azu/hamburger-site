@@ -1,83 +1,158 @@
+// ---------------------------------
+// 前へ・次へ
+// --------------------------------- 
 .c-pagination {
-  grid-row: 2;
-  grid-column: 2;
-  align-self: start;
+  height: 120px;
+  font-size: 14px;
+  @include font-robotto;
+  white-space: nowrap;
+  align-items: center;
+  color: $font-color;
+  text-decoration: none;
 
-  --padding: 30px;
-  --ya-soto: 80px;
-  --ya-naka: 90px;
-  --border-size: 1px;
+  &__page {
+    margin: 0 20px;
+  }
 
-  &--prev {
-    padding-left: var(--padding);
-
-    // 左向き矢印
-    &::before {
-      grid-column: 2;
-      @include giji-ya;
-      left: var(--ya-soto);
-      border-top: var(--border-size);
-      border-right: var(--border-size);
+  &__pre {
+    margin-right: 40px;
 
     @include breakpoint( pc ) {
-      left: 100px;
-      }
+      margin-right: 20px;
     }
-  
-    &::after {
-      grid-column: 2;
-      @extend .c-pagination--prev::before;
-      left: var(--ya-naka);
+
+    @include breakpoint( pc-wide ) {
+      margin-right: 40px;
     }
   }
 
-  &--next {
-    padding-right: var(--padding);
+  &__next {
+    margin-left: 40px;
 
-    // 右向き矢印
-    &::before {
-      grid-column: 5;
-      @include giji-ya;
-      right: var(--ya-soto);
-      border-bottom: var(--border-size);
-      border-left: var(--border-size);
-
-      @include breakpoint( pc ) {
-        left: 700px;
-      }
+    @include breakpoint( pc ) {
+      margin-left: 20px;
     }
-  
-    &::after {
-      grid-column: 5;
-      @extend .c-pagination--next::before;
-      right: var(--ya-naka);
-      
-      @include breakpoint( pc ) {
-        left: 710px;
+
+    @include breakpoint( pc-wide ) {
+      margin-left: 40px;
+    }
+  }
+}
+
+
+// ---------------------------------
+// 表示設定:前へ・次へ
+// --------------------------------- 
+.c-pagination {
+  &__pre i,
+  &__next i {
+    font-size: 20px;
+    color: $font-color;
+    text-decoration: none;
+  }
+
+
+  @include breakpoint( tablet ) {
+    &__pre span,
+    &__next span {
+        display: none;
+        color: $font-color;
+        text-decoration: none;
+    }
+  }
+}
+
+
+
+// ---------------------------------
+// 番号付きページネーション
+// --------------------------------- 
+.c-pagination {
+  &__numbers {
+
+    li {
+      display: inline;
+      margin: 0 2px;
+      padding: 0;
+      display: inline-block;
+      background-color:#ffffff;
+      border: 1px solid $font-color;
+      width: 35px;
+      height: 35px;
+      text-align: center;
+      position: relative;
+
+      @include breakpoint( pc-wide ) {
+        width: 50px;
+        height: 50px;
+      }
+
+      a {
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display:table;
+        text-decoration: none;
+        color: $font-color;
+
+        span {
+          display:table-cell;
+          vertical-align:middle;
+        }
       }
     }
   }
 }
 
 
-// ページ番号付きページネーション
+
+// ---------------------------------
+// スマホのみでの表示設定
+// --------------------------------- 
+@media only screen and (max-width: 640px){
+  .c-pagination {
+    &__page,
+    &__numbers li {
+        display: none;
+      }
+    }
+
+    &__pre,
+    &__next {
+      display: inline-block;
+      width: 40%;
+      height: 50px;
+      text-align: center;
+    }
+
+    &__next .fas {
+      display: inline-block;
+      margin-left: 200px;
+      // right: 0;
+    }
+
+    &__pre span,
+    &__next span {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+
+// ---------------------------------
+// ホバー時
+// --------------------------------- 
 .c-pagination {
-
-  &--numbers {
-    text-align: center;
-    list-style-position: inside;
-    padding: 0;
-  }
-
-  &--numbers li {
-    display: inline-block;
-  }
-
-  &--numbers a {
-    display: inline-block;
-    padding: .5rem;
-    margin: 0 .2rem .2rem 0;
-    background: #fff;
-    border: 1px solid #ccc;
+  &__numbers {
+    a:hover,
+    a.active {
+      color: #FFF;
+      background: $card-color;
+    }
   }
 }
