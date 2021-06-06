@@ -709,9 +709,22 @@ input[type="checkbox"] {
   .c-pagination__pre span,
   .c-pagination__next span {
     display: none;
-    color: #707070;
-    text-decoration: none;
   }
+}
+
+.c-pagination__pre span,
+.c-pagination__next span {
+  font-size: 20px;
+  color: #707070;
+  text-decoration: none;
+}
+
+.c-pagination__pre span {
+  padding: 0 80px 0 0;
+}
+
+.c-pagination__next span {
+  padding: 0 0 0 80px;
 }
 
 .c-pagination__numbers li {
@@ -766,7 +779,6 @@ input[type="checkbox"] {
   }
   __next .fas {
     display: inline-block;
-    margin-left: 200px;
   }
   __pre span,
   __next span {
@@ -1225,7 +1237,7 @@ input[type="text"]::placeholder {
   content: '';
   width: 1.5px;
   height: 18px;
-  margin-top: 1%;
+  margin-top: 6px;
   margin-left: 10px;
 }
 
