@@ -17,6 +17,10 @@
   // PCサイズ：サイドバー幅を入れる
   @include breakpoint( pc ){
     grid-template-columns: var(--side) calc(100vw - #{$sidebar-width-pc} - var(--side)*2) var(--side) $sidebar-width-pc;
+
+    // 余白の32768pxを隠すため、rerativeとhiddenをセット
+    position: relative;
+    overflow: hidden;
   }
 }
 

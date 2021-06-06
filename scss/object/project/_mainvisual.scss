@@ -1,24 +1,31 @@
-// $bgSetList: home mainvisual, archive mainvisual;
-// @each $bgSet in $bgSetList {
-//   .#{nth($bgSet,1)}.p-mainvisual {
-//     background-image: url('#{$imgPath}#{nth($bgSet,1)}_#{nth($bgSet,2)}.png');
-//   }
-// }
+// -----------------------------------------
+// 画像の繰り返し配置
+// -----------------------------------------
+$bgMainList: home mainvisual, archive mainvisual, single mainvisual, page mainvisual;
+@each $bgMain in $bgMainList {
+  .#{nth($bgMain,1)} .p-mainvisual {
+    background-image: url('#{$imgPath}#{nth($bgMain,1)}_#{nth($bgMain,2)}.png');
+  }
+}
 
+
+$bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, single mainvisual_pc, page mainvisual_pc;
+@include breakpoint( pc ) {
+  @each $bgMain_pc in $bgMain_pcList {
+    .#{nth($bgMain_pc,1)} .p-mainvisual {
+      background-image: url('#{$imgPath}#{nth($bgMain_pc,1)}_#{nth($bgMain_pc,2)}.png');
+      background-size: auto 100%, cover;
+    }
+  }
+}
 
 
 // -----------------------------------------
 // ホーム
 // -----------------------------------------
 .p-mainvisual {
-  background-image: url(#{$imgPath}home_mainvisual.png);
   background-size: 100%, cover;
   background-position: center;
-
-  @include breakpoint( pc ) {
-    background-image: url(#{$imgPath}home_mainvisual_pc.png);
-    background-size: auto 100%, cover;
-  }
 }
 
 
@@ -28,7 +35,6 @@
 .archive,
 .archive_search {
   .p-mainvisual {
-    background-image: url(#{$imgPath}archive_mainvisual.png);
     background-size: 200%, cover;
     background-color: #000000;
     background-position: left;
@@ -36,11 +42,6 @@
     @include breakpoint( tablet ) {
       background-size: 100% 100%, contain;
       background-position: center;
-
-    @include breakpoint( pc ) {
-      background-image: url(#{$imgPath}archive_mainvisual_pc.png);
-      background-size: auto 100%, cover;
-    }
     }
   }
 }
@@ -52,17 +53,11 @@
 // -----------------------------------------
 .single {
   .p-mainvisual {
-    background-image: url(#{$imgPath}single_mainvisual.png);
     background-size: 100%,contain;
     background-position: left;
 
     @include breakpoint( tablet ) {
       background-size: 100% 100%, cover;
-    }
-
-    @include breakpoint( pc ) {
-      background-image: url(#{$imgPath}single_mainvisual_pc.png);
-      background-size: auto 100%, contain;
     }
   }
 }
@@ -73,14 +68,8 @@
 // -----------------------------------------
 .page {
   .p-mainvisual {
-    background-image: url(#{$imgPath}page_mainvisual.png);
     background-size: 100% 100%, contain;
     background-position: left;
-
-    @include breakpoint( pc ) {
-      background-image: url(#{$imgPath}page_mainvisual_pc.png);
-      background-size: auto 100%, cover;
-    }
   }
 }
 

@@ -1,77 +1,25 @@
 // ------------------------------
-// pcのときのみ、c-gridに組み込みたい
-// ------------------------------ 
-@include breakpoint( pc ){
-  .l-sidebar {
-    grid-column: 4;
-    grid-row: 1 / -1;
-  }
-}
-
-
-// ------------------------------
 // サイドバーの中身
 // ------------------------------
 .l-sidebar {
   width: 100vw;
   right: 100%;// 右に隠す
-  height: 100%;
-
-  top: 0;// 一番上にもってくる
-  position: absolute;// これがないと固定されちゃう
-  z-index: 100;
-
-
-  display: grid;
-  grid-template-columns: $sidebar-side-width auto;// サイドボックス/メニューボックス
   overflow-y: scroll;// 縦スクロール
 
-  @include breakpoint( tablet ){
-    grid-template-columns: 1fr $sidebar-menu-width;
-  }
+  position: absolute;// これがないと固定されちゃう
+  top: 0;// 一番上にもってくる
+  bottom: 0;// これないとスクロールできない
+  z-index: 200;
 
+  background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 10%, $sidebar-color 10%, $sidebar-color 100%);
+  padding-top: 150px;
+  padding-left: 15%;
+  padding-bottom: 100vh;
 
-  &--side-box {
-    background-color:rgba($sidebox-bgcolor, 0.5);// 黒の透過
-    grid-row: 1 / -1;
-    grid-column: 1;
-  }
-
-  &--menu-box {
-    background-color: $sidebar-color;
-    grid-row: 1 / -1;
-    grid-column: 2;
-
-    display: grid;
-    grid-template-columns: 20px auto 20px 20px;
-    grid-template-rows: 40px 100px 1fr 1fr;// 余白/xボタン/メニュー/余白
-    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-    // ↑↑↑余白サイズ要修正↑↑↑
-    // gtrの４行目を何とかする
-    // ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-  }
-}
-
-
-
-
-// ------------------------------
-// メニューボックスのグリッド
-// ------------------------------
-.l-sidebar{
-  &--menu-box {
-
-    &__xbtn {
-      grid-column: 3;
-      grid-row: 2;
-      text-align: left;
-      align-self: baseline;
-    }
-    
-    &__nav {
-      grid-column: 2 / -1;
-      grid-row: 3;
-    }
+  &__xbtn {
+    position: absolute;
+    top: 5%;
+    right: 10%;
   }
 }
 
@@ -93,29 +41,31 @@ body.is-open {
 
 
 // ------------------------------
-// PC版
+// レスポンシブ
 // ------------------------------
 .l-sidebar {
+  @include breakpoint( tablet ){
+    background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 40%, $sidebar-color 40%, $sidebar-color 100%);
+    padding-left: 45%;
+  }
+
   @include breakpoint( pc ){
     grid-column: 4;
-    grid-row: 1 / -2;
+    grid-row: 1 / -1;
 
-    grid-template-columns: 0 $sidebar-width-pc;
     right: 0;
     width: $sidebar-width-pc;
-    padding-bottom: 0;
     overflow-y: visible;// 縦スクロール無し
     z-index: unset;
+    background: $sidebar-color;
+    padding-left: 20px;
 
-    &--side-box {
-      background-color: $sidebar-color;
-    }
+    // 下まで伸ばすために余白をとって、親要素でoverflow:hiddenをする
+    padding-bottom: 32768px;
+    margin-bottom: -32768px;
 
-    &--menu-box__xbtn {
+    &__xbtn {
       display: none;
     }
   }
 }
-
-
-
