@@ -48,6 +48,10 @@
     @include breakpoint( tablet ) {
       height: $mv-archive-height;
     }
+
+    // @include breakpoint( pc ) {
+    //   height: $mv-archive-height-pc;
+    // }
   }
 }
 

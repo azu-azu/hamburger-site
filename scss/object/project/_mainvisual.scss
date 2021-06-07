@@ -5,6 +5,8 @@ $bgMainList: home mainvisual, archive mainvisual, single mainvisual, page mainvi
 @each $bgMain in $bgMainList {
   .#{nth($bgMain,1)} .p-mainvisual {
     background-image: url('#{$imgPath}#{nth($bgMain,1)}_#{nth($bgMain,2)}.png');
+    background-size: 100%, cover;
+    background-position: center;
   }
 }
 
@@ -20,13 +22,6 @@ $bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, single mainvisual_pc,
 }
 
 
-// -----------------------------------------
-// ホーム
-// -----------------------------------------
-.p-mainvisual {
-  background-size: 100%, cover;
-  background-position: center;
-}
 
 
 // -----------------------------------------
@@ -40,7 +35,7 @@ $bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, single mainvisual_pc,
     background-position: left;
 
     @include breakpoint( tablet ) {
-      background-size: 100% 100%, contain;
+      background-size: 100% 100%, cover;
       background-position: center;
     }
   }
@@ -68,7 +63,7 @@ $bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, single mainvisual_pc,
 // -----------------------------------------
 .page {
   .p-mainvisual {
-    background-size: 100% 100%, contain;
+    background-size: 100% auto, cover;
     background-position: left;
   }
 }
