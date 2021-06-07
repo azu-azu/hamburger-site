@@ -48,8 +48,9 @@ $bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, single mainvisual_pc,
 // -----------------------------------------
 .single {
   .p-mainvisual {
-    background-size: 100%,contain;
+    background-size: 100%, cover;
     background-position: left;
+    object-fit: cover;
 
     @include breakpoint( tablet ) {
       background-size: 100% 100%, cover;
