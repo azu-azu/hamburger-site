@@ -13,7 +13,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
 
 
 // ---------------------------------------------
-// 【１ページ目】l-mainの中のコンテンツ(ul)のグリッド
+// 【１ページ目:wrap】l-mainの中のコンテンツwrap
 // ---------------------------------------------
 .l-contents {
   &--wrap {
@@ -41,7 +41,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
 }
 
 // ---------------------------------------------
-// 【１ページ目】takeoutとeat-in
+// 【１ページ目:wrapの中のitem】takeoutとeat-in
 // ---------------------------------------------
 .l-contents {
   &--wrap {

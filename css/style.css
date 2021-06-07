@@ -41,6 +41,11 @@ footer {
   font-family: mplus-1m-regular, sans-serif;
 }
 
+/**
+ * ViewportScale v0.2.2
+ * Copyright (c) 2018 Kite
+ * MIT License
+ */
 .l-header {
   grid-column: 1 / -1;
   grid-row: 1;
@@ -904,18 +909,26 @@ input[type="text"]::placeholder {
 
 .home .p-mainvisual {
   background-image: url("../images/home_mainvisual.png");
+  background-size: 100%, cover;
+  background-position: center;
 }
 
 .archive .p-mainvisual {
   background-image: url("../images/archive_mainvisual.png");
+  background-size: 100%, cover;
+  background-position: center;
 }
 
 .single .p-mainvisual {
   background-image: url("../images/single_mainvisual.png");
+  background-size: 100%, cover;
+  background-position: center;
 }
 
 .page .p-mainvisual {
   background-image: url("../images/page_mainvisual.png");
+  background-size: 100%, cover;
+  background-position: center;
 }
 
 @media (min-width: 900px) {
@@ -937,11 +950,6 @@ input[type="text"]::placeholder {
   }
 }
 
-.p-mainvisual {
-  background-size: 100%, cover;
-  background-position: center;
-}
-
 .archive .p-mainvisual,
 .archive_search .p-mainvisual {
   background-size: 200%, cover;
@@ -952,7 +960,7 @@ input[type="text"]::placeholder {
 @media (min-width: 641px) {
   .archive .p-mainvisual,
   .archive_search .p-mainvisual {
-    background-size: 100% 100%, contain;
+    background-size: 100% 100%, cover;
     background-position: center;
   }
 }
@@ -969,7 +977,7 @@ input[type="text"]::placeholder {
 }
 
 .page .p-mainvisual {
-  background-size: 100% 100%, contain;
+  background-size: 100% auto, cover;
   background-position: left;
 }
 
