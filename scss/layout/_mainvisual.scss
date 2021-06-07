@@ -40,6 +40,7 @@
 .archive {
   .l-mainvisual {
     grid-template-rows: repeat(4, auto);
+    
     p {
       grid-column: 2;
       grid-row: 3;
@@ -48,10 +49,6 @@
     @include breakpoint( tablet ) {
       height: $mv-archive-height;
     }
-
-    // @include breakpoint( pc ) {
-    //   height: $mv-archive-height-pc;
-    // }
   }
 }
 
@@ -66,8 +63,8 @@
       height: $mv-singlel-height-tablet;
     }
 
-    @include breakpoint( pc ) {
-      height: $mv-pc-height;
-    }
+    // @include breakpoint( pc ) {
+    //   height: $mv-pc-height;
+    // }
   }
 }

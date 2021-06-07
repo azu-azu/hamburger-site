@@ -153,13 +153,6 @@ footer {
   }
 }
 
-@media (min-width: 900px) {
-  .single .l-mainvisual,
-  .page .l-mainvisual {
-    height: 530px;
-  }
-}
-
 .l-main {
   grid-column: 2;
   grid-row: 4;
@@ -966,8 +959,9 @@ input[type="text"]::placeholder {
 }
 
 .single .p-mainvisual {
-  background-size: 100%,contain;
+  background-size: 100%, cover;
   background-position: left;
+  object-fit: cover;
 }
 
 @media (min-width: 641px) {
