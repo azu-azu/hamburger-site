@@ -44,7 +44,13 @@
       </header>
 
       <!-- メインビジュアル -->
+      <!-- 画像：画面幅によって取り込みサイズを変える -->
       <article class="l-mainvisual p-mainvisual">
+        <img src="images/mainvisual-sp.jpg"
+              srcset="images/mainvisual-sp.jpg 375w,
+                    images/mainvisual-pc.jpg 1430w"
+              sizes="(max-width:641px) 375px, 100vw" 
+              alt="">
         <h1>ダミーサイト</h1>
       </article>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->

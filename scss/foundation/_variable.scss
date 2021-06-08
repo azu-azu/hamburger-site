@@ -6,8 +6,16 @@ $img-width: 379px;
 $takeout-img-height: 642px;
 $card-imag-height: 263px;
 $card-imag-height-tablet: 471px;
+
+// メインビジュアルサイズ
+$mv-height-sp: 285px;
+$mv-height-pc: 1765px;
+
+
 $mv-sp-height: 285px;
+$mv-tablet-height: 360px;
 $mv-pc-height: 530px;
+
 $mv-archive-height: 283px;
 $mv-archive-height-pc: 239px;
 $mv-singlel-height-tablet: 500px;
@@ -22,9 +30,8 @@ $side-size: calc((100vw - #{$img-width}) / 2);
 
 
 // サイドバーのサイズ
-$sidebar-side-width: 45px;
-$sidebar-menu-width: 367px;
-$sidebar-width-pc: $sidebar-menu-width - $sidebar-side-width;
+$sidebar-width-pc: 367px;
+
 
 // グーグル・マップのサイズ
 $GoogleMap-height: 643px;// htmlと同じ高さ指定

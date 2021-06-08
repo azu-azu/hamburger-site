@@ -1,25 +1,57 @@
+.p-mainvisual {
+  position: relative;
+
+  img {
+    width: 100vw;
+    height: 100%;
+
+    @include breakpoint( pc ) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  h1 {
+    position: absolute;
+    height: auto;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 // -----------------------------------------
 // 画像の繰り返し配置
 // -----------------------------------------
-$bgMainList: home mainvisual, archive mainvisual, archive--search mainvisual, single mainvisual, page mainvisual;
-@each $bgMain in $bgMainList {
-  .#{nth($bgMain,1)} .p-mainvisual {
-    background-image: url('#{$imgPath}#{nth($bgMain,1)}_#{nth($bgMain,2)}.png');
-    background-size: 100%, cover;
-    background-position: center;
-  }
-}
+// $bgMainList: home mainvisual, archive mainvisual, archive_search mainvisual, single mainvisual, page mainvisual;
+// @each $bgMain in $bgMainList {
+//   .#{nth($bgMain,1)} .p-mainvisual {
+//     background-image: url('#{$imgPath}#{nth($bgMain,1)}_#{nth($bgMain,2)}.png');
+//     background-size: 105% 100%, cover;
+//     background-position: center;
+//   }
+// }
 
 
-$bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, archive--search mainvisual_pc, single mainvisual_pc, page mainvisual_pc;
-@include breakpoint( pc ) {
-  @each $bgMain_pc in $bgMain_pcList {
-    .#{nth($bgMain_pc,1)} .p-mainvisual {
-      background-image: url('#{$imgPath}#{nth($bgMain_pc,1)}_#{nth($bgMain_pc,2)}.png');
-      background-size: auto 100%, cover;
-    }
-  }
-}
+// $bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, archive_search mainvisual_pc, single mainvisual_pc, page mainvisual_pc;
+// @include breakpoint( pc ) {
+//   @each $bgMain_pc in $bgMain_pcList {
+//     .#{nth($bgMain_pc,1)} .p-mainvisual {
+//       background-image: url('#{$imgPath}#{nth($bgMain_pc,1)}_#{nth($bgMain_pc,2)}.png');
+//       background-size: auto 100%, cover;
+//     }
+//   }
+// }
 
 
 
@@ -27,58 +59,64 @@ $bgMain_pcList: home mainvisual_pc, archive mainvisual_pc, archive--search mainv
 // -----------------------------------------
 // アーカイブ
 // -----------------------------------------
-.archive,
-.archive--search {
-  .p-mainvisual {
-    background-size: 200%, cover;
-    background-color: #000000;
-    background-position: left;
+// .p-mainvisual {
+//   @include breakpoint( pc ) {
+//     background-size: 120% 100%, cover;
+//   }
+// }
 
-    @include breakpoint( tablet ) {
-      background-size: 100% 100%, cover;
-      background-position: center;
-    }
-  }
-}
+// .archive,
+// .archive_search {
+//   .p-mainvisual {
+//     background-size: 200%, cover;
+//     background-color: #000000;
+//     background-position: left;
+
+//     @include breakpoint( tablet ) {
+//       background-size: 100vw 100%, cover;
+//       background-position: center;
+//     }
+//   }
+// }
 
 
 
 // -----------------------------------------
 // シングル
 // -----------------------------------------
-.single {
-  .p-mainvisual {
-    background-size: 100%, cover;
-    background-position: left;
-    object-fit: cover;
+// .single {
+//   .p-mainvisual {
+//     background-size: 100vw auto, cover;
+//     background-position: left;
+//     object-fit: cover;
 
-    @include breakpoint( tablet ) {
-      background-size: 100vw 100%, cover;
-    }
+//     @include breakpoint( tablet ) {
+//       background-size: 100vw 100%, cover;
+//     }
 
-    @include breakpoint( pc ) {
-      background-size: auto 100%, cover;// width:autoにすると見切れる
-    }
-  }
-}
+//     @include breakpoint( pc ) {
+//       background-size: 100% 100%, cover;// width:autoにすると見切れる
+//     }
+//   }
+// }
 
 
 // -----------------------------------------
 // ページ
 // -----------------------------------------
-.page {
-  .p-mainvisual {
-    background-size: 100% auto, cover;
-    background-position: left;
+// .page {
+//   .p-mainvisual {
+//     background-size: 100% auto, cover;
+//     background-position: left;
 
-    @include breakpoint( tablet ) {
-      background-size: 100vw 100%, cover;
-    }
+//     @include breakpoint( tablet ) {
+//       background-size: 100% 100%, cover;
+//     }
 
-    @include breakpoint( pc ) {
-      background-size: calc(100vw - #{$sidebar-width-pc}) 100%, cover;
-    }
-  }
-}
+//     @include breakpoint( pc ) {
+//       background-size: calc(100vw - #{$sidebar-width-pc}) 100%, cover;
+//     }
+//   }
+// }
 
 

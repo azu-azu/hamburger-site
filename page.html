@@ -44,10 +44,16 @@
       </header>
 
       <!-- メインビジュアル -->
+      <!-- 画像：画面幅によって取り込みサイズを変える -->
       <article class="l-mainvisual p-mainvisual">
-        <h1>ショップについて
-          <p></p>
-        </h1>
+        <img src="images/page_mainvisual_sp.jpg"
+              srcset="images/page_mainvisual_sp.jpg 335w,
+                    images/page_mainvisual_tb.png 834w,
+                    images/page_mainvisual_pc.png 1553w"
+              sizes="(max-width:641px) 335px, 100vw,
+              (max-width:900px) 834px, 100vw" 
+              alt="">
+        <h1>ショップについて</h1>
       </article>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">

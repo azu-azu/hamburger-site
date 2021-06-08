@@ -80,7 +80,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
 // 【２ページ目：アーカイブ】コンテンツカード
 // ---------------------------------------------
 .archive,
-.archive--search {
+.archive_search {
   .l-contents {
     &--wrap {
       &__item {
@@ -130,7 +130,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
 // 【アーカイブ:レスポンシブ】wrapのグリッド
 // ---------------------------------------------
 .archive,
-.archive--search {
+.archive_search {
   .l-contents {
     justify-content: center;
 
@@ -162,7 +162,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
             img {
               width: 100%;
               height: 100%;
-              left: 10%;
+              object-position: 10%;// 左側に固定
               object-fit: cover;
             }
           }
@@ -187,7 +187,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
 // 【アーカイブ】ＰＣ用
 // ---------------------------------------------
 .archive,
-.archive--search {
+.archive_search {
   .l-contents {
     justify-content: center;
 
