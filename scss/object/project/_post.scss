@@ -1,8 +1,7 @@
 .p-post {
   width: 100%;
   display: grid;
-  grid-template-rows: 70px 35px auto auto 20px;
-  padding: 40px;
+  grid-template-rows: auto 35px auto auto 20px;
 
   h2 {
     grid-row: 1;
