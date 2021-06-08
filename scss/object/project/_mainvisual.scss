@@ -17,6 +17,64 @@
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
+    white-space: nowrap;
+  }
+}
+
+
+// -------------------------
+// アーカイブ：改行設定
+// -------------------------
+.archive,
+.archive_search {
+  .p-mainvisual {
+    display: grid;
+    position: relative;
+
+    img {
+      grid-row: 1;
+      width: 160%;
+      filter: brightness(50%);// 画像を暗くする
+
+      @include breakpoint( tablet ) {
+        width: 100%;
+      }
+    }
+
+    span {
+      top: 100%;
+    }
+
+    @include breakpoint( tablet ) {
+      br {
+        display: none;
+      }
+
+      span {
+        top: 50%;
+        left: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+// -------------------------
+// シングル・ページ：画像サイズ
+// -------------------------
+.single,
+.page {
+  .p-mainvisual {
+    @include breakpoint( tablet ) {
+    width: 100%;
+    height: 100%;
+    }
+
+    @include breakpoint( pc ) {
+      height: auto;
+    }
   }
 }
 
@@ -26,12 +84,8 @@
 
 
 
-
-
-
-
 // -----------------------------------------
-// 画像の繰り返し配置
+// 画像の繰り返し配置:backgroundの場合
 // -----------------------------------------
 // $bgMainList: home mainvisual, archive mainvisual, archive_search mainvisual, single mainvisual, page mainvisual;
 // @each $bgMain in $bgMainList {
@@ -52,71 +106,3 @@
 //     }
 //   }
 // }
-
-
-
-
-// -----------------------------------------
-// アーカイブ
-// -----------------------------------------
-// .p-mainvisual {
-//   @include breakpoint( pc ) {
-//     background-size: 120% 100%, cover;
-//   }
-// }
-
-// .archive,
-// .archive_search {
-//   .p-mainvisual {
-//     background-size: 200%, cover;
-//     background-color: #000000;
-//     background-position: left;
-
-//     @include breakpoint( tablet ) {
-//       background-size: 100vw 100%, cover;
-//       background-position: center;
-//     }
-//   }
-// }
-
-
-
-// -----------------------------------------
-// シングル
-// -----------------------------------------
-// .single {
-//   .p-mainvisual {
-//     background-size: 100vw auto, cover;
-//     background-position: left;
-//     object-fit: cover;
-
-//     @include breakpoint( tablet ) {
-//       background-size: 100vw 100%, cover;
-//     }
-
-//     @include breakpoint( pc ) {
-//       background-size: 100% 100%, cover;// width:autoにすると見切れる
-//     }
-//   }
-// }
-
-
-// -----------------------------------------
-// ページ
-// -----------------------------------------
-// .page {
-//   .p-mainvisual {
-//     background-size: 100% auto, cover;
-//     background-position: left;
-
-//     @include breakpoint( tablet ) {
-//       background-size: 100% 100%, cover;
-//     }
-
-//     @include breakpoint( pc ) {
-//       background-size: calc(100vw - #{$sidebar-width-pc}) 100%, cover;
-//     }
-//   }
-// }
-
-

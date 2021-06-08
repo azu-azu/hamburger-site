@@ -33,50 +33,52 @@
 .archive,
 .archive_search {
   .l-mainvisual {
-    grid-template-rows: repeat(4, auto);
-
-    span {
-      grid-column: 2;
-      grid-row: 3;
-      line-height: 1;
-    }
-
-    @include breakpoint( tablet ) {
-      height: $mv-archive-height;
-
-      h1 br {
-          display: none;
-      }
-
-      span {
-        position: absolute;
-        margin: 12px;
-      }
-    }
+    object-position: left;
   }
 }
 
 
 // -------------------------
-// シングル＆ページ
+// シングル
 // -------------------------
-// .single,
-// .page {
+// .single {
 //   .l-mainvisual {
-//     grid-column: 1 / -1;
+
+//     height: $mv-single-height-sp;
+//     object-fit: cover;
+//     flex: 0 1 100%;
 
 //     @include breakpoint( tablet ) {
-//       height: $mv-singlel-height-tablet;
-//       width: 100vw;
-
+//       height: $mv-single-height-tab;
 //     }
 
 //     @include breakpoint( pc ) {
-//       // max-height: $mv-singlel-height-tablet;
-//       // height: 300px;
-//       // width: 100vw;
-//       height: 500px;
-//       width: 100%;
+//       height: $mv-single-height-pc;
 //     }
 //   }
 // }
+
+
+// -------------------------
+// シングル・ページ：画像枠のサイズ
+// -------------------------
+.single,
+.page {
+  .l-mainvisual {
+    height: $mv-single-height-sp;
+
+
+    @include breakpoint( tablet ) {
+      height: $mv-single-height-tab;
+    }
+
+    @include breakpoint( pc ) {
+      height: $mv-single-height-pc;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
