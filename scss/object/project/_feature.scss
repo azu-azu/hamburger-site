@@ -8,9 +8,13 @@
   &__eye-catch {
     width: calc(100vw - (var(--side) * 2));
     height: 264px;
+    // height: 100%;
     background: url(#{$imgPath}single.png) no-repeat, center;
+    background-size: 100%;
+    background-position-y: bottom;
 
     @include breakpoint( pc ) {
+      --side: 40px;
       width: calc(100vw - #{$sidebar-width-pc} - var(--side)*2);
       background-size: 100%;
     }

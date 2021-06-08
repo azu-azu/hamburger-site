@@ -16,6 +16,7 @@
 
   // PCサイズ：サイドバー幅を入れる
   @include breakpoint( pc ){
+    --side: 40px;
     grid-template-columns: var(--side) calc(100vw - #{$sidebar-width-pc} - var(--side)*2) var(--side) $sidebar-width-pc;
 
     // 余白の32768pxを隠すため、rerativeとhiddenをセット
@@ -28,7 +29,8 @@
 // -----------------------------------------
 // 【２ページ目】アーカイブ
 // -----------------------------------------
-.archive {
+.archive,
+.archive--search {
   .c-grid {
     grid-template-rows: repeat(6, auto);
   }
@@ -37,9 +39,10 @@
 
 
 // -----------------------------------------
-// 【３ページ目】シングルページ
+// 【３ページ目】シングル・ページ
 // -----------------------------------------
-.single {
+.single,
+.page {
   .c-grid {
     grid-template-rows: auto auto 20px auto 125px auto;
     // rows:６行

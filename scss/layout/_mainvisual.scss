@@ -30,6 +30,8 @@
   h1 {
     grid-column: 2;
     grid-row: 2;
+    line-height: 1;
+    position: relative;
   }
 }
 
@@ -37,17 +39,28 @@
 // -------------------------
 // アーカイブ
 // -------------------------
-.archive {
+.archive,
+.archive--search {
   .l-mainvisual {
     grid-template-rows: repeat(4, auto);
-    
-    p {
+
+    span {
       grid-column: 2;
       grid-row: 3;
+      line-height: 1;
     }
 
     @include breakpoint( tablet ) {
       height: $mv-archive-height;
+
+      h1 br {
+          display: none;
+      }
+
+      span {
+        position: absolute;
+        margin: 12px;
+      }
     }
   }
 }
@@ -62,9 +75,5 @@
     @include breakpoint( tablet ) {
       height: $mv-singlel-height-tablet;
     }
-
-    // @include breakpoint( pc ) {
-    //   height: $mv-pc-height;
-    // }
   }
 }
