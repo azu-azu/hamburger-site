@@ -1,0 +1,25 @@
+// -----------------------------------------
+// リスト
+// -----------------------------------------
+.c-list {
+
+  padding-left: 50px;
+  margin-top: 20px;
+
+  &--ol {
+    ol {
+      padding-left: 20px;
+      padding-top: 10px;
+    }
+  }
+
+  &--ul {
+    ul {
+    padding-top: 10px;
+    }
+
+    &__innner-ul {
+      padding-left: 20px;
+    }
+  }
+}

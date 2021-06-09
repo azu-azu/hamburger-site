@@ -41,8 +41,8 @@
 .l-access__txtbox {
   width: 100%;
 
-    background: linear-gradient(180deg, rgba($access-bgcolor, 1) 0%, rgba($access-bgcolor, 1) 60%, rgba($access-bgcolor, 0.7) 60%, rgba($access-bgcolor, 0.7) 100%);
-    opacity: 0.6;// linear-gradientだけでは完結できない
+  background: linear-gradient(180deg, rgba($access-bgcolor, 1) 0%, rgba($access-bgcolor, 1) 60%, rgba($access-bgcolor, 0.7) 60%, rgba($access-bgcolor, 0.7) 100%);
+  opacity: 0.6;// linear-gradientだけでは完結できない
 
     @include breakpoint( tablet ) {
     background-color: $access-bgcolor;

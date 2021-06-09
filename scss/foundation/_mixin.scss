@@ -16,10 +16,14 @@
   }
 }
 
-
-
 @mixin m-center {
   margin:0 auto;
+}
+
+@mixin c-base {
+  margin-top: 50px;
+  @include font-mplus--regular;
+  color: $list-color;
 }
 
 

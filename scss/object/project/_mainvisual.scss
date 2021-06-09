@@ -23,7 +23,7 @@
 
 
 // -------------------------
-// アーカイブ：改行設定
+// アーカイブ：画像色と改行設定
 // -------------------------
 .archive,
 .archive_search {
@@ -74,6 +74,11 @@
 
     @include breakpoint( pc ) {
       height: auto;
+
+      img {
+        height: 100%;
+        max-width: 100%;
+      }
     }
   }
 }

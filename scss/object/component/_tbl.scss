@@ -1,0 +1,22 @@
+// -----------------------------------------
+// テーブル
+// -----------------------------------------
+.c-tbl {
+  margin-top: 50px;
+  @include font-mplus--regular;
+  font-size: 16px;
+  border-collapse: collapse;
+  border: none;
+  width: 100%;// 100%にしないと右に余白ができる
+
+  td {
+    height: 77px;
+    padding: 10px 20px;
+
+  }
+
+  &__tr--item {
+    width: 60%;// 右だけ設定すれば左は残り幅になる
+  }
+
+}
