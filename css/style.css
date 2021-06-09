@@ -520,10 +520,10 @@ body.is-open {
 }
 
 .c-btn--base {
+  font-family: mplus-1m-bold, sans-serif;
   margin-top: 50px;
   width: 335px;
-  height: 80px;
-  font-family: mplus-1m-bold, sans-serif;
+  height: 50px;
   font-size: 16px;
   cursor: pointer;
   background: linear-gradient(to top, #DED8D3, #F2EDE9);
@@ -535,7 +535,7 @@ body.is-open {
 @media (min-width: 641px) {
   .c-btn--base {
     width: 429px;
-    height: 104px;
+    height: 70px;
   }
 }
 
