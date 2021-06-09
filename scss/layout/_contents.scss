@@ -1,19 +1,5 @@
-// -----------------------------------------
-// 【1ページ目：画像】繰り返し配置
-// -----------------------------------------
-$bgSetList: takeout takeout, eat-in eat-in;
-@each $bgSet in $bgSetList {
-  .l-contents--wrap__item.#{nth($bgSet,1)} {
-    background-image: url('#{$imgPath}home_#{nth($bgSet,2)}.png');
-    background-size: 120%, cover;
-    background-position: center;
-  }
-}
-
-
-
 // ---------------------------------------------
-// 【１ページ目:wrap】l-mainの中のコンテンツwrap
+// 【１ページ目】l-contens--wrap
 // ---------------------------------------------
 .l-contents {
   &--wrap {
@@ -30,18 +16,13 @@ $bgSetList: takeout takeout, eat-in eat-in;
 
     @include breakpoint( pc ) {
       grid-template-columns: repeat(2, auto);
-      column-gap: calc(#{$side}/2);
-    }
-
-    @include breakpoint( pc-wide ) {
-      grid-template-columns: repeat(2, auto);
-      column-gap: calc(#{$side}*2);
+      column-gap: 1em calc(50% - 500px);
     }
   }
 }
 
 // ---------------------------------------------
-// 【１ページ目:wrapの中のitem】takeoutとeat-in
+// 【１ページ目:takeoutとeat-in】l-contens--wrap__item
 // ---------------------------------------------
 .l-contents {
   &--wrap {

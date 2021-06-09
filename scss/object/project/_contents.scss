@@ -1,10 +1,27 @@
 // -----------------------------------------
+// 【1ページ目：画像】繰り返し配置
+// -----------------------------------------
+$bgSetList: takeout takeout, eat-in eat-in;
+@each $bgSet in $bgSetList {
+  .p-contents.#{nth($bgSet,1)} {
+    background-image: url('#{$imgPath}home_#{nth($bgSet,2)}.png');
+    background-size: 120%, cover;
+    background-position: center;
+  }
+}
+
+
+// -----------------------------------------
 // 【１ページ目】画像幅＆h2タイトル下のライン
 // -----------------------------------------
 .p-contents {
-  width: $img-width;
+  max-width: $img-width;
 
   @include breakpoint( tablet ) {
+    width: calc((100vw - #{$gap20} * 3) / 2);
+  }
+
+  @include breakpoint( pc ) {
     width: 292px;
   }
 
@@ -41,6 +58,7 @@
 .archive_search {
   .p-contents {
     width: $img-width;
+    max-width: unset;
 
     // グリッドで対応しているためサイズの解除
     @include breakpoint( tablet ) {
@@ -67,4 +85,12 @@
       white-space: normal;// 行を折り返す
     }
   }
+}
+
+// -----------------------------------------
+// ホバーアクション
+// -----------------------------------------
+.p-contents:hover {
+  transform: scale(1.02);
+  transition: .3s;
 }
