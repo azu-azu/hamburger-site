@@ -39,27 +39,6 @@
 
 
 // -------------------------
-// シングル
-// -------------------------
-// .single {
-//   .l-mainvisual {
-
-//     height: $mv-single-height-sp;
-//     object-fit: cover;
-//     flex: 0 1 100%;
-
-//     @include breakpoint( tablet ) {
-//       height: $mv-single-height-tab;
-//     }
-
-//     @include breakpoint( pc ) {
-//       height: $mv-single-height-pc;
-//     }
-//   }
-// }
-
-
-// -------------------------
 // シングル・ページ：画像枠のサイズ
 // -------------------------
 .single,
@@ -74,10 +53,6 @@
 
     @include breakpoint( pc ) {
       height: $mv-single-height-pc;
-
-      img {
-        height: 100%;
-      }
     }
   }
 }

@@ -1,4 +1,28 @@
 // -----------------------------------------
+// base ボタン
+// -----------------------------------------
+.c-btn--base {
+  margin-top: 50px;
+  width: 335px;
+  height: 80px;
+  @include font-mplus--bold;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(to top, #DED8D3, $btn-color);
+  border: 1px solid $font-color;
+  color: $font-color;
+  border-radius: 20px;
+
+  @include breakpoint( tablet ) {
+    width: 429px;
+    height: 104px;
+  }
+}
+
+
+
+
+// -----------------------------------------
 // メニューボタン
 // -----------------------------------------
 .c-btn--menu {

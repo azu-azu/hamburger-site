@@ -89,9 +89,9 @@ footer {
   .l-header__btn {
     position: absolute;
     z-index: 101;
+    left: 15%;
+    margin-top: -25%;
     pointer-events: none;
-    right: 230px;
-    margin-top: -100px;
   }
   .l-header a {
     grid-column: 2;
@@ -148,10 +148,6 @@ footer {
   .single .l-mainvisual,
   .page .l-mainvisual {
     height: 343px;
-  }
-  .single .l-mainvisual img,
-  .page .l-mainvisual img {
-    height: 100%;
   }
 }
 
@@ -523,6 +519,26 @@ body.is-open {
   line-height: 3;
 }
 
+.c-btn--base {
+  margin-top: 50px;
+  width: 335px;
+  height: 80px;
+  font-family: mplus-1m-bold, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(to top, #DED8D3, #F2EDE9);
+  border: 1px solid #707070;
+  color: #707070;
+  border-radius: 20px;
+}
+
+@media (min-width: 641px) {
+  .c-btn--base {
+    width: 429px;
+    height: 104px;
+  }
+}
+
 .c-btn--menu {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
@@ -762,84 +778,6 @@ input[type="checkbox"] {
 
 .c-setting {
   margin-top: 50px;
-  font-family: mplus-1m-regular, sans-serif;
-  color: #3C2A10;
-}
-
-.c-setting--list {
-  padding-left: 50px;
-  margin-top: 20px;
-}
-
-.c-setting--list ol {
-  padding-left: 20px;
-  padding-top: 10px;
-}
-
-.c-setting--list ul {
-  padding-top: 10px;
-}
-
-.c-setting--list__ul {
-  padding-left: 20px;
-}
-
-.c-setting--box {
-  margin: 50px auto 0 auto;
-  width: 100%;
-  height: 237px;
-  background-color: #F5F5F5;
-  position: relative;
-}
-
-.c-setting--box p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.c-setting--tbl {
-  margin-top: 50px;
-  font-family: mplus-1m-regular, sans-serif;
-  font-size: 16px;
-  border-collapse: collapse;
-  border: none;
-  width: 100%;
-}
-
-.c-setting--tbl td {
-  height: 77px;
-  padding: 10px 20px;
-}
-
-.c-setting--tbl__tr--item {
-  width: 60%;
-}
-
-.c-setting--btn {
-  margin-top: 50px;
-  width: 335px;
-  height: 80px;
-  font-family: mplus-1m-bold, sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  background: linear-gradient(to top, #DED8D3, #F2EDE9);
-  border: 1px solid #707070;
-  color: #707070;
-  border-radius: 20px;
-}
-
-@media (min-width: 641px) {
-  .c-setting--btn {
-    width: 429px;
-    height: 104px;
-  }
-}
-
-.c-setting--bold {
-  margin-top: 50px;
-  font-family: mplus-1m-bold, sans-serif;
 }
 
 .c-font--card-ttl {
@@ -908,6 +846,62 @@ input[type="text"] {
   padding: 5px;
   line-height: 2;
   left: 20%;
+}
+
+.c-list {
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+.c-list--ol ol {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.c-list--ul ul {
+  padding-top: 10px;
+}
+
+.c-list--ul__innner-ul {
+  padding-left: 20px;
+}
+
+.c-tbl {
+  margin-top: 50px;
+  font-family: mplus-1m-regular, sans-serif;
+  font-size: 16px;
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+}
+
+.c-tbl td {
+  height: 77px;
+  padding: 10px 20px;
+}
+
+.c-tbl__tr--item {
+  width: 60%;
+}
+
+.c-box {
+  margin: 50px auto 0 auto;
+  width: 100%;
+  height: 237px;
+  background-color: #F5F5F5;
+  position: relative;
+}
+
+.c-box p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.c-bold {
+  margin-top: 50px;
+  font-family: mplus-1m-bold, sans-serif;
 }
 
 .p-page-ttl {
@@ -990,6 +984,11 @@ input[type="text"] {
   .single .p-mainvisual,
   .page .p-mainvisual {
     height: auto;
+  }
+  .single .p-mainvisual img,
+  .page .p-mainvisual img {
+    height: 100%;
+    max-width: 100%;
   }
 }
 

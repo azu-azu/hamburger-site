@@ -57,9 +57,9 @@
     &__btn {
       position: absolute;
       z-index: 101;
+      left: 15%;
+      margin-top: -25%;
       pointer-events: none;// マウスイベントを無効にする
-      right: 230px;
-      margin-top: -100px;
     }
 
     a {
