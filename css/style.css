@@ -156,18 +156,6 @@ footer {
   grid-row: 4;
 }
 
-.l-contents--wrap__item.takeout {
-  background-image: url("../images/home_takeout.png");
-  background-size: 120%, cover;
-  background-position: center;
-}
-
-.l-contents--wrap__item.eat-in {
-  background-image: url("../images/home_eat-in.png");
-  background-size: 120%, cover;
-  background-position: center;
-}
-
 .l-contents--wrap {
   justify-content: center;
   display: grid;
@@ -184,14 +172,7 @@ footer {
 @media (min-width: 900px) {
   .l-contents--wrap {
     grid-template-columns: repeat(2, auto);
-    column-gap: calc(20px/2);
-  }
-}
-
-@media (min-width: 1120px) {
-  .l-contents--wrap {
-    grid-template-columns: repeat(2, auto);
-    column-gap: calc(20px*2);
+    column-gap: 1em calc(50% - 500px);
   }
 }
 
@@ -495,7 +476,7 @@ body.is-open {
 
 .archive .c-grid,
 .archive_search .c-grid {
-  grid-template-rows: repeat(6, auto);
+  grid-template-rows: auto auto 20px auto auto auto;
 }
 
 .single .c-grid,
@@ -612,7 +593,7 @@ input[type="checkbox"] {
 .c-card {
   color: #3C2A10;
   background-color: #ffffff;
-  opacity: 0.5;
+  opacity: 0.8;
   width: 359px;
   margin: 0 auto;
   white-space: normal;
@@ -995,7 +976,7 @@ input[type="text"] {
 .p-post {
   width: 100%;
   display: grid;
-  grid-template-rows: auto 35px auto auto 20px;
+  grid-template-rows: 50px 35px auto auto 20px;
 }
 
 .p-post h2 {
@@ -1044,11 +1025,29 @@ input[type="text"] {
   text-decoration: underline;
 }
 
+.p-contents.takeout {
+  background-image: url("../images/home_takeout.png");
+  background-size: 120%, cover;
+  background-position: center;
+}
+
+.p-contents.eat-in {
+  background-image: url("../images/home_eat-in.png");
+  background-size: 120%, cover;
+  background-position: center;
+}
+
 .p-contents {
-  width: 379px;
+  max-width: 379px;
 }
 
 @media (min-width: 641px) {
+  .p-contents {
+    width: calc((100vw - 20px * 3) / 2);
+  }
+}
+
+@media (min-width: 900px) {
   .p-contents {
     width: 292px;
   }
@@ -1082,6 +1081,7 @@ input[type="text"] {
 .archive .p-contents,
 .archive_search .p-contents {
   width: 379px;
+  max-width: unset;
 }
 
 @media (min-width: 641px) {
@@ -1112,6 +1112,11 @@ input[type="text"] {
   display: inline-block;
   line-height: 1.7;
   white-space: normal;
+}
+
+.p-contents:hover {
+  transform: scale(1.02);
+  transition: .3s;
 }
 
 .p-feature {
