@@ -3,12 +3,14 @@ jQuery(function($) {
   $(".js-menu-btn").on("click", function(){
     $(".l-sidebar").toggleClass("is-open");
     $(".has-menu").toggleClass("is-open");
+    $(".c-overlay").toggleClass("is-open");
     $("body").toggleClass("is-open");
   });
 
   $('.js-sidex-btn').on('click', function(){
     $(".l-sidebar").toggleClass("is-open");
     $(".has-menu").toggleClass("is-open");
+    $(".c-overlay").toggleClass("is-open");
     $("body").toggleClass("is-open");
   });
 });

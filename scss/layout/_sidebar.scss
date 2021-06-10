@@ -12,7 +12,6 @@
   z-index: 200;// とりあえず一番上
 
   background: $sidebar-color;
-  padding-bottom: 100vh;
 
   display: grid;
   grid-template-columns: 40px auto 60px;
@@ -29,9 +28,9 @@
   &__nav {
     grid-column: 2;
     padding-top: 90px;
+    padding-bottom: 100vh;
   }
 }
-
 
 
 // ------------------------------
@@ -65,15 +64,6 @@
 // ボディは固定する
 body.is-open {
   position: fixed;
-
-  .overlay {
-    width: 100vw;
-    height: 100vh;
-    // background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 10%, $sidebar-color 10%, $sidebar-color 100%);
-    // filter: brightness(50%);
-    z-index: -1;
-    background: rgba(0,0,0,.8);
-  }
 }
 
 
