@@ -3,23 +3,29 @@
 // ------------------------------
 .l-sidebar {
   width: 100vw;
-  right: 100%;// 右に隠す
+  left: 100%;// 左に隠す
   overflow-y: scroll;// 縦スクロール
 
   position: absolute;// これがないと固定されちゃう
   top: 0;// 一番上にもってくる
   bottom: 0;// これないとスクロールできない
-  z-index: 200;
+  z-index: 200;// とりあえず一番上
 
   background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 10%, $sidebar-color 10%, $sidebar-color 100%);
-  padding-top: 150px;
   padding-left: 15%;
   padding-bottom: 100vh;
 
   &__xbtn {
-    position: absolute;
-    top: 5%;
-    right: 10%;
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    right: -83%;
+    border: 10px solid transparent;
+    background-clip: padding-box;
+  }
+
+  &__nav {
+    padding-top: 90px;
   }
 }
 
@@ -30,7 +36,22 @@
 // ------------------------------
 // サイドバーを開く
 .is-open .l-sidebar {
-  right: 0;
+  left: 0;
+  transform: translateX(0);
+  transition: all .50s ease-out;
+
+  &__nav li {
+    transform: translateY(10px);// 縦に下がる
+    transition: all .7s .2s ease-in-out;
+
+    a {
+      transition: all .5s ease-in-out;// ふわっとホバー
+
+      &:hover {
+        opacity: 0.5;// ホバーしたら半透明に
+      }
+    }
+  }
 }
 
 // ボディは固定する
@@ -53,7 +74,7 @@ body.is-open {
     grid-column: 4;
     grid-row: 1 / -1;
 
-    right: 0;
+    left: 0;
     width: $sidebar-width-pc;
     overflow-y: visible;// 縦スクロール無し
     z-index: unset;

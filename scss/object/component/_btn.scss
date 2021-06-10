@@ -54,21 +54,25 @@
 
 
 // -----------------------------------------
-// xボタン：サイドメニュー
+// xボタン：疑似要素
 // -----------------------------------------
 .c-btn--sidex {
-  // ｘ装飾
-  &__line {
-    position: relative;
+  position: relative;
 
+  // ｘ疑似要素
+  &__line {
     &::before {
       @include giji-sidex;
       transform: rotate(45deg);
+      position: absolute;
+      left: 0;
     }
 
     &::after {
       @include giji-sidex;
       transform: rotate(-45deg);
+      position: absolute;
+      left: 0;
     }
   }
 }
