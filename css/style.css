@@ -69,9 +69,10 @@ footer {
   grid-row: 2;
 }
 
-.l-header a {
+.l-header span {
   grid-column: 2 / 4;
-  grid-row: 4;
+  grid-row: 3;
+  height: auto;
   text-align: center;
 }
 
@@ -407,26 +408,47 @@ footer {
 
 .l-sidebar {
   width: 100vw;
-  right: 100%;
+  left: 100%;
   overflow-y: scroll;
   position: absolute;
   top: 0;
   bottom: 0;
   z-index: 200;
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 10%, #F2EDE9 10%, #F2EDE9 100%);
-  padding-top: 150px;
   padding-left: 15%;
   padding-bottom: 100vh;
 }
 
 .l-sidebar__xbtn {
-  position: absolute;
-  top: 5%;
-  right: 10%;
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  right: -83%;
+  border: 10px solid transparent;
+  background-clip: padding-box;
+}
+
+.l-sidebar__nav {
+  padding-top: 90px;
 }
 
 .is-open .l-sidebar {
-  right: 0;
+  left: 0;
+  transform: translateX(0);
+  transition: all .50s ease-out;
+}
+
+.is-open .l-sidebar__nav li {
+  transform: translateY(10px);
+  transition: all .7s .2s ease-in-out;
+}
+
+.is-open .l-sidebar__nav li a {
+  transition: all .5s ease-in-out;
+}
+
+.is-open .l-sidebar__nav li a:hover {
+  opacity: 0.5;
 }
 
 body.is-open {
@@ -444,7 +466,7 @@ body.is-open {
   .l-sidebar {
     grid-column: 4;
     grid-row: 1 / -1;
-    right: 0;
+    left: 0;
     width: 367px;
     overflow-y: visible;
     z-index: unset;
@@ -484,12 +506,15 @@ body.is-open {
   grid-template-rows: auto auto 20px auto 125px auto;
 }
 
+.c-gmenu__has {
+  margin-top: 50px;
+}
+
 .c-gmenu__has a {
   font-family: mplus-1m-bold, sans-serif;
   color: #707070;
   text-decoration: none;
   font-size: 24px;
-  line-height: 4;
 }
 
 .c-gmenu__sub a {
@@ -544,7 +569,7 @@ body.is-open {
   border-radius: 10px;
 }
 
-.c-btn--sidex__line {
+.c-btn--sidex {
   position: relative;
 }
 
@@ -557,6 +582,8 @@ body.is-open {
   background: #707070;
   transition: transform 0.2s;
   transform: rotate(45deg);
+  position: absolute;
+  left: 0;
 }
 
 .c-btn--sidex__line::after {
@@ -568,6 +595,8 @@ body.is-open {
   background: #707070;
   transition: transform 0.2s;
   transform: rotate(-45deg);
+  position: absolute;
+  left: 0;
 }
 
 input[type="checkbox"] {
