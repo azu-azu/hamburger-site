@@ -416,7 +416,6 @@ footer {
   bottom: 0;
   z-index: 200;
   background: #F2EDE9;
-  padding-bottom: 100vh;
   display: grid;
   grid-template-columns: 40px auto 60px;
 }
@@ -433,6 +432,7 @@ footer {
 .l-sidebar__nav {
   grid-column: 2;
   padding-top: 90px;
+  padding-bottom: 100vh;
 }
 
 .is-open .l-sidebar {
@@ -462,13 +462,6 @@ footer {
 
 body.is-open {
   position: fixed;
-}
-
-body.is-open .overlay {
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: rgba(0, 0, 0, 0.8);
 }
 
 @media (min-width: 641px) {
@@ -535,6 +528,16 @@ body.is-open .overlay {
   padding-left: 20px;
   font-size: 20px;
   line-height: 3;
+}
+
+.is-open .c-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  z-index: 199;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .c-btn--base {
