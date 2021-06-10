@@ -18,7 +18,7 @@
     margin-right: 40px;
 
     @include breakpoint( pc ) {
-      margin-right: 20px;
+      margin-right: 5px;
     }
 
     @include breakpoint( pc-wide ) {
@@ -30,7 +30,7 @@
     margin-left: 40px;
 
     @include breakpoint( pc ) {
-      margin-left: 20px;
+      margin-left: 5px;
     }
 
     @include breakpoint( pc-wide ) {

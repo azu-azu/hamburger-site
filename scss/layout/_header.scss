@@ -49,11 +49,12 @@
 }
 
 
-
+// -------------------------
 // PC版
+// -------------------------
 .l-header {
   @include breakpoint( pc ) {
-    grid-template-columns: 50px auto auto 20px;
+    grid-template-columns: auto auto;
     grid-template-rows: repeat(3, 1fr);
 
     // メニューボタン
@@ -65,15 +66,15 @@
       pointer-events: none;// マウスイベントを無効にする
     }
 
-    a {
-      grid-column: 2;
+    span {
+      grid-column: 1;
       grid-row: 2;
       text-align: center;
       }
     
     // 検索フォーム
     &__form {  
-      grid-column: 3;
+      grid-column: 2;
       grid-row: 2;
       align-self: center;
     }

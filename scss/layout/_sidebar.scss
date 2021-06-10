@@ -2,7 +2,7 @@
 // サイドバーの中身
 // ------------------------------
 .l-sidebar {
-  width: 100vw;
+  width: calc(100vw - 10%);
   left: 100%;// 左に隠す
   overflow-y: scroll;// 縦スクロール
 
@@ -11,20 +11,23 @@
   bottom: 0;// これないとスクロールできない
   z-index: 200;// とりあえず一番上
 
-  background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 10%, $sidebar-color 10%, $sidebar-color 100%);
-  padding-left: 15%;
+  background: $sidebar-color;
   padding-bottom: 100vh;
 
+  display: grid;
+  grid-template-columns: 40px auto 60px;
+
   &__xbtn {
+    grid-column: 3;
     width: 50px;
     height: 50px;
     margin-top: 10px;
-    right: -83%;
     border: 10px solid transparent;
     background-clip: padding-box;
   }
 
   &__nav {
+    grid-column: 2;
     padding-top: 90px;
   }
 }
@@ -36,7 +39,12 @@
 // ------------------------------
 // サイドバーを開く
 .is-open .l-sidebar {
-  left: 0;
+  left: 10%;
+
+  @include breakpoint( tablet ){
+    left : calc(100% - #{$sidebar-width-pc});
+  }
+
   transform: translateX(0);
   transition: all .50s ease-out;
 
@@ -57,6 +65,15 @@
 // ボディは固定する
 body.is-open {
   position: fixed;
+
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    // background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 10%, $sidebar-color 10%, $sidebar-color 100%);
+    // filter: brightness(50%);
+    z-index: -1;
+    background: rgba(0,0,0,.8);
+  }
 }
 
 
@@ -66,8 +83,7 @@ body.is-open {
 // ------------------------------
 .l-sidebar {
   @include breakpoint( tablet ){
-    background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 40%, $sidebar-color 40%, $sidebar-color 100%);
-    padding-left: 45%;
+    width: $sidebar-width-pc;
   }
 
   @include breakpoint( pc ){
@@ -81,12 +97,14 @@ body.is-open {
     background: $sidebar-color;
     padding-left: 20px;
 
-    // 下まで伸ばすために余白をとって、親要素でoverflow:hiddenをする
-    padding-bottom: 32768px;
-    margin-bottom: -32768px;
-
     &__xbtn {
       display: none;
     }
   }
 }
+
+
+
+
+// background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 10%, $sidebar-color 10%, $sidebar-color 100%);
+// background: linear-gradient(90deg, rgba($sidebox-bgcolor, 0.3) 0%, rgba($sidebox-bgcolor, 0.5) 40%, $sidebar-color 40%, $sidebar-color 100%);
