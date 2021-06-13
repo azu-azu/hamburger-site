@@ -98,7 +98,6 @@ footer {
   .l-header span {
     grid-column: 1;
     grid-row: 2;
-    text-align: center;
   }
   .l-header__form {
     grid-column: 2;
@@ -432,7 +431,6 @@ footer {
 .l-sidebar__nav {
   grid-column: 2;
   padding-top: 90px;
-  padding-bottom: 100vh;
 }
 
 .is-open .l-sidebar {
@@ -799,10 +797,6 @@ input[type="checkbox"] {
 .c-pagination__numbers a.active {
   color: #FFF;
   background: #3c2b1c;
-}
-
-.c-setting {
-  margin-top: 50px;
 }
 
 .c-font--card-ttl {
@@ -1307,6 +1301,10 @@ input[type="text"] {
     grid-template-columns: repeat(3, auto);
     column-gap: var(--side);
   }
+}
+
+.p-setting {
+  margin-top: 50px;
 }
 
 .u-display--center {
