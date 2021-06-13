@@ -1,53 +1,10 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-  <head>
-    <meta charset="UTF-8">
-
-    <!-- レスポンシブ対応：デバイスの幅を使うことを指定 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Hamburger</title>
-    <meta name="description" content="説明文を記述">
-    <meta name="keywords" content="検索ワードを記述（５つまで）">
-
-    <!-- グーグルフォント -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-
-    <!-- フォントオーサム -->
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
-    <!-- ファビコン -->
-    <link rel="icon" type="image/svg" href="images/favicon.png">
-
-    <!-- リセットCSS -->
-    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-
-    <!-- 自作CSS -->
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <!-- ◇----------------------------------------------------------------------------------------------◇ -->
-
-  <body class="archive">
-    <div class="c-grid">
-      <header class="l-header">
-        <button class="l-header__btn c-btn--menu js-menu-btn">Menu</button>
-        <span><a href="index.html" class="p-page-ttl">Hamburger</a></span>
-
-        <div class="l-header__form u-display--center">
-          <form class="c-searchform" action="#" method="get">
-            <i class="c-searchform__icon fas fa-search"></i>
-            <input type="text" placeholder="" id="s" name="s" size="20">
-          </form>
-          <button class="c-btn--search">検索</button>
-        </div>
-      </header>
+<?php get_header(); ?>
 
       <!-- メインビジュアル -->
-      <article class="l-mainvisual p-mainvisual">
-          <img src="images/archive_mainvisual.jpg" alt="">
+      <figure class="l-mainvisual p-mainvisual">
+          <img src="<?php echo get_template_directory_uri();?>/images/archive_mainvisual.jpg" alt="">
           <h1>Ｍenu:<br><span>チーズバーガー</span></h1>
-      </article>
+      </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
         <article class="p-post">
@@ -63,10 +20,10 @@
               <a href="#" class="l-contents--wrap__item">
 
                 <!-- 画像：画面幅によって取り込みサイズを変える -->
-                <section class="l-contents--wrap__item--bg">
-                  <img src="images/card.png" srcset="images/card.png 379w,
-                          images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
-                </section>
+                <figure class="l-contents--wrap__item--bg">
+                  <img src="<?php echo get_template_directory_uri();?>/images/card.png" srcset="<?php echo get_template_directory_uri();?>/images/card.png 379w,
+                  <?php echo get_template_directory_uri();?>/images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
+                </figure>
 
                 <div class="l-contents--wrap__item--cat">
                   <h2>チーズバーガー</h2>
@@ -90,8 +47,8 @@
 
                 <!-- 画像：画面幅によって取り込みサイズを変える -->
                 <section class="l-contents--wrap__item--bg">
-                  <img src="images/card.png" srcset="images/card.png 379w,
-                          images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
+                  <img src="<?php echo get_template_directory_uri();?>/images/card.png" srcset="<?php echo get_template_directory_uri();?>/images/card.png 379w,
+                  <?php echo get_template_directory_uri();?>/images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
                 </section>
 
                 <div class="l-contents--wrap__item--cat">
@@ -116,8 +73,8 @@
 
                 <!-- 画像：画面幅によって取り込みサイズを変える -->
                 <section class="l-contents--wrap__item--bg">
-                  <img src="images/card.png" srcset="images/card.png 379w,
-                          images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
+                  <img src="<?php echo get_template_directory_uri();?>/images/card.png" srcset="<?php echo get_template_directory_uri();?>/images/card.png 379w,
+                  <?php echo get_template_directory_uri();?>/images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
                 </section>
 
                 <div class="l-contents--wrap__item--cat">
@@ -167,71 +124,13 @@
 
       </main>
 
-      <footer class="l-footer p-footer">
-        <div class="l-footer__wrapper u-display--col">
-          <ul class="u-display--center">
-            <li>ショップ情報</li>
-            <li>ヒストリー</li>
-          </ul>
-          <small>Copyright: RaiseTech</small>
-        </div>
-      </footer>
-
+      <?php get_footer(); ?>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <!-- サイドメニューが表示されたときの背景画面 -->
       <div class="c-overlay"></div>
 
-      <!-- サイドメニュー -->
-      <aside class="l-sidebar">
-        <!-- 閉じるボタン -->
-        <button class="l-sidebar__xbtn c-btn--sidex js-sidex-btn">
-          <span class="c-btn--sidex__line"></span>
-        </button>
-
-        <!-- ナビゲーション -->
-        <div class="l-sidebar__nav">
-          <nav class="c-gmenu">
-            <!-- メニュー -->
-            <ul class="c-gmenu__ul u-wrap--align">
-
-              <li class="c-gmenu__has">
-                <a class="" href="#">バーガー</a>
-                <ul class="c-gmenu__sub">
-                  <li><a href="#">ハンバーガー</a></li>
-                  <li><a href="#">チーズバーガー</a></li>
-                  <li><a href="#">テリヤキバーガー</a></li>
-                  <li><a href="#">アボカドバーガー</a></li>
-                  <li><a href="#">フィッシュバーガー</a></li>
-                  <li><a href="#">ベーコンバーガー</a></li>
-                  <li><a href="#">チキンバーガー</a></li>
-                </ul>
-              </li>
-
-              <li class="c-gmenu__has">
-                <a class="" href="#">サイド</a>
-                <ul class="c-gmenu__sub">
-                  <li><a href="#">ポテト</a></li>
-                  <li><a href="#">サラダ</a></li>
-                  <li><a href="#">ナゲット</a></li>
-                  <li><a href="#">コーン</a></li>
-                </ul>
-              </li>
-
-              <li class="c-gmenu__has">
-                <a class="" href="#">ドリンク</a>
-                <ul class="c-gmenu__sub">
-                  <li><a href="#">コーラ</a></li>
-                  <li><a href="#">ファンタ</a></li>
-                  <li><a href="#">オレンジ</a></li>
-                  <li><a href="#">アップル</a></li>
-                  <li><a href="#">紅茶（Ice/Hot）</a></li>
-                  <li><a href="#">コーヒー（Ice/Hot）</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </aside>
+      <?php get_sidebar(); ?>
+      
     </div>
 
     <script src="js/jquery-3.6.0.min.js"></script>
