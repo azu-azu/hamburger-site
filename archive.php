@@ -1,38 +1,48 @@
-<?php get_header(); ?>
+<?php get_header();?>
+      <?php
+      $cat_id = get_query_var('cat'); //カテゴリーIDをcat_idへ
+      $cat = get_category($cat_id); //カテゴリーIDをcatへ
+      $category_name = $cat->cat_name;//category_nameを上書き
+      ?>
 
       <!-- メインビジュアル -->
       <figure class="l-mainvisual p-mainvisual">
-          <img src="<?php echo get_template_directory_uri();?>/images/archive_mainvisual.jpg" alt="">
-          <h1>Ｍenu:<br><span>チーズバーガー</span></h1>
+          <img src="<?php echo get_template_directory_uri(); ?>/images/archive_mainvisual.jpg" alt="">
+          <h1>Ｍenu:<br><span><?php echo $category_name; ?></span></h1>
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
         <article class="p-post">
-          <h2><?php wp_title(''); ?></h2>
+
+          <h2><?php wp_title('');?></h2>
           <p>
             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
           </p>
         </article>
 
         <article class="l-contents">
+          <?php if (have_posts()): ?>
+          <?php while (have_posts()): the_post(); ?>
+
           <ul class="l-contents--wrap">
             <li class="p-contents cheeze-burger">
               <a href="#" class="l-contents--wrap__item">
 
-                <!-- 画像：画面幅によって取り込みサイズを変える -->
+                <!-- カードのキャッチ画像 -->
                 <figure class="l-contents--wrap__item--bg">
-                  <img src="<?php echo get_template_directory_uri();?>/images/card.png" srcset="<?php echo get_template_directory_uri();?>/images/card.png 379w,
-                  <?php echo get_template_directory_uri();?>/images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
+                  <!-- 画像：画面幅によって取り込みサイズを変える -->
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/card.png" srcset="<?php echo get_template_directory_uri(); ?>/images/card.png 379w,
+                  <?php echo get_template_directory_uri(); ?>/images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
                 </figure>
 
                 <div class="l-contents--wrap__item--cat">
-                  <h2>チーズバーガー</h2>
+                  <h2><?php the_title(); ?></h2>
                   <ul class="">
                     <li class="">
                       <dl>
-                        <dt class="c-font--card-ttl">小見出しが入ります</dt>
+                        <dt class="c-font--card-ttl"><?php get_index(); ?></dt><!-- functionで定義した関数 -->
                         <dd class="c-font--card-txt">
-                          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                          <?php the_excerpt(); ?><!-- 抜粋の取得 -->
                         </dd>
                       </dl>
                     </li>
@@ -41,61 +51,9 @@
                 </div>
               </a>
             </li>
-
-            <li class="p-contents Wcheeze-burger">
-              <a href="#" class="l-contents--wrap__item">
-
-                <!-- 画像：画面幅によって取り込みサイズを変える -->
-                <section class="l-contents--wrap__item--bg">
-                  <img src="<?php echo get_template_directory_uri();?>/images/card.png" srcset="<?php echo get_template_directory_uri();?>/images/card.png 379w,
-                  <?php echo get_template_directory_uri();?>/images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
-                </section>
-
-                <div class="l-contents--wrap__item--cat">
-                  <h2>ダブルチーズバーガー</h2>
-                  <ul class="l-contents--wrap__item--card">
-                    <li class="">
-                      <dl>
-                        <dt class="c-font--card-ttl">小見出しが入ります</dt>
-                        <dd class="c-font--card-txt">
-                          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                        </dd>
-                      </dl>
-                    </li>
-                  </ul>
-                  <button class="c-btn--miru-btn">詳しく見る</button>
-                </div>
-              </a>
-            </li>
-
-            <li class="p-contents special-cheez-burger">
-              <a href="#" class="l-contents--wrap__item">
-
-                <!-- 画像：画面幅によって取り込みサイズを変える -->
-                <section class="l-contents--wrap__item--bg">
-                  <img src="<?php echo get_template_directory_uri();?>/images/card.png" srcset="<?php echo get_template_directory_uri();?>/images/card.png 379w,
-                  <?php echo get_template_directory_uri();?>/images/card_pc.png 677w" sizes="(max-width:640px) 379px, 100vw" alt="">
-                </section>
-
-                <div class="l-contents--wrap__item--cat">
-                  <h2>スペシャルチーズバーガー</h2>
-                  <ul class="l-contents--wrap__item--card">
-                    <li class="">
-                      <dl>
-                        <dt class="c-font--card-ttl">小見出しが入ります</dt>
-                        <dd class="c-font--card-txt">
-                          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                        </dd>
-                      </dl>
-                    </li>
-                  </ul>
-                  <button class="c-btn--miru-btn">詳しく見る</button>
-                </div>
-              </a>
-            </li>
-          </ul>
+        <?php endwhile; ?>
+        <?php endif; ?>
         </article>
-
 
         <article class="c-pagination u-display--center">
           <span class="c-pagination__page">page 1/10</span>
@@ -124,13 +82,13 @@
 
       </main>
 
-      <?php get_footer(); ?>
+      <?php get_footer();?>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <!-- サイドメニューが表示されたときの背景画面 -->
       <div class="c-overlay"></div>
 
-      <?php get_sidebar(); ?>
-      
+      <?php get_sidebar();?>
+
     </div>
 
     <script src="js/jquery-3.6.0.min.js"></script>
