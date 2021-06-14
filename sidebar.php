@@ -8,7 +8,6 @@
 
         <!-- ナビゲーション -->
         <nav class="l-sidebar__nav c-gmenu">
-
           <?php
             wp_nav_menu (array (
             'menu_class' => 'c-gmenu__sub',
@@ -16,7 +15,6 @@
             'theme_location' => 'category_nav',
           ));
           ?>
-
         </nav>
       </aside>
 

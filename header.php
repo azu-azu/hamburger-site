@@ -13,7 +13,7 @@
     <?php wp_head();?>
   </head>
   <!-- ◇----------------------------------------------------------------------------------------------◇ -->
-  <body class="home" <?php body_class();?>>
+  <body <?php body_class();?>><!-- ページごとにbody_classを取得 -->
     <?php wp_body_open();?>
 
     <div class="c-grid">

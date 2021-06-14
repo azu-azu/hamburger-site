@@ -2,19 +2,22 @@
 
       <!-- メインビジュアル -->
       <figure class="l-mainvisual p-mainvisual">
-        <img src="images/single_mainvisual_sp.jpg"
-              srcset="images/single_mainvisual_sp.jpg 375w,
-                    images/single_mainvisual_tb.png 834w,
-                    images/single_mainvisual_pc.png 1553w"
+        <img src="<?php echo get_template_directory_uri(); ?>/images/single_mainvisual_sp.jpg"
+              srcset="<?php echo get_template_directory_uri(); ?>/images/single_mainvisual_sp.jpg 375w,
+              <?php echo get_template_directory_uri(); ?>/images/single_mainvisual_tb.png 834w,
+              <?php echo get_template_directory_uri(); ?>/images/single_mainvisual_pc.png 1553w"
               sizes="(max-width:641px) 375px, 100vw,
               (max-width:900px) 834px, 100vw" 
               alt="">
-        <h1>チーズバーガー</h1>
+        <h1><?php wp_title('');?></h1>
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
         <article class="p-post">
-          <h2>single.html</h2>
+        <?php if (have_posts()): ?>
+        <?php while (have_posts()): the_post(); ?>
+
+          <?php get_index(); ?>
           <p>
             テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
           </p>
@@ -51,14 +54,14 @@
           </section>
 
           <section class="p-feature--cont">
-            <figure class="p-feature--cont__figure01"><img src="images/single02.png" alt=""></figure>
+            <figure class="p-feature--cont__figure01"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></figure>
             <p class="p-feature--cont__txt01">
               テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
             </p>
           </section>
 
           <section class="p-feature--cont">
-            <figure class="p-feature--cont__figure02"><img src="images/single02.png" alt=""></figure>
+            <figure class="p-feature--cont__figure02"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></figure>
             <p class="p-feature--cont__txt02">
               テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
             </p>
@@ -66,21 +69,21 @@
 
           <section class="p-feature__last-img">
             <div class="p-feature__last-img--wrap">
-              <img class="" src="images/single02.png" alt="">
+              <img class="" src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt="">
             </div>
           </section>
         </article>
 
         <article class="p-gallery">
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
-          <section class="p-gallery__img"><img src="images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+          <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
         </article>
 
         <article class="p-setting">
@@ -143,6 +146,9 @@
           </section>
         </article>
       </main>
+
+      <?php endwhile; ?>
+      <?php endif; ?>
 
       <?php get_footer(); ?>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->

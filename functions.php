@@ -100,3 +100,21 @@ add_action('widgets_init', 'hamburgersite_widgets_init');
 //   add_editor_style(get_template_directory_uri()."/css/editor-style.css");
 // }
 // add_action('admin_init','hambergursite_theme_add_editor_styles');
+
+
+
+// <h>タグをすべて取得
+function get_index() {
+  global $post;
+  preg_match_all('/<h[1-6]>.+<\/h[1-6]>/u', $post->post_content, $matches);  //マッチングで<h>タグを取得する
+  $matches_count = count($matches[0]);//取得した<h>タグの個数をカウント
+
+  if(empty($matches)){  //<h>タグがなければ
+      echo '<span>no index</span>';
+
+    }else{ //あれば出力      
+      for ($i = 0; $i < $matches_count; $i++){
+          echo  $matches[0][$i];
+      }
+  }     
+}
