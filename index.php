@@ -3,28 +3,39 @@
   <!-- メインビジュアル -->
   <!-- 画像：画面幅によって取り込みサイズを変える -->
   <figure class="l-mainvisual p-mainvisual">
-    <img src="<?php echo get_template_directory_uri();?>/images/mainvisual-sp.jpg" srcset="<?php echo get_template_directory_uri();?>/images/mainvisual-sp.jpg 375w,
-              <?php echo get_template_directory_uri();?>/images/mainvisual-pc.jpg 1430w" sizes="(max-width:641px) 375px, 100vw" alt="">
-    <h1>ダミーサイト</h1>
+    <img src="<?php echo do_shortcode('[uri]'); ?>/images/mainvisual-sp.jpg" 
+          srcset="<?php echo do_shortcode('[uri]'); ?>/images/mainvisual-sp.jpg 375w,
+                  <?php echo do_shortcode('[uri]'); ?>/images/mainvisual-pc.jpg 1430w"
+          sizes="(max-width:641px) 375px, 100vw" alt="">
+    <h1 class="c-ttl">ダミーサイト</h1>
   </figure>
   <!-- ◇----------------------------------------------------------------------------------------------◇ -->
   <main class="l-main">
 
     <article class="l-contents">
       <ul class="l-contents--wrap">
+
+        <!-- 【注意】WP側でスラッグの変更は厳禁 -->
+        <?php 
+          $cat = get_category_by_slug('takeout');//スラッグから取得
+          $cat_link = get_category_link($cat);
+          $cat_name = $cat -> name;
+        ?>
+
         <li class="p-contents takeout">
-          <a href="" class="l-contents--wrap__item">
-            <h2 class="p-contents__ttl">Take Out</h2>
+          <a href="<?php echo $cat_link ?>" class="l-contents--wrap__item">
+
+            <h2 class="p-contents__ttl"><?php echo $cat_name ?></h2>
             <ul class="l-contents--wrap__item--card">
               <li class="c-card">
                 <dl>
-                  <dt class="c-font--card-ttl">Take Out</dt>
+                  <dt class="c-font--card-ttl"><?php echo $cat_name ?></dt>
                   <dd class="c-font--card-txt">当店のテイクアウトで利用できる商品を掲載しています</dd>
                 </dl>
               </li>
               <li class="c-card">
                 <dl>
-                  <dt class="c-font--card-ttl">Take Out</dt>
+                  <dt class="c-font--card-ttl"><?php echo $cat_name ?></dt>
                   <dd class="c-font--card-txt">当店のテイクアウトで利用できる商品を掲載しています</dd>
                 </dl>
               </li>
@@ -32,20 +43,25 @@
           </a>
         </li>
 
+
+        <?php 
+          $cat = get_category_by_slug('eat-in');
+          $cat_link = get_category_link($cat);
+          $cat_name = $cat -> name;
+        ?>
         <li class="p-contents eat-in">
-          <a href="#" class="l-contents--wrap__item">
-            <!-- /category/takeout/ -->
-            <h2 class="p-contents__ttl">Eat In</h2>
+          <a href="<?php echo $cat_link ?>" class="l-contents--wrap__item">
+            <h2 class="p-contents__ttl"><?php echo $cat_name ?></h2>
             <ul class="l-contents--wrap__item--card">
               <li class="c-card">
                 <dl>
-                  <dt class="c-font--card-ttl">Eat In</dt>
+                  <dt class="c-font--card-ttl"><?php echo $cat_name ?></dt>
                   <dd class="c-font--card-txt">当店の店内で利用できる商品を掲載しています</dd>
                 </dl>
               </li>
               <li class="c-card">
                 <dl>
-                  <dt class="c-font--card-ttl">Eat In</dt>
+                  <dt class="c-font--card-ttl"><?php echo $cat_name ?></dt>
                   <dd class="c-font--card-txt">当店の店内で利用できる商品を掲載しています</dd>
                 </dl>
               </li>

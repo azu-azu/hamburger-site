@@ -1,25 +1,88 @@
-// -----------------------------------------
-// リスト
-// -----------------------------------------
-.c-list {
+//---------------------
+// 投稿用のスタイリング
+//---------------------
+.single,
+.page {
 
-  padding-left: 50px;
-  margin-top: 20px;
-
-  &--ol {
-    ol {
-      padding-left: 20px;
-      padding-top: 10px;
-    }
+  li {
+    line-height: 1.7;
+  }
+  
+  ol {
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+  
+  // 入れ子リストの左余白
+  ul li ul {
+    margin-left: 20px;
   }
 
-  &--ul {
-    ul {
-    padding-top: 10px;
-    }
-
-    &__innner-ul {
-      padding-left: 20px;
-    }
-  }
 }
+
+
+
+
+
+
+// .c-list {
+
+//   padding-left: 50px;
+//   margin-top: 20px;
+
+//   &--ol {
+//     ol {
+//       padding-left: 20px;
+//       padding-top: 10px;
+//     }
+//   }
+
+//   &--ul {
+//     ul {
+//     padding-top: 10px;
+//     }
+
+//     &__innner-ul {
+//       padding-left: 20px;
+//     }
+//   }
+// }
+
+
+
+
+
+// -----------------------------------------
+// 元コード
+// -----------------------------------------
+// <section class="c-list--ol">
+// <ol>
+//   <li>リストリストリスト</li>
+//   <li>リストリストリスト
+//     <ol>
+//       <li>リスト2リスト2リスト2</li>
+//       <li>リスト2リスト2リスト2</li>
+//     </ol>
+//   </li>
+// </ol>
+// <ol>
+//   <li>リストリストリスト</li>
+//   <li>リストリストリスト</li>
+// </ol>
+// </section>
+
+// <section class="c-list--ul">
+// <ul>
+//   <li>リストリストリスト</li>
+//   <li>リストリストリスト
+//     <ul class="c-list--ul__innner-ul">
+//       <li>リスト2リスト2リスト2</li>
+//       <li>リスト2リスト2リスト2</li>
+//     </ul>
+//   </li>
+// </ul>
+// <ul>
+//   <li>リストリストリスト</li>
+//   <li>リストリストリスト</li>
+// </ul>
+// </section>

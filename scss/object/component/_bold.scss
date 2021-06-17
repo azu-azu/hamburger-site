@@ -1,7 +1,14 @@
 // -----------------------------------------
 // ボールド
 // -----------------------------------------
-.c-bold {
+// .c-bold {
+.strong {
   margin-top: 50px;  
   @include font-mplus--bold;
 }
+
+
+
+// <section class="c-bold">
+// <p>boldboldboldboldboldboldbold</p>
+// </section>

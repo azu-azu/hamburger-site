@@ -14,28 +14,33 @@
     margin: 0 20px;
   }
 
-  &__pre {
-    margin-right: 40px;
+  &__pre,
+  &__next {
+    margin-right: 20px;
 
     @include breakpoint( pc ) {
       margin-right: 5px;
     }
 
     @include breakpoint( pc-wide ) {
-      margin-right: 40px;
+      margin-right: 20px;
     }
   }
 
   &__next {
-    margin-left: 40px;
+    margin-left: 20px;
 
     @include breakpoint( pc ) {
       margin-left: 5px;
     }
 
     @include breakpoint( pc-wide ) {
-      margin-left: 40px;
+      margin-left: 20px;
     }
+  }
+
+  &--non {
+    margin-top: 100px;
   }
 }
 
@@ -56,7 +61,7 @@
   @include breakpoint( tablet ) {
     &__pre span,
     &__next span {
-        display: none;
+      display: none;
     }
   }
 }
@@ -85,9 +90,11 @@
 // --------------------------------- 
 .c-pagination {
   &__numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     li {
-      display: inline;
       margin: 0 2px;
       padding: 0;
       display: inline-block;
@@ -96,6 +103,7 @@
       width: 35px;
       height: 35px;
       text-align: center;
+      justify-items: center;
       position: relative;
 
       @include breakpoint( pc-wide ) {
@@ -121,6 +129,19 @@
         }
       }
     }
+
+    li.-current {
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display:block;
+        top: 20%;
+        @include breakpoint( pc-wide ) {
+          top: 28%;
+        }
+      }
+    }
   }
 }
 
@@ -135,7 +156,6 @@
     &__numbers li {
         display: none;
       }
-    }
 
     &__pre,
     &__next {
@@ -154,7 +174,25 @@
       width: 100%;
       text-align: center;
     }
+
+    &__pre i,
+    &__next i {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    &__next {
+      margin-left: 200px;
+    }
+
+    &__pre {
+      margin-right: 200px;
+    }
   }
+}
+
+
+
 
 
 
@@ -164,9 +202,16 @@
 .c-pagination {
   &__numbers {
     a:hover,
-    a.active {
+    li.-current {
       color: #FFF;
       background: $card-color;
     }
+  }
+
+  &__pre span:hover,
+  &__pre i:hover,
+  &__next span:hover,
+  &__next i:hover {
+    opacity: 0.5;
   }
 }

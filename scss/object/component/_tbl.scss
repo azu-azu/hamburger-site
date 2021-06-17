@@ -1,22 +1,49 @@
 // -----------------------------------------
 // テーブル
 // -----------------------------------------
-.c-tbl {
-  margin-top: 50px;
+// .c-tbl {
+.wp-block-table {
   @include font-mplus--regular;
   font-size: 16px;
-  border-collapse: collapse;
-  border: none;
   width: 100%;// 100%にしないと右に余白ができる
+
+
+  table {
+    border: solid 1px;//tableタグにつけないとダメ
+    border-collapse: collapse;//これ入れないと二重線になる
+  }
 
   td {
     height: 77px;
     padding: 10px 20px;
-
+    border: solid 1px;
   }
 
-  &__tr--item {
-    width: 60%;// 右だけ設定すれば左は残り幅になる
+  // &__tr--item {
+  td:nth-of-type(2) {
+    width: 75%;// 右だけ設定すれば左は残り幅になる
   }
-
 }
+
+
+
+
+// -----------------------------------------
+// 元コード
+// -----------------------------------------
+// <table class="c-tbl" border="1">
+// <tr class="c-tbl__tr">
+//   <td class="c-tbl__tr--value noborder">テーブル</td>
+//   <td class="c-tbl__tr--item noborder">テーブル</td>
+// </tr>
+
+// <tr class="c-tbl__tr">
+//   <td class="c-tbl__tr--value noborder">テーブル</td>
+//   <td class="c-tbl__tr--item noborder">テーブル</td>
+// </tr>
+
+// <tr class="c-tbl__tr">
+//   <td class="c-tbl__tr--value noborder">テーブル</td>
+//   <td class="c-tbl__tr--item noborder">テーブル</td>
+// </tr>
+// </table>

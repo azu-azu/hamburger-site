@@ -10,23 +10,30 @@
       <!-- メインビジュアル -->
       <figure class="l-mainvisual p-mainvisual">
         <img src="<?php echo do_shortcode('[uri]'); ?>/images/archive_mainvisual.jpg" alt="">
-        <h1 class="c-ttl">Ｍenu:<br><span><?php echo $category_name; ?></span></h1>
+        <h1 class="c-ttl">Search:<br><span><?php wp_title('');?></span></h1>
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
         <article class="p-post">
 
-          <h2><?php wp_title('');?></h2>
-          <p>
-            テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-          </p>
+        <?php if (have_posts()): ?>
+
+          <?php
+          if (isset($_GET['s']) && empty($_GET['s'])){//NULLか空なら
+            echo '<h2>もういちど検索してください</h2>';
+            echo '<p>ごめんなさい、見つかりませんでした。<br><br>以下、全商品を掲載しておきます。</p>';
+          } else {
+            echo '<h2>' . $_GET['s'] . '：'. $wp_query -> found_posts . '件 見つかりました</h2>';
+            echo '<p>写真をクリックすると、詳しく見ることができます。</p>';
+          }
+          ?>
+
         </article>
 
         <article class="l-contents">
-          <?php if (have_posts()): ?>
+          <ul class="l-contents--wrap">
           <?php while (have_posts()): the_post(); ?>
 
-          <ul class="l-contents--wrap">
             <li class="p-contents">
               <!-- singleページにリンク -->
               <a href="<?php the_permalink(); ?>" class="l-contents--wrap__item">
@@ -57,8 +64,10 @@
               </a>
             </li>
         <?php endwhile; ?>
-        <?php endif; ?>
         </article>
+
+        <?php else: ?>ごめんなさい、お探しのワードでは見つかりませんでした。<br>もういちどやり直してください。
+        <?php endif; ?>
 
         <!-- ページネーション -->
         <?php

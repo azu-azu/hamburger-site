@@ -1,58 +1,33 @@
 .p-post {
-  width: 100%;
-  display: grid;
-  grid-template-rows: 50px 35px auto auto 20px;
+  --marginB: 20px;
 
+  .wp-block-quote,
+  .wp-block-table,
+  .wp-block-group,
+  .wp-block-columns,
+  .wp-block-media-text__media {
+    margin-bottom: var(--marginB);
+    width: calc(100vw - (var(--side) * 2));
+
+    @include breakpoint( pc ) {
+      --side: 40px;
+      width: calc(100vw - #{$sidebar-width-pc} - var(--side)*2);
+    }
+  }
+
+
+  p,
   h2 {
-    grid-row: 1;
-    align-self: end;
-    font-size: 28px;
+    margin-bottom: var(--marginB);
   }
 
-  p {
-    grid-row: 3;
-    font-size: 16px;
-    line-height: 1.5;
-  }
 
-  &__cont {
-    grid-row: 4;
-    margin-top: 20px;
-
-    &--ttl {
-      margin-top: 20px;
-    }
+  .wp-block-button {
+    margin-bottom: 50px;
   }
 }
 
 
-// --------------------------------
-// blockquote
-// --------------------------------
-.p-post {
-  &__blockquote {
-    margin-top: 20px;
-    padding: 35px;
 
-    position: relative;
-    box-sizing: border-box;
-    @include font-mplus--regular;
-    font-size: 16px;
-    background: $block-quote-bg;
-    color: $block-quote;
 
-    p {
-      line-height: 1.7;
-    }
 
-    &--cite {
-      padding-top: 40px;
-      display: block;
-      font-style: normal;// 斜体にしない
-
-      a {
-        text-decoration: underline;
-      }
-    }
-  }
-}

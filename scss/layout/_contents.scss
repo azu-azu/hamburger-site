@@ -61,7 +61,7 @@
 // 【２ページ目：アーカイブ】コンテンツカード
 // ---------------------------------------------
 .archive,
-.archive_search {
+.search {
   .l-contents {
     &--wrap {
       &__item {
@@ -111,7 +111,7 @@
 // 【アーカイブ:レスポンシブ】wrapのグリッド
 // ---------------------------------------------
 .archive,
-.archive_search {
+.search {
   .l-contents {
     justify-content: center;
 
@@ -122,6 +122,14 @@
         --side: $gap20;
         row-gap: $gap20;
         height: 100%;
+
+        
+        // 100%にしないと幅が足りない：p-contentsの幅も100%にする
+        @include breakpoint( pc-wide ) {
+          width: 100%;
+        }
+
+
 
         display: flex;
         flex-direction: column;// 子要素を縦に並べる
@@ -139,13 +147,6 @@
 
           &--bg {
             grid-row: 1;
-
-            img {
-              width: 100%;
-              height: 100%;
-              object-position: 10%;// 左側に固定
-              object-fit: cover;
-            }
           }
     
           &--cat {
@@ -168,11 +169,12 @@
 // 【アーカイブ】ＰＣ用
 // ---------------------------------------------
 .archive,
-.archive_search {
+.search {
   .l-contents {
     justify-content: center;
 
     &--wrap {
+
       &__item {
 
       @include breakpoint( pc ) {

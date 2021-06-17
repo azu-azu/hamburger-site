@@ -17,6 +17,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
 .p-contents {
   max-width: $img-width;
 
+  // 幅はビューポートに合わせて計算
   @include breakpoint( tablet ) {
     width: calc((100vw - #{$gap20} * 3) / 2);
   }
@@ -52,10 +53,10 @@ $bgSetList: takeout takeout, eat-in eat-in;
 
 
 // -----------------------------------------
-// 【２ページ目】アーカイブのコンテンツカード
+// 【アーカイブ】コンテンツカード
 // -----------------------------------------
 .archive,
-.archive_search {
+.search {
   .p-contents {
     width: $img-width;
     max-width: unset;
@@ -65,6 +66,12 @@ $bgSetList: takeout takeout, eat-in eat-in;
       width: unset;
       height: unset;
     }
+
+    // 100%にしないと幅が足りない：l-contents--wrapの幅も100%にする
+    @include breakpoint( pc-wide ) {
+      width: 100%;
+    }
+
 
     h2 {
       font-size: 22px;
@@ -78,11 +85,47 @@ $bgSetList: takeout takeout, eat-in eat-in;
       font-size: 18px;
     }
 
-    // ★要修正
     dd {
       display: inline-block;
       line-height: 1.7;
       white-space: normal;// 行を折り返す
+    }
+  }
+}
+
+
+// -----------------------------------------
+// 【アーカイブ】コンテンツカード:画像配置
+// -----------------------------------------
+.archive,
+.search {
+  .p-contents{
+
+    // デフォルト画像(imgタグ)
+    &__default-bg {
+      width: 100%;
+      height: 100%;
+      object-position: 10%;// 左側に固定
+      object-fit: cover;
+    }
+
+
+    // 投稿からの画像配置(divタグ)
+    &__post-bg {
+      width: 379px;
+      height: 264px;
+
+      @include breakpoint( tablet ) {
+        width: auto;
+        height: 471px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
     }
   }
 }

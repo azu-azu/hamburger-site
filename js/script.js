@@ -17,7 +17,7 @@ jQuery(function($) {
 
 
 // 全画面でハンバーガーメニューの設定をリセットする
-$(function(){
+jQuery(function($){
   $(window).resize(function(){
     //windowの幅をxに代入
     let x = $(window).width();

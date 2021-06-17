@@ -12,6 +12,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  overflow-x: hidden;// 突然、これがないと100vw超えてスクロールされるようになってしまった
 }
 
 
@@ -23,17 +24,17 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  @include font-mplus--bold;
-  height: 100%;
-  font-size: 36px;
-  color: $ttl-color;
-}
+// h1 {
+//   @include font-mplus--bold;
+//   height: 100%;
+//   font-size: 36px;
+//   color: $ttl-color;
+// }
 
-h1 > span {
-  @extend h1;
-  font-size: 16px;
-}
+// h1 > span {
+//   @extend h1;
+//   font-size: 16px;
+// }
 
 footer {
   @include font-mplus--regular;
