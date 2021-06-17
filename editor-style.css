@@ -1,1 +1,6 @@
-@import url('style.css');
+@import url('./css/style.css');
+
+p {
+  color: red;
+}
+

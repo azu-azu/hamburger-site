@@ -1,4 +1,5 @@
 // Menuボタンを押したら
+console.log("test");
 jQuery(function($) {
   $(".js-menu-btn").on("click", function(){
     $(".l-sidebar").toggleClass("is-open");
