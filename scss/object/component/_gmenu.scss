@@ -4,16 +4,15 @@
 
   &__has {
     margin-top: 50px;
-    a {
+
+    .menu-item-has-children a {
       @include font-mplus--bold;
       color: $font-color;
       text-decoration: none;
       font-size: 24px;
     }
-  }
 
-  &__sub {
-    a {
+    .sub-menu a {
       @include font-mplus--regular;
       color: $font-color;
       padding-left: 20px;
@@ -21,4 +20,20 @@
       line-height: 3;
     }
   }
+
+  .menu-item-has-children a:hover,
+  .sub-menu a:hover {
+    opacity: 0.5;
+    // color: $card-color;
+  }
 }
+
+
+// &__sub {
+// a {
+//   @include font-mplus--regular;
+//   color: $font-color;
+//   padding-left: 20px;
+//   font-size: 20px;
+//   line-height: 3;
+// }

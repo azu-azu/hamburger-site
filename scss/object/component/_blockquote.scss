@@ -1,0 +1,29 @@
+//---------------------
+// 投稿用のスタイリング
+//---------------------
+.wp-block-quote{
+  --side: 20px;
+
+  padding: 35px;
+
+  position: relative;
+  box-sizing: border-box;
+  @include font-mplus--regular;
+  font-size: 16px;
+  background: $block-quote-bg;
+  color: $block-quote;
+
+  > p {
+    line-height: 1.7;
+  }
+
+  > cite {
+    padding-top: 40px;
+    display: block;
+    font-style: normal;// 斜体にしない
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

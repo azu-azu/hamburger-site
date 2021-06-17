@@ -21,8 +21,6 @@
         <button class="l-header__btn c-btn--menu js-menu-btn">Menu</button>
         <span><a href="<?php echo esc_url(home_url('/')); ?>" class="p-page-ttl"><?php bloginfo('name');?></a></span>
 
-        <div class="l-header__form u-display--center">
-          <?php get_search_form();?>
-          <button class="c-btn--search">検索</button>
-        </div>
+        <!-- serachform.phpを呼び出す -->
+        <?php get_search_form();?>
       </header>

@@ -1,0 +1,93 @@
+//---------------------
+// 投稿用のスタイリング
+//---------------------
+// .p-gallery {
+.wp-block-gallery {
+  margin-bottom: 20px;
+}
+
+.blocks-gallery {
+  --side: 20px;
+
+  &-grid {
+
+    width: calc(100vw - (var(--side) * 2));
+    display: grid;
+    row-gap: var(--side);
+
+    figure { // ここをクラス名にすると、うまくいかない
+      height: 306px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+
+// -------------------------------
+// タブレット用：２列横並び
+// -------------------------------
+.blocks-gallery {
+  &-grid {
+    @include breakpoint( tablet ) {
+      width: calc((100vw - (var(--side) * 3)));
+      grid-template-columns: 50% 50%;
+      column-gap: var(--side);
+    }
+  }
+}
+
+// -------------------------------
+// PC用：３列横並び
+// -------------------------------
+.blocks-gallery {
+  &-grid {
+    @include breakpoint( pc ) {
+      --side: 40px;
+      --gap: 10px;
+
+      width: calc(100vw - #{$sidebar-width-pc} - var(--side)*2 - var(--gap)*2);
+
+      grid-template-columns: 33% 33% 33%;
+      column-gap: var(--gap);
+      row-gap: var(--gap);
+
+    figure {
+      height: 160px;
+
+      @include breakpoint( pc-wide ) {
+        height: 250px;
+        width: auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    }
+  }
+}
+
+
+
+
+
+
+
+// <article class="p-gallery">
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+//   <section class="p-gallery__img"><img src="<?php echo get_template_directory_uri(); ?>/images/single02.png" alt=""></section>
+// </article>

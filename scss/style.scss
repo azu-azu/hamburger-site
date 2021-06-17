@@ -39,10 +39,14 @@
 @import "./object/component/_tbl";
 @import "./object/component/_box";
 @import "./object/component/_bold";
+@import "./object/component/_ttl";
+@import "./object/component/_blockquote";
+@import "./object/component/_gallery";
+@import "./object/component/_img";
+@import "./object/component/_block-column";
 
 @import "./object/component/_icon";
 @import "./object/component/_time";
-@import "./object/component/_title";
 @import "./object/component/_yeararchive";
 
 // -----------------------------------------------------------------
@@ -50,12 +54,9 @@
 // -----------------------------------------------------------------
 @import "./object/project/_page-ttl";
 @import "./object/project/_mainvisual";
-@import "./object/project/_post";
 @import "./object/project/_contents";
-@import "./object/project/_feature";
 @import "./object/project/_footer";
-@import "./object/project/_gallery";
-@import "./object/project/_setting";
+@import "./object/project/_post";
 
 
 @import "./object/project/_archive";

@@ -1,0 +1,20 @@
+.c-ttl {
+  @include font-mplus--bold;
+  height: 100%;
+  // width: 100%;
+  font-size: 36px;
+  color: $ttl-color;
+
+  > span {
+    @extend h1;
+    font-size: 16px;
+  }
+}
+
+.single {
+  .c-ttl {
+    background-color: rgba($card-color, 0.5);
+    // padding: 20px;
+    box-shadow: 0 0 10px 20px rgba($card-color, .5);
+  }
+}
