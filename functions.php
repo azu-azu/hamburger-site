@@ -8,13 +8,6 @@ add_theme_support('post-thumbnails'); //アイキャッチ画像を扱う
 
 
 //--------------------------------------------
-//画像サイズ
-//--------------------------------------------
-add_image_size( 'auto', 'auto', 'auto', true );
-
-
-
-//--------------------------------------------
 //Gutenberg用CSSを削除する
 //--------------------------------------------
 add_action( 'wp_enqueue_scripts', 'remove_block_library_style' );
@@ -304,3 +297,9 @@ function hamburgersite_widgets_init() {
   );
 }
 add_action('widgets_init', 'hamburgersite_widgets_init');
+
+
+//--------------------------------------------
+//画像サイズ（使ってない）
+//--------------------------------------------
+add_image_size( 'auto', 'auto', 'auto', true );
