@@ -8,7 +8,7 @@
                       <?php echo do_shortcode('[uri]'); ?>/images/page_mainvisual_tb.png 834w,
                       <?php echo do_shortcode('[uri]'); ?>/images/page_mainvisual_pc.png 1553w"
               sizes="(max-width:641px) 375px, 100vw,
-              (max-width:900px) 834px, 100vw" 
+              (max-width:900px) 834px, 100vw"
               alt="">
 
         <h1 class="c-ttl"><?php wp_title('');?></h1>
@@ -36,8 +36,6 @@
       
     </div><!-- c-grid -->
 
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 
 </html>

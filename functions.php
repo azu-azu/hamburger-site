@@ -7,14 +7,25 @@ add_theme_support('title-tag');
 add_theme_support('post-thumbnails'); //アイキャッチ画像を扱う
 
 
+
 //--------------------------------------------
 //Gutenberg用CSSを削除する
 //--------------------------------------------
-add_action( 'wp_enqueue_scripts', 'remove_block_library_style' );
 function remove_block_library_style() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'wp-block-library-theme' );
 }
+add_action( 'wp_enqueue_scripts', 'remove_block_library_style' );
+
+
+
+
+
+//--------------------------------------------
+//jsを読み込む & jqueryの二重読み込みを防ぐ
+//--------------------------------------------
+wp_enqueue_script('jquery');
+wp_enqueue_script('accordion_script', get_template_directory_uri() . '/js/script.js', array(), '', true);
 
 
 
@@ -22,7 +33,6 @@ function remove_block_library_style() {
 //スタイルシートを読み込むタグを出力
 //--------------------------------------------
 function hamburgersite_script() {
-  wp_enqueue_script('jquery');//jqueryの二重読み込みを防ぐ
   wp_enqueue_style('font-awesome', '//use.fontawesome.com/releases/v5.6.1/css/all.css', array());
   wp_enqueue_style('google-font', '//fonts.gstatic.com',array());
 
@@ -31,7 +41,6 @@ function hamburgersite_script() {
   wp_enqueue_style('hamburgersite', get_template_directory_uri() . '/css/style.css', array(), '1.0.0');
   wp_enqueue_style('style', get_template_directory_uri() . '/style.css', array(), '1.0.0');
 }
-
 add_action('wp_enqueue_scripts', 'hamburgersite_script');
 
 
@@ -41,9 +50,13 @@ add_action('wp_enqueue_scripts', 'hamburgersite_script');
 //editor-style.cssを認識させる:
 // エディターでフロントの見た目にするため
 //--------------------------------------------
+
+function extend_tiny_mce_before_init($mce_init){ $mce_init['cache_suffix']='v='.time(); return $mce_init; } add_filter('tiny_mce_before_init','extend_tiny_mce_before_init');
+
+
 add_action( 'after_setup_theme', function(){
 	add_theme_support( 'editor-styles' );// ブロックエディタ用スタイル機能をテーマに追加
-	add_editor_style(get_template_directory_uri()."/css/editor-style.css");// ブロックエディタ用CSSの読み込み
+	add_editor_style( 'editor-style.css' );// ブロックエディタ用CSSの読み込み
 });
 
 
@@ -159,6 +172,7 @@ function wp_search_title ($search_ttl) {
   return $search_ttl;
 }
 add_filter ('wp_title', 'wp_search_title');
+
 
 
 //--------------------------------------------
