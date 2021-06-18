@@ -22,7 +22,7 @@
           $cat_name = $cat -> name;
         ?>
 
-        <li class="p-contents takeout">
+        <li <?php post_class('p-contents takeout'); ?>>
           <a href="<?php echo $cat_link ?>" class="l-contents--wrap__item">
 
             <h2 class="p-contents__ttl"><?php echo $cat_name ?></h2>
@@ -49,7 +49,7 @@
           $cat_link = get_category_link($cat);
           $cat_name = $cat -> name;
         ?>
-        <li class="p-contents eat-in">
+        <li <?php post_class('p-contents eat-in'); ?>>
           <a href="<?php echo $cat_link ?>" class="l-contents--wrap__item">
             <h2 class="p-contents__ttl"><?php echo $cat_name ?></h2>
             <ul class="l-contents--wrap__item--card">

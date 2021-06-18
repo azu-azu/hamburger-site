@@ -16,7 +16,7 @@
                 alt="">
         <?php endif; ?>
         
-        <h1 class="c-ttl"><?php wp_title('');?></h1>
+        <h1 class="c-ttl"><?php echo wp_get_document_title();?></h1>
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
@@ -25,6 +25,11 @@
           <?php while (have_posts()): the_post(); ?>
 
             <?php the_content(); ?>
+
+            <!-- ページリンクがないとエラーになるため記述 -->
+            <div class="p-post__pagelink">
+              <?php wp_link_pages( 'before=<p>&after=</p>&next_or_number=number&pagelink= %' ); ?>
+            </div>
 
           <?php endwhile; ?>
           <?php endif; ?>
