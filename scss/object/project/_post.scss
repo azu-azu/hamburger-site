@@ -1,5 +1,7 @@
 .p-post {
   --marginB: 20px;
+  @include font-mplus--regular;
+  line-height: 1.7;
 
   .wp-block-quote,
   .wp-block-table,
@@ -30,4 +32,32 @@
 
 
 
+// -----------------------------------------
+// ページリンク：WPでエラーが出るため記述しておく
+// -----------------------------------------
+.p-post {
+  
+  &__pagelink {
+  display: flex;
+  justify-content: center;
 
+    p{
+      font-size: 1.4rem;
+
+      span,a{
+        padding: 5px;
+        border: solid 2px #3B2A10;
+        margin: 0 3px;
+      }
+
+      span{
+        color: #fff7ef;
+        background-color: #3B2A10;
+      }
+      
+      a{
+        color: #3B2A10;
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@
       <!-- メインビジュアル -->
       <figure class="l-mainvisual p-mainvisual">
         <img src="<?php echo do_shortcode('[uri]'); ?>/images/archive_mainvisual.jpg" alt="">
-        <h1 class="c-ttl">Search:<br><span><?php wp_title('');?></span></h1>
+        <h1 class="c-ttl">Search:<br><span><?php echo wp_get_document_title();?></span></h1>
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">

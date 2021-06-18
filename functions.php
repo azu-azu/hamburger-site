@@ -5,7 +5,20 @@
 // add_theme_support('menus');
 add_theme_support('title-tag');
 add_theme_support('post-thumbnails'); //アイキャッチ画像を扱う
+add_theme_support('automatic-feed-links');//フィードの利用を許可する
+add_theme_support( 'custom-background' );//カスタム背景機能をサポートする
+add_theme_support( 'wp-block-styles' );//ブロックエディターのスタイルを適用
+add_theme_support( 'responsive-embeds' );//挿入した動画などがレスポンシブ対応（画面幅に応じてサイズが拡大・縮小）になる
+add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );//コメントフォーム、検索フォーム、コメントリスト、ギャラリーでHTML5マークアップの使用を許可
+add_theme_support( 'custom-header' );//カスタムヘッダー
 
+//--------------------------------------------
+//カスタムロゴ：推奨されているので念のため
+//--------------------------------------------
+function mytheme_setup() {
+  add_theme_support('custom-logo');
+}
+add_action('after_setup_theme', 'mytheme_setup');
 
 
 //--------------------------------------------
@@ -34,7 +47,8 @@ wp_enqueue_script('accordion_script', get_template_directory_uri() . '/js/script
 //--------------------------------------------
 function hamburgersite_script() {
   wp_enqueue_style('font-awesome', '//use.fontawesome.com/releases/v5.6.1/css/all.css', array());
-  wp_enqueue_style('google-font', '//fonts.gstatic.com',array());
+  // wp_enqueue_style( 'M PLUS 1p', '//fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap', array() );
+  // wp_enqueue_style( 'Roboto', '//fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap', array() );
 
   //WordPressがテーマディレクトリまでのURI情報を取得してくれる（echo して出力できる）
   wp_enqueue_style('ress', get_template_directory_uri() . '/css/ress.css', array(), '1.0.0');
@@ -51,32 +65,40 @@ add_action('wp_enqueue_scripts', 'hamburgersite_script');
 // エディターでフロントの見た目にするため
 //--------------------------------------------
 
-function extend_tiny_mce_before_init($mce_init){ $mce_init['cache_suffix']='v='.time(); return $mce_init; } add_filter('tiny_mce_before_init','extend_tiny_mce_before_init');
+// function extend_tiny_mce_before_init($mce_init){ $mce_init['cache_suffix']='v='.time(); return $mce_init; } add_filter('tiny_mce_before_init','extend_tiny_mce_before_init');
 
-
-add_action( 'after_setup_theme', function(){
-	add_theme_support( 'editor-styles' );// ブロックエディタ用スタイル機能をテーマに追加
-	add_editor_style( 'editor-style.css' );// ブロックエディタ用CSSの読み込み
-});
-
-
-// if ( ! function_exists( 'hambergursite_setup' ) ) :
-//   function hambergursite_setup() {
-
-//       add_theme_support( 'editor-styles' );
-//       add_editor_style(get_template_directory_uri()."/css/editor-style.css");
-
-//   }
-// endif;
-// add_action( 'after_setup_theme', 'hambergursite_setup' );
+function hambergursite_theme_add_editor_styles() {
+	add_theme_support( 'editor-styles' );	// ブロックエディタ用スタイル機能をテーマに追加
+	add_editor_style("editor-style.css");	// ブロックエディタ用CSSの読み込み
+}
+add_action('admin_init','hambergursite_theme_add_editor_styles');
 
 
 
-// function hambergursite_theme_add_editor_styles() {
-// 	add_theme_support( 'editor-styles' );	// ブロックエディタ用スタイル機能をテーマに追加
-// 	add_editor_style(get_template_directory_uri()."/css/editor-style.css");	// ブロックエディタ用CSSの読み込み
-// }
-// add_action('admin_init','hambergursite_theme_add_editor_styles');
+// add_action( 'after_setup_theme', function(){
+// 	add_theme_support( 'editor-styles' );// ブロックエディタ用スタイル機能をテーマに追加
+// 	add_editor_style( 'editor-style.css' );// ブロックエディタ用CSSの読み込み
+// });
+
+
+
+
+//--------------------------------------------
+// コンテンツエリアのサイズ指定:これないとWPでエラーが出る
+//--------------------------------------------
+if(!isset($content_width)){
+  $content_width=960;
+}
+
+
+
+//--------------------------------------------
+// 翻訳:これないとWPでエラーが出る
+//--------------------------------------------
+function hambergersite_theme_setup(){
+  load_theme_textdomain( 'hamberger-site', get_template_directory() . '/languages' );
+  }
+add_action( 'after_setup_theme', 'hambergersite_theme_setup' );
 
 
 
@@ -84,16 +106,12 @@ add_action( 'after_setup_theme', function(){
 // メニューバー作成
 //--------------------------------------------
 register_nav_menus( array(
-  'category_nav' => esc_html__('category navigation', 'rtbread'),
+  'category_nav' => esc_html__('category navigation', 'hamburger-site'),
   // 'footer_nav' => esc_html__('footer navigation', 'rtbread'),
 ) );
 
 
-// add_theme_support('automatic-feed-links');//フィードの利用を許可する
 
-// if(!isset($content_width)){
-//   $content_width=960;
-// }
 
 
 
@@ -272,45 +290,45 @@ function pagination($pages = '', $range = 2){
 // ↓↓↓ 今回は使ってない
 //--------------------------------------------
 //ウィジェット（カテゴリー、タグ、アーカイブ）を扱う機能
-function hamburgersite_widgets_init() {
+// function hamburgersite_widgets_init() {
 
-  register_sidebar(
-    array(
-      'name' => 'カテゴリーウィジェット',
-      'id' => 'category_widget',
-      'description' => 'カテゴリー用ウィジェットです',
-      'before_widget' => '<div id="%1$s" class="widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h2><i class="fa fa-folder-open" aria-hidden="true"></i>',
-      'after_title' => "</h2>\n",
-    )
-  );
+//   register_sidebar(
+//     array(
+//       'name' => 'カテゴリーウィジェット',
+//       'id' => 'category_widget',
+//       'description' => 'カテゴリー用ウィジェットです',
+//       'before_widget' => '<div id="%1$s" class="widget %2$s">',
+//       'after_widget' => '</div>',
+//       'before_title' => '<h2><i class="fa fa-folder-open" aria-hidden="true"></i>',
+//       'after_title' => "</h2>\n",
+//     )
+//   );
 
-  register_sidebar(
-    array(
-      'name'  => 'タグウィジェット',
-      'id'    => 'tag_widget',
-      'description' => 'タグ用ウィジェットです',
-      'before_widget' => '<div id="%1$s" class="widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h2><i class="fa fa-tags" aria-hidden="true"></i>',
-      'after_title' => "</h2>\n",
-    )
-  );
+//   register_sidebar(
+//     array(
+//       'name'  => 'タグウィジェット',
+//       'id'    => 'tag_widget',
+//       'description' => 'タグ用ウィジェットです',
+//       'before_widget' => '<div id="%1$s" class="widget %2$s">',
+//       'after_widget' => '</div>',
+//       'before_title' => '<h2><i class="fa fa-tags" aria-hidden="true"></i>',
+//       'after_title' => "</h2>\n",
+//     )
+//   );
 
-  register_sidebar(
-    array(
-      'name'  => 'アーカイブウィジェット',
-      'id'    => 'archive_widget',
-      'description' => 'アーカイブ用ウィジェットです',
-      'before_widget' => '<div id="%1$s" class="widget %2$s">',
-      'after_widget' => '</div>',
-      'before_title' => '<h2><i class="fa fa-archive" aria-hidden="true"></i>',
-      'after_title' => "</h2>\n",
-    )
-  );
-}
-add_action('widgets_init', 'hamburgersite_widgets_init');
+//   register_sidebar(
+//     array(
+//       'name'  => 'アーカイブウィジェット',
+//       'id'    => 'archive_widget',
+//       'description' => 'アーカイブ用ウィジェットです',
+//       'before_widget' => '<div id="%1$s" class="widget %2$s">',
+//       'after_widget' => '</div>',
+//       'before_title' => '<h2><i class="fa fa-archive" aria-hidden="true"></i>',
+//       'after_title' => "</h2>\n",
+//     )
+//   );
+// }
+// add_action('widgets_init', 'hamburgersite_widgets_init');
 
 
 //--------------------------------------------

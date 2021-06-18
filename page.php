@@ -11,7 +11,7 @@
               (max-width:900px) 834px, 100vw"
               alt="">
 
-        <h1 class="c-ttl"><?php wp_title('');?></h1>
+        <h1 class="c-ttl"><?php echo wp_get_document_title();?></h1>
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
