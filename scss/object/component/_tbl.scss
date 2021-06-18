@@ -2,27 +2,34 @@
 // テーブル
 // -----------------------------------------
 // .c-tbl {
-.wp-block-table {
+table,
+thead,
+tbody {
   @include font-mplus--regular;
   font-size: 16px;
   width: 100%;// 100%にしないと右に余白ができる
 
+  border: solid 1px;//tableタグにつけないとダメ
+  border-collapse: collapse;//これ入れないと二重線になる
+  
 
-  table {
-    border: solid 1px;//tableタグにつけないとダメ
-    border-collapse: collapse;//これ入れないと二重線になる
-  }
-
-  td {
+  td,
+  th {
     height: 77px;
     padding: 10px 20px;
     border: solid 1px;
+    font-weight: unset;
+
+    a {
+      color: black;
+    }
   }
 
+
   // &__tr--item {
-  td:nth-of-type(2) {
-    width: 75%;// 右だけ設定すれば左は残り幅になる
-  }
+  // td:nth-of-type(2) {
+  //   width: 75%;// 右だけ設定すれば左は残り幅になる
+  // }
 }
 
 

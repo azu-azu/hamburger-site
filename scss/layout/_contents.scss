@@ -32,24 +32,25 @@
       $side: $gap10;
 
       display: grid;
-      grid-template-columns: $side 1fr $side;// 2つ目:$img-width
+      grid-template-columns: auto;// 幅 = $img-width
       grid-template-rows: 25px auto $side auto 350px $side;
       // 1余白/2タイトル/3疑似要素/4余白/5カード部分/6余白
 
-
       h2 {
-        grid-column: 2;
         grid-row: 2;
         padding-left: $side;
       }
 
       &--card {
-        grid-column: 2;
         grid-row: 5 / 6;
 
         // カード２つをグリッドで配置
         display: grid;
         row-gap: $side;
+      }
+
+      @include breakpoint( pc-wide ) {
+        grid-template-columns: 340px;
       }
     }
   }

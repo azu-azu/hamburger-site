@@ -7,7 +7,11 @@
           srcset="<?php echo do_shortcode('[uri]'); ?>/images/mainvisual-sp.jpg 375w,
                   <?php echo do_shortcode('[uri]'); ?>/images/mainvisual-pc.jpg 1430w"
           sizes="(max-width:641px) 375px, 100vw" alt="">
-    <h1 class="c-ttl">ダミーサイト</h1>
+
+    <div class="c-ttl">
+      <h1 id="js-ttl" class="c-ttl__font">ハンバーガーサイト</h1>
+    </div>
+
   </figure>
   <!-- ◇----------------------------------------------------------------------------------------------◇ -->
   <main class="l-main">
@@ -97,7 +101,9 @@
 
   <?php get_sidebar();?>
 
-
+  <!-- テキストを親要素にフィットさせるためのjs -->
+  <script src="fitty.min.js"></script>
+  <script>fitty('#js-ttl');</script>
 </div>
 
   </body>

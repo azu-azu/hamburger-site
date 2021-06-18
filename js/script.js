@@ -1,5 +1,4 @@
 // Menuボタンを押したら
-console.log("test");
 jQuery(function($) {
   $(".js-menu-btn").on("click", function(){
     $(".l-sidebar").toggleClass("is-open");
@@ -33,3 +32,29 @@ jQuery(function($){
     }
 });
 })
+
+
+// alignleftの親要素にスタイリングする
+jQuery(function($) {
+  $('p:has(.alignleft)').css({display:'flex',margin:'10px 0 10px 0'});
+  });
+
+
+// alignrightの親要素にスタイリングする
+jQuery(function($) {
+  $('p:has(.alignright)').css({display:'flex','justify-content':'flex-end',margin:'10px 0 10px 0'});
+  });
+
+// iframeの親要素にスタイリングする
+jQuery(function($) {
+  $('p:has(iframe)').css({position:'relative',width:'100%','padding-top':'56.25%'});
+  });
+
+// タグに直書きされたstyleを削除する
+jQuery(function($) {
+  $('figure').removeAttr('style');
+  $('img').removeAttr('width');
+  $('img').removeAttr('height');
+  $('dl').removeAttr('style');
+});
+

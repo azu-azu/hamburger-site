@@ -3,8 +3,10 @@
   @include font-mplus--regular;
   line-height: 1.7;
 
-  .wp-block-quote,
-  .wp-block-table,
+  blockquote,
+  table,
+  code,
+  pre,
   .wp-block-group,
   .wp-block-columns,
   .wp-block-media-text__media {
@@ -17,17 +19,39 @@
     }
   }
 
-
   p,
   h2 {
     margin-bottom: var(--marginB);
   }
 
+  p {
+    width: calc(100vw - (var(--side) * 2));
+
+    @include breakpoint( pc ) {
+      --side: 40px;
+      width: calc(100vw - #{$sidebar-width-pc} - var(--side)*2);
+    }
+  }
+
+  pre {
+    white-space: normal;
+  }
 
   .wp-block-button {
     margin-bottom: 50px;
   }
+
+  // blockquoteにpがあるので、p-postの入れ子にしないと上書きできない
+  blockquote {
+    > p {
+      width: unset;
+      margin-bottom: unset;
+      line-height: 1.7;
+    }
+  }
 }
+
+
 
 
 

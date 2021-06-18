@@ -39,7 +39,7 @@ add_action( 'wp_enqueue_scripts', 'remove_block_library_style' );
 //--------------------------------------------
 wp_enqueue_script('jquery');
 wp_enqueue_script('accordion_script', get_template_directory_uri() . '/js/script.js', array(), '', true);
-
+wp_enqueue_script('fitty_script', get_template_directory_uri() . '/js/fitty.min.js', array(), '', true);
 
 
 //--------------------------------------------

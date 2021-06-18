@@ -10,15 +10,6 @@
       height: auto;
     }
   }
-
-  h1 {
-    position: absolute;
-    height: auto;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    white-space: nowrap;
-  }
 }
 
 
@@ -38,21 +29,6 @@
 
       @include breakpoint( tablet ) {
         width: 100%;
-      }
-    }
-
-    span {
-      top: 100%;
-    }
-
-    @include breakpoint( tablet ) {
-      br {
-        display: none;
-      }
-
-      span {
-        top: 50%;
-        left: 100%;
       }
     }
   }
