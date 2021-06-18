@@ -15,8 +15,10 @@
                 (max-width:900px) 834px, 100vw"
                 alt="">
         <?php endif; ?>
-        
-        <h1 class="c-ttl"><?php echo wp_get_document_title();?></h1>
+
+        <div class="c-ttl">
+          <h1 id="js-ttl" class="c-ttl__font"><?php echo wp_get_document_title();?></h1>
+        </div>
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
@@ -24,7 +26,8 @@
           <?php if (have_posts()): ?>
           <?php while (have_posts()): the_post(); ?>
 
-            <?php the_content(); ?>
+            <?php the_content('続きを読む'); ?>
+
 
             <!-- ページリンクがないとエラーになるため記述 -->
             <div class="p-post__pagelink">
@@ -46,6 +49,9 @@
       
     </div><!-- c-grid -->
 
+    <!-- テキストを親要素にフィットさせるためのjs -->
+    <script src="fitty.min.js"></script>
+    <script>fitty('#js-ttl');</script>
   </body>
 
 </html>

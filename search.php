@@ -10,7 +10,11 @@
       <!-- メインビジュアル -->
       <figure class="l-mainvisual p-mainvisual">
         <img src="<?php echo do_shortcode('[uri]'); ?>/images/archive_mainvisual.jpg" alt="">
-        <h1 class="c-ttl">Search:<br><span><?php echo wp_get_document_title();?></span></h1>
+
+        <div class="c-ttl">
+          <h1 id="js-ttl" class="c-ttl__font">Search:<br><span><?php echo wp_get_document_title();?></span></h1>
+        </div>
+
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
@@ -45,7 +49,8 @@
                     <div class="p-contents__post-bg"><?php the_post_thumbnail(); ?></div>
 
                   <?php else: ?><!--アイキャッチ画像がない場合は、デフォルトの画像を表示-->
-                    <img class="p-contents__default-bg" src="<?php echo do_shortcode('[uri]'); ?>/images/card.png" 
+                    <img class="p-contents__default-bg"
+                        src="<?php echo do_shortcode('[uri]'); ?>/images/card.png" 
                         srcset="<?php echo do_shortcode('[uri]'); ?>/images/card.png 379w,
                         <?php echo do_shortcode('[uri]'); ?>/images/card_pc.png 677w" 
                         sizes="(max-width:640px) 379px, 100vw" alt="">
@@ -86,8 +91,8 @@
 
     </div>
 
-    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script>
+    <script src="fitty.min.js"></script> -->
   </body>
 
 </html>

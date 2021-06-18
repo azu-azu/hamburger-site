@@ -1,20 +1,78 @@
+//---------------------
+// メインビジュアルの中のタイトル
+//---------------------
 .c-ttl {
-  @include font-mplus--bold;
+  position: absolute;
+  top: 0;
+  width: 95%;
   height: 100%;
-  // width: 100%;
-  font-size: 36px;
-  color: $ttl-color;
 
-  > span {
-    @extend h1;
-    font-size: 16px;
+
+  &__font {
+    --left: 5%;
+
+    @include font-mplus--bold;
+    font-size: 36px;
+    color: $ttl-color;
+    word-wrap: break-word;//英単語の途中で改行しない
+    white-space: normal;
+
+    width: calc(100% - var(--left));
+    position: absolute;
+    left: var(--left);
+    top: 50%;//高さがあると効かないのでheightがある場合は使えない
+    transform: translateY(-50%);
+
+
+    // 縁取り文字にする
+    text-shadow:
+      1px 0 0 black,
+      0 1px 0 black,
+      -1px 0 0 black,
+      0 -1px 0 black;
+
+
+    > span {
+      @extend .c-ttl;
+      font-size: 16px;
+    }
   }
 }
 
-.single {
-  .c-ttl {
-    background-color: rgba($card-color, 0.5);
+
+// -------------------------
+// シングル
+// -------------------------
+// .single {
+//   .c-ttl {
+    // background-color: rgba($card-color, 0.5);
     // padding: 20px;
-    box-shadow: 0 0 10px 20px rgba($card-color, .5);
+    // box-shadow: 0 0 10px 10px rgba($card-color, .5);
+//   }
+// }
+
+
+// -------------------------
+// アーカイブとSearchのspan
+// -------------------------
+.archive,
+.search {
+
+  .c-ttl {
+    span {
+      top: 100%;
+    }
+
+    @include breakpoint( tablet ) {
+      br {
+        display: none;
+      }
+
+      span {
+        top: 30%;
+      }
+    }
   }
 }
+
+

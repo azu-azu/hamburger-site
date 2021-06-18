@@ -15,7 +15,6 @@ $bgSetList: takeout takeout, eat-in eat-in;
 // 【１ページ目】画像幅＆h2タイトル下のライン
 // -----------------------------------------
 .p-contents {
-  max-width: $img-width;
 
   // 幅はビューポートに合わせて計算
   @include breakpoint( tablet ) {
@@ -28,6 +27,7 @@ $bgSetList: takeout takeout, eat-in eat-in;
 
   @include breakpoint( pc-wide ) {
     width: $img-width;
+    // max-width: $img-width;
   }
 
 

@@ -18,6 +18,14 @@
     margin-left: 20px;
   }
 
+  dl {
+    width: calc(100vw - (var(--side) * 2));
+
+    @include breakpoint( pc ) {
+      width: unset;
+    }
+  }
+
 }
 
 

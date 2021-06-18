@@ -44,7 +44,8 @@
 .single,
 .page {
   .l-mainvisual {
-    height: $mv-single-height-sp;
+    // height: $mv-single-height-sp;
+    height: 100%;
 
 
     @include breakpoint( tablet ) {

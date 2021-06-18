@@ -2,10 +2,96 @@
 // 投稿用のスタイリング
 //---------------------
 // 画像のキャプション：指定が推奨されているため設定
-.wp-caption {
-  font-size: 1.3rem
+figure.wp-caption.aligncenter {
+  --side: 20px;
+
+  margin: 10px auto;
+  position: relative;
+  width: calc(100vw - var(--side) * 2);
+  padding-top: 56.25%;
+
+  @include breakpoint( pc ) {
+    --side: 40px;
+    width: calc(100vw - #{$sidebar-width-pc} - var(--side)*2);
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wp-caption-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal;
+  }
 }
 
+.wp-caption.alignleft {
+  text-align: left;
+  margin: 10px 0 10px 0;
+
+  .wp-caption-text {
+    text-align: left;
+  }
+}
+
+.wp-caption.alignright {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  align-items: flex-end;
+}
+
+
+.wp-caption.alignnone {
+  margin: 10px auto 30px auto;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .wp-caption-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+element.style {
+  width: initial;
+}
+
+
+
+
+// .wp-caption.alignnone {
+//   margin: 10px 0 10px 0;
+
+//   img {
+//     width: 100%;
+//     max-width: 100%;
+//     object-fit: content;
+//   }
+// }
+
+
+
 .wp-caption-text {
-  margin-top: -20px;
+  font: 10px;
+  text-align: center;
+  white-space: nowrap;
 }

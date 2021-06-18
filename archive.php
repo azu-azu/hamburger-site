@@ -10,7 +10,10 @@
       <!-- メインビジュアル -->
       <figure class="l-mainvisual p-mainvisual">
         <img src="<?php echo do_shortcode('[uri]'); ?>/images/archive_mainvisual.jpg" alt="">
-        <h1 class="c-ttl">Ｍenu:<br><span><?php echo $category_name; ?></span></h1>
+        <div class="c-ttl">
+          <h1 id="js-ttl" class="c-ttl__font">Ｍenu:<br><span><?php echo $category_name; ?></span></h1>
+        </div>
+
       </figure>
       <!-- ◇----------------------------------------------------------------------------------------------◇ -->
       <main class="l-main">
@@ -77,6 +80,9 @@
 
     </div>
 
+    <!-- テキストを親要素にフィットさせるためのjs -->
+    <!-- <script src="fitty.min.js"></script>
+    <script>fitty('#js-ttl');</script> -->
   </body>
 
 </html>
